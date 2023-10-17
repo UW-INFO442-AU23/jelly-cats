@@ -1,14 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-
-// FIREBASE STUFF
-
-// Import the functions you need from the SDKs you need
+import React, { StrictMode } from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App/App';
+import { BrowserRouter } from 'react-router-dom';
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase } from 'firebase/database';
+
+import './components/App/App.js';
+import 'whatwg-fetch';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -23,10 +21,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+const db = getDatabase();
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
