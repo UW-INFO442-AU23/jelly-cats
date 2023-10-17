@@ -7,6 +7,7 @@ import { getDatabase } from 'firebase/database';
 
 import './components/App/App.js';
 import 'whatwg-fetch';
+import './index.css';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -27,7 +28,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
-    </BrowserRouter>,
+    </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Navbar } from '../Navbar/Navbar.js';
 
 export default function Home(props) {
-
-    return (
-        <div>
-            <p>Test</p>
-        </div>
-    )
-}
+  return (
+    <div>
+        <Navbar/>
+    </div>
+  );
+};
