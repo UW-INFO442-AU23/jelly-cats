@@ -1,13 +1,13 @@
-import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App/App';
-import { BrowserRouter } from 'react-router-dom';
+import React, { StrictMode } from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App/App";
+import { BrowserRouter } from "react-router-dom";
 import { initializeApp } from "firebase/app";
-import { getDatabase } from 'firebase/database';
+import { getDatabase } from "firebase/database";
 
-import './components/App/App.js';
-import 'whatwg-fetch';
-import './index.css';
+import "./components/App/App.js";
+import "whatwg-fetch";
+import "./index.css";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,7 +16,7 @@ const firebaseConfig = {
   projectId: "kinguistics-6dd7e",
   storageBucket: "kinguistics-6dd7e.appspot.com",
   messagingSenderId: "1084695766941",
-  appId: "1:1084695766941:web:65e08e8b08f9d4891c3174"
+  appId: "1:1084695766941:web:65e08e8b08f9d4891c3174",
 };
 
 // Initialize Firebase
@@ -30,5 +30,5 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
