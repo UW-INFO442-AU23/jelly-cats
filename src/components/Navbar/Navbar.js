@@ -9,22 +9,22 @@ export function Navbar(props) {
     return (
         <header>
             <nav>
-                <div class="flex-grow">
-                    <ul class="flex flex-row justify-around items-center text-lg">
+                <div className="flex-grow">
+                    <ul className="flex flex-row justify-around items-center">
                         <li>
-                            <img class="w-16" src={logo} alt="Logo"/>
+                            <img className="w-16" src={logo} alt="Logo"/>
                         </li>
                         <li>
-                            <a class={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} href="/">Home</a>
+                            <a className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} href="/">Home</a>
                         </li>
                         <li>
-                            <a class={`font-bold ${location.pathname === '/Events' ? 'border-b-4 border-indigo-500' : ''}`} href="/Events">Events</a>
+                            <a className={`font-bold ${location.pathname === '/Events' ? 'border-b-4 border-indigo-500' : ''}`} href="/Events">Events</a>
                         </li>
                         <li>
-                            <a class={`font-bold ${location.pathname === '/Resources' ? 'border-b-4 border-indigo-500' : ''}`} href="/Resources">Resources</a>
+                            <a className={`font-bold ${location.pathname === '/Resources' ? 'border-b-4 border-indigo-500' : ''}`} href="/Resources">Resources</a>
                         </li>
                         <li>
-                            <a class={`font-bold ${location.pathname === '/About' ? 'border-b-4 border-indigo-500' : ''}`} href="/About">About</a>
+                            <a className={`font-bold ${location.pathname === '/About' ? 'border-b-4 border-indigo-500' : ''}`} href="/About">About</a>
                         </li>
                     </ul>
                 </div>
