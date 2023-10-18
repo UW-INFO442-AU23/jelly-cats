@@ -12,8 +12,7 @@ export function Navbar(props) {
                 <div className="">
                     <ul className="flex flex-row justify-around items-center h-16">
                         <li className="basis-1/4 flex-center">
-                            <img className="w-16" src={logo} alt="Logo"/>
-                            <a className="font-bold text-3xl">Kinguistics</a>
+                            <img className="h-16" src={logo} alt="Logo"/>
                         </li>
                         <li>
                             <a className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} href="/">Home</a>
