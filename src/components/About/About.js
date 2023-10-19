@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../Navbar/Navbar.js";
-import justin from '../../imgs/Justin.png';
-import matthew from '../../imgs/Matthew.png';
-import sarah from '../../imgs/Sarah.png';
-import scott from '../../imgs/Scott.png';
-import vannary from '../../imgs/Vannary.png';
+import justin from '../../imgs/About/Justin.png';
+import matthew from '../../imgs/About/Matthew.png';
+import sarah from '../../imgs/About/Sarah.png';
+import scott from '../../imgs/About/Scott.png';
+import vannary from '../../imgs/About/Vannary.png';
 
 export default function About(props) {
     return (
