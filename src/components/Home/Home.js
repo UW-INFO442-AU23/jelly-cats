@@ -12,7 +12,7 @@ export default function Home(props) {
     <div>
       <Navbar />
       <div className="flex flex-col justify-center">
-        <div className="flex md:flex-row justify-center my-10 mx-14 md:mx-32 items-center">
+        <div className="flex md:flex-row justify-center my-10 mx-14 md:mx-20 lg:mx-32 items-center">
           <div className="flex flex-col basis-3/4 md:basis-1/2">
             <p className="text-lg md:text-2xl lg:text-4xl font-bold">Accessible and collaborative language-learning</p>
             <p className="mt-8 md:text-lg lg:text-2xl">Kinguistics strives to provide accessible collaborative language-learning opportunities for high school students in King County, WA. </p>
@@ -23,7 +23,7 @@ export default function Home(props) {
           <p className="text-lg md:text-2xl lg:text-4xl font-bold">Top Events</p>
           <p className="md:text-xl lg:text-2xl py-2 md:pt-5">Here’s a selection of our top upcoming events</p>
         </div>
-        <div className="flex flex-col md:flex-row justify-around pt-5 md:pt-0 2xl:mx-72">
+        <div className="flex flex-col md:flex-row justify-around pt-5 md:pt-0 2xl:mx-72 text-center">
           <div className="flex flex-col justify-center items-center">
             <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={asl} alt="ASL"/>
             <p className="font-bold text-lg lg:text-2xl">ASL Market</p>
@@ -49,7 +49,7 @@ export default function Home(props) {
             Are you a King County, WA high school student looking for additional ways to help you learn and practice a foreign language for class? 
             Here’s how to get started! Follow the steps below to get access to more language learning resources and events:
           </p>
-          <p className="lg:text-2xl pt-5 md:pt-7 lg:pt-10 pb-3">1. Review the <Link to="/resources" className="underline">Resources</Link> page for more educational tools to support your learning</p>
+          <p className="lg:text-2xl mt-5 md:mt-7 lg:mt-10 mb-3">1. Review the <Link to="/resources" className="underline">Resources</Link> page for more educational tools to support your learning</p>
           <p className="lg:text-2xl">2. Explore the <Link to="/events" className="underline">Events</Link> page and sign up for upcoming in-person or online events where you can practice your skills with other students.</p>
         </div>
       </div>
