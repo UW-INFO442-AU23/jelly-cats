@@ -25,21 +25,23 @@ export function Navbar(props) {
                         </li>
                     </ul>
 
-                    <div className={`sm:hidden ${!toggle ? 'hidden' : 'flex'}`}>
-                        <ul className="list-none flex flex-col justify-start items-center ml-4">
-                            <li className="rounded hover:bg-indigo-300 mb-3 px-4">
+                    <div className={`sm:hidden ${!toggle ? 'hidden' : 'flex flex-row justify-start'}`}>
+                        <ul className="list-none flex flex-col justify-start items-center basis-1/4">
+                            <li className="rounded hover:bg-indigo-300 mb-3 mr-2">
                                 <a className="font-bold" href="/">Home</a>
                             </li>
-                            <li className="rounded hover:bg-indigo-300 mb-3 px-3">
+                            <li className="rounded hover:bg-indigo-300 mb-3 mr-2">
                                 <a className="font-bold" href="/Events">Events</a>
                             </li>
-                            <li className="rounded hover:bg-indigo-300 mb-3">
+                            <li className="rounded hover:bg-indigo-300 mb-3 mr-2">
                                 <a className="font-bold" href="/Resources">Resources</a>
                             </li>
-                            <li className="rounded hover:bg-indigo-300 px-4">
+                            <li className="rounded hover:bg-indigo-300 mr-2">
                                 <a className="font-bold" href="/About">About</a>
                             </li>
                         </ul>
+                        <ul></ul>
+                        <ul className="basis-1/4"></ul>
                     </div>
                     {/* Desktop Header */}
                     <ul className="hidden sm:flex flex-row justify-around items-center h-16">
