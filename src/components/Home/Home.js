@@ -15,7 +15,7 @@ export default function Home(props) {
         <div className="flex md:flex-row my-10 mx-14 md:mx-32 flex-center">
           <div className="flex flex-col basis-3/4 md:basis-1/2">
             <p className="text-lg md:text-4xl font-bold">Accessible and collaborative language-learning</p>
-            <p className="mt-8 text-xs md:text-2xl">Kinguistics strives to provide accessible collaborative language-learning opportunities for high school students in King County, WA. </p>
+            <p className="mt-8 md:text-2xl">Kinguistics strives to provide accessible collaborative language-learning opportunities for high school students in King County, WA. </p>
           </div>
           <img className="h-fit w-2/5" src={home} alt="Home" />
         </div>
