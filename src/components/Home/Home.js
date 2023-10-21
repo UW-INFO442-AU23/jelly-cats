@@ -12,29 +12,29 @@ export default function Home(props) {
     <div>
       <Navbar />
       <div className="flex flex-col justify-center">
-        <div className="flex md:flex-row my-10 mx-14 md:mx-32 flex-center">
+        <div className="flex md:flex-row my-10 mx-14 md:mx-32 items-center">
           <div className="flex flex-col basis-3/4 md:basis-1/2">
             <p className="text-lg md:text-4xl font-bold">Accessible and collaborative language-learning</p>
             <p className="mt-8 md:text-2xl">Kinguistics strives to provide accessible collaborative language-learning opportunities for high school students in King County, WA. </p>
           </div>
           <img className="h-fit w-2/5" src={home} alt="Home" />
         </div>
-        <div className="flex flex-col flex-center my-5 md:my-10">
+        <div className="flex flex-col items-center my-5 md:my-10">
           <p className="text-lg md:text-4xl font-bold">Top Events</p>
           <p className="md:text-2xl py-2 md:pt-5">Here’s a selection of our top upcoming events</p>
         </div>
         <div className="flex flex-col md:flex-row justify-around md:mx-72">
-          <div className="flex flex-col justify-center flex-center">
+          <div className="flex flex-col justify-center items-center">
             <img className="w-3/5 h-fit mb-2 md:w-fit" src={asl} alt="ASL"/>
             <p className="font-bold md:text-2xl py-1">ASL Market</p>
             <p className="pb-5 md:text-xl">ASL in Aisles: Sign your way to flavors!</p>
           </div>
-          <div className="flex flex-col justify-center flex-center">
+          <div className="flex flex-col justify-center items-center">
             <img className="w-3/5 h-fit mb-2 md:w-fit" src={spanish} alt="ASL"/>
             <p className="font-bold md:text-2xl py-1">Spanish at the Beach</p>
             <p className="pb-5 md:text-xl">Spanish by the shore: Spice up your getaway!</p>
           </div>
-          <div className="flex flex-col justify-center flex-center">
+          <div className="flex flex-col justify-center items-center">
             <img className="w-3/5 h-fit mb-2 md:w-fit" src={french} alt="ASL"/>
             <p className="font-bold md:text-2xl py-1">French Bakery</p>
             <p className="md:text-xl">Fluent in French: Boss in Bakeries! </p>

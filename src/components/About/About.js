@@ -18,29 +18,29 @@ export default function About(props) {
                     and opportunities for students to further their learning and collaborate with peers outside of school.
                 </p>
                 <div className="flex flex-col md:flex-row flex-wrap justify-around mt-5 md:my-6 mx-20">
-                    <div className="flex flex-col justify-center flex-center">
+                    <div className="flex flex-col justify-center items-center">
                         <img className="md:w-60" src={sarah} alt="Portrait"/>
                         <p className="font-bold mt-3 md:text-2xl">Sarah Thomas<br/></p>
                         <p className="mb-3 md:text-xl">UX/UI Designer + PM</p>
                     </div>
-                    <div className="flex flex-col justify-center flex-center">
+                    <div className="flex flex-col justify-center items-center">
                         <img className="md:w-60" src={vannary} alt="Portrait"/>
                         <p className="font-bold mt-3 md:text-2xl">Vannary Sou<br/></p>
                         <p className="mb-3 md:text-xl">User Researcher</p>
                     </div>
-                    <div className="flex flex-col justify-center flex-center">
+                    <div className="flex flex-col justify-center items-center">
                         <img className="md:w-60" src={justin} alt="Portrait"/>
                         <p className="font-bold mt-3 md:text-2xl">Justin Sukomol<br/></p>
                         <p className="mb-3 md:text-xl">UX/UI Designer + PM</p>
                     </div>
                 </div>
                 <div className="flex flex-col md:flex-row flex-wrap justify-around md:mx-72">
-                    <div className="flex flex-col justify-center flex-center">
+                    <div className="flex flex-col justify-center items-center">
                         <img className="md:w-60" src={scott} alt="Portrait"/>
                         <p className="font-bold mt-3 md:text-2xl">Scott Nguyen<br/></p>
                         <p className="mb-3 md:text-xl">Developer</p>
                     </div>
-                    <div className="flex flex-col justify-center flex-center">
+                    <div className="flex flex-col justify-center items-center">
                         <img className="md:w-60" src={matthew} alt="Portrait"/>
                         <p className="font-bold mt-3 md:text-2xl">Matthew Bacarro<br/></p>
                         <p className="mb-3 md:text-xl">Developer</p>
