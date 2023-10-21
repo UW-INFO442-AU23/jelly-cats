@@ -11,7 +11,7 @@ export default function Home(props) {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col justify-center h-auto">
+      <div className="flex flex-col justify-center">
         <div className="flex md:flex-row my-10 mx-14 md:mx-32 flex-center">
           <div className="flex flex-col basis-3/4 md:basis-1/2">
             <p className="text-lg md:text-4xl font-bold">Accessible and collaborative language-learning</p>
