@@ -14,7 +14,7 @@ export function Navbar(props) {
             <nav>
                 <div>
                     {/* Mobile Header */}
-                    <ul className="sm:hidden flex flex-row justify-around items-center h-16">
+                    <ul className="sm:hidden static flex flex-row justify-around items-center h-16">
                         <li className="basis-1/4">
                             <img className={`h-7 cursor-pointer ${!toggle ? '' : 'ml-3'}`} src={`${!toggle ? nav : x}`} alt="Navigation" onClick={() => setToggle(!toggle)} />
                         </li>
