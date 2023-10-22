@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Navbar } from "../Navbar/Navbar.js";
 import justin from '../../imgs/About/Justin.png';
 import matthew from '../../imgs/About/Matthew.png';
@@ -11,12 +11,14 @@ export default function About(props) {
         <div>
             <Navbar />
             <div className="flex flex-col justify-center">
+                {/* Team Introduction & Goals */}
                 <p className="font-bold text-lg md:text-4xl mx-14 mt-10 md:mx-32 md:mt-20"> Meet the team behind Kinguistics</p>
                 <p className="md:text-xl mx-14 mt-3 md:mx-32 md:mt-6">
                     To address the educational disparities faced by underprivileged students in King County schools’
                     foreign language programs, our team aims to support high school students by offering free resources
                     and opportunities for students to further their learning and collaborate with peers outside of school.
                 </p>
+                {/* Team Portraits + Role */}
                 <div className="flex flex-col md:flex-row flex-wrap justify-around mt-5 md:my-6 mx-20">
                     <div className="flex flex-col justify-center items-center">
                         <img className="md:w-60" src={sarah} alt="Portrait"/>

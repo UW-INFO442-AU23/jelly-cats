@@ -12,37 +12,41 @@ export default function Home(props) {
     <div>
         <Navbar />
         <div className="flex flex-col justify-center">
+            {/* Introduction */}
             <div className="flex md:flex-row justify-center my-10 mx-14 md:mx-20 lg:mx-36 items-center">
             <div className="flex flex-col basis-3/4 md:basis-1/2">
                 <p className="text-lg md:text-2xl lg:text-4xl font-bold">Accessible and collaborative language-learning</p>
                 <p className="mt-8 md:text-lg lg:text-2xl">Kinguistics strives to provide accessible collaborative language-learning opportunities for high school students in King County, WA.</p>
             </div>
             <img className="h-fill w-2/5" src={home} alt="Home" />
+            {/* Top Events List */}
             </div>
                 <div className="flex flex-col items-center md:my-3 lg:my-10">
                 <p className="text-lg md:text-2xl lg:text-4xl font-bold">Top Events</p>
                 <p className="md:text-xl lg:text-2xl py-2 md:pt-5">Here’s a selection of our top upcoming events</p>
             </div>
             <div className="flex flex-col md:flex-row justify-around pt-5 md:pt-0 2xl:mx-72 text-center">
-            <div className="flex flex-col justify-center items-center">
-                <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={asl} alt="ASL"/>
-                <p className="font-bold text-lg lg:text-2xl">ASL Market</p>
-                <p className="pb-5 md:pb-0 lg:text-xl">ASL in Aisles: Sign your way to flavors!</p>
+                <div className="flex flex-col justify-center items-center">
+                    <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={asl} alt="ASL"/>
+                    <p className="font-bold text-lg lg:text-2xl">ASL Market</p>
+                    <p className="pb-5 md:pb-0 lg:text-xl">ASL in Aisles: Sign your way to flavors!</p>
+                </div>
+                <div className="flex flex-col justify-center items-center">
+                    <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={spanish} alt="ASL"/>
+                    <p className="font-bold text-lg lg:text-2xl">Spanish at the Beach</p>
+                    <p className="pb-5 md:pb-0 lg:text-xl">Spanish by the shore: Spice up your getaway!</p>
+                </div>
+                <div className="flex flex-col justify-center items-center">
+                    <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={french} alt="ASL"/>
+                    <p className="font-bold text-lg lg:text-2xl">French Bakery</p>
+                    <p className="lg:text-xl">Fluent in French: Boss in Bakeries! </p>
+                </div>
             </div>
-            <div className="flex flex-col justify-center items-center">
-                <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={spanish} alt="ASL"/>
-                <p className="font-bold text-lg lg:text-2xl">Spanish at the Beach</p>
-                <p className="pb-5 md:pb-0 lg:text-xl">Spanish by the shore: Spice up your getaway!</p>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-                <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={french} alt="ASL"/>
-                <p className="font-bold text-lg lg:text-2xl">French Bakery</p>
-                <p className="lg:text-xl">Fluent in French: Boss in Bakeries! </p>
-            </div>
-            </div>
-                <div className="flex flex-row justify-center my-8 lg:my-12">
+            {/* View Events Button */}
+            <div className="flex flex-row justify-center my-8 lg:my-12">
                 <Link to="/events" className="bg-indigo-500 md:text-xl text-white font-bold rounded py-1 px-5 md:py-3 md:px-8">View all Events</Link>
             </div>
+            {/* How to use Section */}
             <div className="flex flex-col mx-14 md:mx-28 lg:mx-60 lg:my-10">
                 <p className="text-2xl lg:text-4xl font-bold">How to use Kinguistics</p>
                 <p className="lg:text-2xl pt-5">
