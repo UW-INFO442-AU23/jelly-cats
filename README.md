@@ -1,6 +1,6 @@
-# Kinguistics
+<h1 align="center"><strong>Kinguistics</strong></h1>
 
-<h2 align="center">Collaborative language-learning in King County, WA</h2>
+<h2 align="center"><strong>Collaborative language-learning in King County, WA</strong></h2>
 
 Group 6: Jelly Cats
 
@@ -19,6 +19,8 @@ The link to our published web application:
 * Vannary Sou
 * Justin Sukomol
 * Sarah Thomas
+
+
 
 
 
