@@ -1,6 +1,25 @@
 # Kinguistics
 
-## *Collaborative language-learning in King County, WA*
+<h2 align="center">Collaborative language-learning in King County, WA</h2>
+
+Group 6: Jelly Cats
+
+## Our Mission
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
