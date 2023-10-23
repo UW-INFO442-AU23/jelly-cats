@@ -6,6 +6,22 @@ Group 6: Jelly Cats
 
 ## Our Mission
 
+To further support economically disadvantaged King County high school students learning a new language, our solution aims to bridge the gap between language learning in schools and at home. Through the Kinguistics site, students will learn the benefits of language learning, access additional educational resources that may not be available in their high school classrooms, and sign up for free events to practice their language learning with other students, either virtually or in person. By providing students with additional resources and opportunities for collaboration, we hope to encourage peer learning and motivate students to practice and actively engage with their studies.
+
+## Published Site
+
+The link to our published web application:
+
+## Group Members
+
+* Matthew Bacarro
+* Scott Nguyen
+* Vannary Sou
+* Justin Sukomol
+* Sarah Thomas
+
+
+
 
 
 
