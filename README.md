@@ -2,11 +2,22 @@
 
 <h2 align="center"><strong>Collaborative language-learning in King County, WA</strong></h2>
 
-Group 6: Jelly Cats
+<p align="center">Group 6: Jelly Cats</p>
 
 ## Our Mission
 
 To further support economically disadvantaged King County high school students learning a new language, our solution aims to bridge the gap between language learning in schools and at home. Through the Kinguistics site, students will learn the benefits of language learning, access additional educational resources that may not be available in their high school classrooms, and sign up for free events to practice their language learning with other students, either virtually or in person. By providing students with additional resources and opportunities for collaboration, we hope to encourage peer learning and motivate students to practice and actively engage with their studies.
+
+## Features
+
+* Language-learning events with descriptions and details
+* Navigation bar with home, about, resources, and event pages
+* Filter and sort-by system for language-learning events
+  * Filter based on language, language level, location
+  * Sort-by date
+* Ability to register for language-learning events
+  * Requires user email for validation
+* Multi-media information expressing the benefits of learning another language
 
 ## Published Site
 
@@ -19,6 +30,12 @@ The link to our published web application:
 * Vannary Sou
 * Justin Sukomol
 * Sarah Thomas
+
+## User Personas
+
+The two user personas we used when designing our product can be found here.
+
+## Testing Protocols
 
 
 
