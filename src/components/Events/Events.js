@@ -5,6 +5,7 @@ export default function Events(props) {
     return (
         <div>
             <Navbar />
+            <a>Hello</a>
         </div>
     );
 }
