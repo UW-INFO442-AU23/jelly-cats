@@ -1,11 +1,11 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App/App";
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
-import "./components/App/App.js";
+import "./App.js";
 import "whatwg-fetch";
 import "./index.css";
 
