@@ -62,7 +62,7 @@ export default function Events(props) {
                 <div className="flex flex-row items-center justify-between mt-8">
                     <div className="flex">
                         {/* filter by location*/}
-                        <div className="flex flex-row items-center justify-between border-4 border-indigo-500 rounded-full py-2 px-4 mr-7">
+                        {/* <div className="flex flex-row items-center justify-between border-4 border-indigo-500 rounded-full py-2 px-4 mr-7"> */}
                         <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer mr-7">
                             <p className="mr-10">Location</p>
                             <img src={ arrow } className="h-fit" alt="Location filter dropdown"/>
@@ -75,49 +75,14 @@ export default function Events(props) {
                             <p className="mr-10">Location</p>
                             <img src={ arrow } className="h-fit" alt="Location filter dropdown"/>
                         </div>
-                    </div>
-                    <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer">
+                        </div>
+                    <div className="flex flex-row items-center justify-between px-4 py -2 border-4 border-indigo-500 rounded-full cursor-pointer">
                             <p className="mr-10">Sort by date</p>
                             <img src={ arrow } className="h-fit" alt="Sort by date filter dropdown"/>
+                    </div>
                     </div>
                 </div>
             </div>
 
-        
-
-            
-
-            {/* Events
-            <div className="mx-14 md:mx-20 lg:mx-36">
-                <h2>Event List</h2>
-                <ul>
-                    {events.map((event) => (
-                    <li key={event}>
-                        {event}
-                    </li>
-                    ))}
-                </ul>
-                <div></div>
-                <h2>languages List</h2>
-                <ul>
-                    {languages.map((languages) => (
-                    <li key={languages}>
-                        {languages}
-                    </li>
-                    ))}
-                </ul>
-                <div></div>
-                <h2>locations List</h2>
-                <ul>
-                    {locations.map((locations) => (
-                    <li key={locations}>
-                        {locations}
-                    </li>
-                    ))}
-                </ul>
-                
-            </div> */}
-        </div>
-        </div>
     );
 }
