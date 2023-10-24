@@ -93,7 +93,8 @@ export function Navbar(props) {
                         <li className="basis-1/4 flex-center">
                             {user ? (
                                 <li className="flex-center">
-                                    <p className="mr-10 font-bold">{user.displayName}</p>
+                                    <img src={ user.photoURL } className="h-12 mr-2 rounded-full w-fit" alt="user image"/>
+                                    <p className="mr-8 font-bold">{user.displayName}</p>
                                     <button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={handleSignOut}>Sign Out</button>
                                 </li>
                             ) : (
