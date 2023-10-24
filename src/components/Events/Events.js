@@ -62,7 +62,7 @@ export default function Events(props) {
                 <div className="flex flex-row items-center justify-between mt-8">
                     <div className="flex">
                         {/* filter by location*/}
-                        {/* <div className="flex flex-row items-center justify-between border-4 border-indigo-500 rounded-full py-2 px-4 mr-7"> */}
+                        {/* <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full mr-7"> */}
                         <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer mr-7">
                             <p className="mr-10">Location</p>
                             <img src={ arrow } className="h-fit" alt="Location filter dropdown"/>
@@ -76,7 +76,7 @@ export default function Events(props) {
                             <img src={ arrow } className="h-fit" alt="Location filter dropdown"/>
                         </div>
                         </div>
-                    <div className="flex flex-row items-center justify-between px-4 py -2 border-4 border-indigo-500 rounded-full cursor-pointer">
+                    <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer">
                             <p className="mr-10">Sort by date</p>
                             <img src={ arrow } className="h-fit" alt="Sort by date filter dropdown"/>
                     </div>
