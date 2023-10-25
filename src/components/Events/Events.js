@@ -22,6 +22,7 @@ const app = initializeApp(firebaseConfig);
 export default function Events(props) {
     const [events, setEvents] = useState([]);
     const [languages, setLanguages] = useState([]);
+    const [langLevel, setLangLevel] = useState([]);
     const [locations, setLocations] = useState([]);
 
     useEffect(() => {
@@ -33,14 +34,16 @@ export default function Events(props) {
             if (snapshot.exists()) {
             const eventsData = snapshot.val();
 
-            // Extract events, languages, and locations from the data
+            // Extract data from the firebase
             const eventTitles = Object.keys(eventsData);
             const eventLanguages = Array.from(new Set(Object.values(eventsData).map((event) => event.Language)));
             const eventLocations = Array.from(new Set(Object.values(eventsData).map((event) => event.Location)));
+            const eventLangLevels = Array.from(new Set(Object.values(eventsData).map((event) => event["Language Level"])));
 
             setEvents(eventTitles);
             setLanguages(eventLanguages);
             setLocations(eventLocations);
+            setLangLevel(eventLangLevels)
             } else {
             console.log("No data found for events.");
             }
@@ -64,25 +67,14 @@ export default function Events(props) {
                     <div className="flex">
                         {/* filter by location*/}
                         {/* <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full mr-7"> */}
-                        <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer mr-7">
-                            <p className="mr-10">Location</p>
-                            <img src={ arrow } className="h-fit" alt="Location filter dropdown"/>
-                        </div>
-                        <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer mr-7">
-                            <p className="mr-10">Language Level</p>
-                            <img src={ arrow } className="h-fit" alt="Language Level filter dropdown"/>
-                        </div>
-                        <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer mr-7">
-                            <p className="mr-10">Location</p>
-                            <img src={ arrow } className="h-fit" alt="Location filter dropdown"/>
-                        </div>
+                        <Filter defaultVal="All Languages" options={languages}/>
+                        <Filter defaultVal="All Languages Levels" options={langLevel}/>
+                        <Filter defaultVal="All Locations" options={locations}/>
                     </div>
-                    <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer">
-                            <p className="mr-10">Sort by date</p>
-                            <img src={ arrow } className="h-fit" alt="Sort by date filter dropdown"/>
-                    </div>
+                        <Filter defaultVal="Sort by date" options={["Ascending", "Descending"]} />
                 </div>
-                <Filter filterBy="Languages" options={languages}/>
+                {/*Events */}
+                
             </div>
         </div>
     );

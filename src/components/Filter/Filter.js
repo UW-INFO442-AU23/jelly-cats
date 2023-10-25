@@ -4,13 +4,12 @@ import './Filter.css';
 
 export default function Filter(props) {
 
-    const filterBy = props.filterBy
+    const defaultVal = props.defaultVal
     const options = props.options
 
     return (
-        <select id="{filterBy}" class="px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer mr-7 w-44
-        appearance-none">
-            <option selected>{filterBy}</option>
+        <select id="{defaultVal}" className="px-4 py-2 text-center border-4 border-indigo-500 rounded-full appearance-none cursor-pointer mr-7 w-44">
+            <option selected>{defaultVal}</option>
             {options.map((option, index) => (
                 <option key={index} value={option}>
                     {option}
