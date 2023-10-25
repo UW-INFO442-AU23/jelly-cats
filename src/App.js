@@ -6,7 +6,7 @@ import Home from "./components/Home/Home.js";
 import Events from "./components/Events/Events.js";
 import Resources from "./components/Resources/Resources.js";
 import About from "./components/About/About.js";
-import Navbar from "./components/Navbar/Navbar.js";
+import Profile from "./components/Profile/Profile.js";
 
 function App(props) {
     const [user, setUser] = useState(null);
@@ -42,6 +42,7 @@ function App(props) {
             <Route path="events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="about" element={<About data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="profile" element={<Profile data={props.data} user={user} onSignOut={handleSignOut} />} />
         </Routes>
     );
 }

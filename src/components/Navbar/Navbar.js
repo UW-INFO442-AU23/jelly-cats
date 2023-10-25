@@ -66,12 +66,17 @@ export function Navbar(props) {
                         <li className="basis-1/4 flex-center">
                             {user ? (
                                 <li className="flex-center">
-                                    <img src={ user.photoURL } className="h-12 mr-8 rounded-full w-fit" alt="profile"/>
-                                    <button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={props.onSignOut}>Sign Out</button>
+                                    {location.pathname === '/Profile' ? 
+                                        <Link to="/"><button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={props.onSignOut}>Sign Out</button></Link>
+                                    : 
+                                        <Link to="/Profile">
+                                            <img src={ user.photoURL } className="h-12 rounded-full w-fit" alt="profile"/>
+                                        </Link>
+                                    }
                                 </li>
                             ) : (
                                 <li className="basis-1/4 flex-center">
-                                    <Login />
+                                    <Login data={props.data} user={user} onSignOut={ props.onSignOut} />
                                 </li>
                             )}
                         </li>
