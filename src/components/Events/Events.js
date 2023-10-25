@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navbar } from "../Navbar/Navbar.js";
 import { getDatabase, ref, get } from 'firebase/database';
 import { initializeApp } from "firebase/app";
+import Filter from '../Filter/Filter.js'
 
 import arrow from '../../imgs/Events/Arrow.png';
 
@@ -81,6 +82,7 @@ export default function Events(props) {
                             <img src={ arrow } className="h-fit" alt="Sort by date filter dropdown"/>
                     </div>
                 </div>
+                <Filter filterBy="Languages" options={languages}/>
             </div>
         </div>
     );
