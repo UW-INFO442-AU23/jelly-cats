@@ -69,7 +69,7 @@ export function Navbar(props) {
                             {user ? (
                                 <li className="flex-center">
                                     {location.pathname === '/Profile' ? 
-                                        <Link to="/"><button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={props.onSignOut}>Sign Out</button></Link>
+                                        <Link to="/"><button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={props.onSignOut}>Logout</button></Link>
                                     : 
                                         <Link to="/Profile">
                                             <img src={ user.photoURL } className="h-12 rounded-full w-fit" alt="profile"/>
