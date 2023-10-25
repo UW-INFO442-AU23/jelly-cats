@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../Navbar/Navbar.js';
+
 import home from '../../imgs/Home/Home.png';
 import asl from '../../imgs/Home/ASL.png';
 import spanish from '../../imgs/Home/Spanish.png';
 import french from '../../imgs/Home/French.png';
+
 import './Home.css';
 
 export default function Home(props) {

@@ -1,10 +1,13 @@
 import React from "react";
 import { Navbar } from "../Navbar/Navbar.js";
+
 import justin from '../../imgs/About/Justin.png';
 import matthew from '../../imgs/About/Matthew.png';
 import sarah from '../../imgs/About/Sarah.png';
 import scott from '../../imgs/About/Scott.png';
 import vannary from '../../imgs/About/Vannary.png';
+
+import './About.css'
 
 export default function About(props) {
     return (

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../Navbar/Navbar.js";
+import { getDatabase, ref, get } from 'firebase/database';
+import { initializeApp } from "firebase/app";
+
 import arrow from '../../imgs/Events/Arrow.png';
 
-//import the function from the realtime database module
-import { getDatabase, ref, get } from 'firebase/database';
-
-import { initializeApp } from "firebase/app";
+import './Events.css';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAjDJtvu0NuE44_Xs2qNZADRJq_lMc9-2c",

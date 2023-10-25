@@ -1,9 +1,7 @@
 import React from "react";
 import { Navbar } from "../Navbar/Navbar.js";
 
-import './Profile.css';
-
-export default function Profile(props) {
+export default function ProfileEvents(props) {
     const user = props.user;
     return (
         <div>

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Login } from '../Login/Login.js';
+
 import logo from '../../imgs/Navbar/Logo.png';
 import nav from '../../imgs/Navbar/Nav.png';
 import x from '../../imgs/Navbar/X.png';
+
 import './Navbar.css';
 
 export function Navbar(props) {

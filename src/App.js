@@ -8,6 +8,8 @@ import Resources from "./components/Resources/Resources.js";
 import About from "./components/About/About.js";
 import Profile from "./components/Profile/Profile.js";
 
+import './App.css';
+
 function App(props) {
     const [user, setUser] = useState(null);
     const auth = getAuth();
