@@ -34,19 +34,19 @@ export default function Home(props) {
                         <p className="pb-5 md:pb-0 lg:text-xl">ASL in Aisles: Sign your way to flavors!</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={spanish} alt="ASL"/>
+                        <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={spanish} alt="Spanish"/>
                         <p className="text-lg font-bold lg:text-2xl">Spanish at the Beach</p>
                         <p className="pb-5 md:pb-0 lg:text-xl">Spanish by the shore: Spice up your getaway!</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={french} alt="ASL"/>
+                        <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={french} alt="French"/>
                         <p className="text-lg font-bold lg:text-2xl">French Bakery</p>
                         <p className="lg:text-xl">Fluent in French: Boss in Bakeries! </p>
                     </div>
                 </div>
                 {/* View Events Button */}
                 <div className="flex flex-row justify-center my-8 lg:my-12">
-                    <Link to="/events" className="px-5 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl md:py-3 md:px-8">View all Events</Link>
+                    <Link to="/events" className="px-5 py-1 font-bold text-white bg-indigo-500 rounded-lg md:text-xl md:py-3 md:px-8">View all Events</Link>
                 </div>
                 {/* How to use Section */}
                 <div className="flex flex-col mx-14 md:mx-28 lg:mx-60 lg:my-10">

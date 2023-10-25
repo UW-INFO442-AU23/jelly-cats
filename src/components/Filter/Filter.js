@@ -8,7 +8,7 @@ export default function Filter(props) {
     const options = props.options
 
     return (
-        <select id="{defaultVal}" className="px-4 py-2 text-center border-4 border-indigo-500 rounded-full appearance-none cursor-pointer mr-7 w-44">
+        <select id="{defaultVal}" className="px-6 py-2 text-center border-4 border-indigo-500 rounded-full appearance-none cursor-pointer mr-7">
             <option selected>{defaultVal}</option>
             {options.map((option, index) => (
                 <option key={index} value={option}>
