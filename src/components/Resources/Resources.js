@@ -5,7 +5,7 @@ export default function Resources(props) {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar user={props.user} onSignOut={props.onSignOut} />
         </div>
     )
 }

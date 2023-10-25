@@ -51,7 +51,7 @@ export default function Events(props) {
 
     return (
         <div>
-            <Navbar />
+            <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mx-14 md:mx-20 lg:mx-36">
                 {/* Introduction */}
                 <div className="mt-10 md:mt-20">
@@ -75,14 +75,13 @@ export default function Events(props) {
                             <p className="mr-10">Location</p>
                             <img src={ arrow } className="h-fit" alt="Location filter dropdown"/>
                         </div>
-                        </div>
+                    </div>
                     <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full cursor-pointer">
                             <p className="mr-10">Sort by date</p>
                             <img src={ arrow } className="h-fit" alt="Sort by date filter dropdown"/>
                     </div>
-                    </div>
                 </div>
             </div>
-
+        </div>
     );
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { Login } from '../Login/Login.js';
 import logo from '../../imgs/Navbar/Logo.png';
 import nav from '../../imgs/Navbar/Nav.png';
@@ -9,34 +8,8 @@ import './Navbar.css';
 
 export function Navbar(props) {
     const location = useLocation();
-    const [user, setUser] = useState(null);
     const [toggle, setToggle] = useState(false);
-
-    const auth = getAuth();
-
-    useEffect(() => {
-        // Check if user is logged in
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user);
-            } else {
-                setUser(null);
-            }
-        });
-
-        // Clean up the listener when the component unmounts
-        return () => unsubscribe();
-    }, []);
-
-    const handleSignOut = () => {
-        signOut(auth)
-            .then(() => {
-                setUser(null);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    };
+    const user = props.user;
 
     return (
         <header>
@@ -93,9 +66,8 @@ export function Navbar(props) {
                         <li className="basis-1/4 flex-center">
                             {user ? (
                                 <li className="flex-center">
-                                    <img src={ user.photoURL } className="h-12 mr-2 rounded-full w-fit" alt="user image"/>
-                                    <p className="mr-8 font-bold">{user.displayName}</p>
-                                    <button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={handleSignOut}>Sign Out</button>
+                                    <img src={ user.photoURL } className="h-12 mr-8 rounded-full w-fit" alt="profile"/>
+                                    <button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={props.onSignOut}>Sign Out</button>
                                 </li>
                             ) : (
                                 <li className="basis-1/4 flex-center">

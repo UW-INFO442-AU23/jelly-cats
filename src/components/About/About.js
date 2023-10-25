@@ -9,7 +9,7 @@ import vannary from '../../imgs/About/Vannary.png';
 export default function About(props) {
     return (
         <div>
-            <Navbar />
+            <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center">
                 {/* Team Introduction & Goals */}
                 <p className="mt-10 text-lg font-bold md:text-4xl mx-14 md:mx-32 md:mt-20"> Meet the team behind Kinguistics</p>
