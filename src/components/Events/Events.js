@@ -3,6 +3,7 @@ import { Navbar } from "../Navbar/Navbar.js";
 import { getDatabase, ref, get } from 'firebase/database';
 import { initializeApp } from "firebase/app";
 import Filter from '../Filter/Filter.js'
+import EventCard from "../EventCard/EventCard.js";
 
 import arrow from '../../imgs/Events/Arrow.png';
 
@@ -35,12 +36,11 @@ export default function Events(props) {
             const eventsData = snapshot.val();
 
             // Extract data from the firebase
-            const eventTitles = Object.keys(eventsData);
             const eventLanguages = Array.from(new Set(Object.values(eventsData).map((event) => event.Language)));
             const eventLocations = Array.from(new Set(Object.values(eventsData).map((event) => event.Location)));
             const eventLangLevels = Array.from(new Set(Object.values(eventsData).map((event) => event["Language Level"])));
 
-            setEvents(eventTitles);
+            setEvents(eventsData);
             setLanguages(eventLanguages);
             setLocations(eventLocations);
             setLangLevel(eventLangLevels)
@@ -52,6 +52,8 @@ export default function Events(props) {
             console.error("Error reading events:", error);
         });
     }, []);
+
+
 
     return (
         <div>
@@ -73,9 +75,12 @@ export default function Events(props) {
                     </div>
                         <Filter defaultVal="Sort by date" options={["Ascending", "Descending"]} />
                 </div>
-                {/*Events */}
                 
             </div>
+            {/*Events */}
+            <div className="grid my-6 mx-14 md:mx-20 lg:mx-36">
+                    <EventCard />
+                </div>
         </div>
     );
 }
