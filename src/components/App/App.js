@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
-import Home from "./components/Home/Home.js";
-import Events from "./components/Events/Events.js";
-import Resources from "./components/Resources/Resources.js";
-import About from "./components/About/About.js";
-import Profile from "./components/Profile/Profile.js";
-
-import './App.css';
+import Home from "../Home/Home.js";
+import Events from "../Events/Events.js";
+import Resources from "../Resources/Resources.js";
+import About from "../About/About.js";
+import Profile from "../Profile/Profile.js";
 
 function App(props) {
     const [user, setUser] = useState(null);

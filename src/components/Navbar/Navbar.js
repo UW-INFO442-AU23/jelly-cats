@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { Login } from '../Login/Login.js';
+import { NavLink } from "react-router-dom";
+import { Login } from './Login.js';
 
 import logo from '../../imgs/Navbar/Logo.png';
 import nav from '../../imgs/Navbar/Nav.png';
 import x from '../../imgs/Navbar/X.png';
 
-import './Navbar.css';
-
 export function Navbar(props) {
     const location = useLocation();
     const [toggle, setToggle] = useState(false);
+    const [profileDropdown, setProfileDropdown] = useState(false);
     const user = props.user;
 
     return (
@@ -18,24 +18,46 @@ export function Navbar(props) {
             <nav>
                 <div>
                     {/* Mobile Header */}
-                    <ul className="static flex flex-row items-center justify-around h-16 sm:hidden">
+                    <ul className="fixed top-0 flex flex-row items-center justify-around w-full h-16 bg-white sm:hidden">
                         <li className="basis-1/4 flex-center">
-                            <img className="cursor-pointer h-7" src={`${!toggle ? nav : x}`} alt="Navigation" onClick={() => setToggle(!toggle)} />
+                            <div className="relative group" onClick={() => setToggle(!toggle)}>
+                                <img className="mr-2 cursor-pointer h-7" src={`${!toggle ? nav : x}`} alt="Navigation" onClick={() => setToggle(!toggle)} />
+                                <div className={`text-center absolute left-1/2 transform -translate-x-1/2 mt-2 w-28 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-indigo-500 ${toggle ? 'block' : 'hidden'}`}>
+                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                                        <li>
+                                            <Link to="/" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/Events" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Events</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/Resources" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Resources</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/About" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                         <li className="flex-center">
                             <img className="h-16" src={logo} alt="Logo" />
                         </li>
                         <li className="basis-1/4 flex-center">
                             {user ? (
-                                <li className="flex-center">
-                                    {location.pathname === '/Profile' ? 
-                                        <Link to="/"><button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded-xl md:text-xl" onClick={props.onSignOut}>Logout</button></Link>
-                                    : 
-                                        <Link to="/Profile">
-                                            <img src={ user.photoURL } className="h-12 rounded-full w-fit" alt="profile"/>
-                                        </Link>
-                                    }
-                                </li>
+                                <div className="relative group" onClick={() => setProfileDropdown(!profileDropdown)}>
+                                    <img src={user.photoURL} className="h-12 rounded-full cursor-pointer" alt="profile" />
+                                    <div className={`absolute text-center left-1/2 transform -translate-x-1/2 mt-2 w-28 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-indigo-500 ${profileDropdown ? 'block' : 'hidden'}`}>
+                                        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                                            <li>
+                                                <Link to="/profile" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</Link>
+                                            </li>
+                                            <li>
+                                                <a href="/" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={props.onSignOut}>Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             ) : (
                                 <li className="basis-1/4 flex-center">
                                     <Login data={props.data} user={user} onSignOut={ props.onSignOut} />
@@ -44,26 +66,8 @@ export function Navbar(props) {
                         </li>
                     </ul>
 
-                    <div className={`sm:hidden ${!toggle ? 'hidden' : 'flex flex-row justify-around'}`}>
-                        <ul className="flex flex-col items-center justify-around basis-1/2">
-                            <li className="mb-3 rounded hover:bg-indigo-300">
-                                <Link to="/" className="font-bold">Home</Link>
-                            </li>
-                            <li className="mb-3 rounded hover:bg-indigo-300">
-                                <Link to="/Events" className="font-bold">Events</Link>
-                            </li>
-                            <li className="mb-3 rounded hover:bg-indigo-300">
-                                <Link to="/Resources" className="font-bold">Resources</Link>
-                            </li>
-                            <li className="rounded hover:bg-indigo-300">
-                                <Link to="/About" className="font-bold">About</Link>
-                            </li>
-                        </ul>
-                        <ul className="basis-1/2"></ul>
-                        <ul className="basis-1/4"></ul>
-                    </div>
                     {/* Desktop Header */}
-                    <ul className="flex-row items-center justify-around hidden h-16 sm:flex">
+                    <ul className="fixed top-0 flex-row items-center justify-around hidden w-full h-16 bg-white sm:flex">
                         <li className="basis-1/4 flex-center">
                             <img className="h-16" src={logo} alt="Logo" />
                         </li>
@@ -81,18 +85,22 @@ export function Navbar(props) {
                         </li>
                         <li className="basis-1/4 flex-center">
                             {user ? (
-                                <li className="flex-center">
-                                    {location.pathname === '/Profile' ? 
-                                        <Link to="/"><button className="px-8 py-1 font-bold text-white bg-indigo-500 rounded-xl md:text-xl" onClick={props.onSignOut}>Logout</button></Link>
-                                    : 
-                                        <Link to="/Profile">
-                                            <img src={ user.photoURL } className="h-12 rounded-full w-fit" alt="profile"/>
-                                        </Link>
-                                    }
-                                </li>
+                                <div className="relative group" onClick={() => setProfileDropdown(!profileDropdown)}>
+                                    <img src={user.photoURL} className="h-12 rounded-full cursor-pointer" alt="profile" />
+                                    <div className={`absolute text-center left-1/2 transform -translate-x-1/2 mt-2 w-28 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-indigo-500 ${profileDropdown ? 'block' : 'hidden'}`}>
+                                        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                                            <li>
+                                                <Link to="/profile" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</Link>
+                                            </li>
+                                            <li>
+                                                <a href="/" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={props.onSignOut}>Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             ) : (
                                 <li className="basis-1/4 flex-center">
-                                    <Login data={props.data} user={user} onSignOut={ props.onSignOut} />
+                                    <Login data={props.data} user={user} onSignOut={props.onSignOut} />
                                 </li>
                             )}
                         </li>

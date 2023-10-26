@@ -7,13 +7,11 @@ import asl from '../../imgs/Home/ASL.png';
 import spanish from '../../imgs/Home/Spanish.png';
 import french from '../../imgs/Home/French.png';
 
-import './Home.css';
-
 export default function Home(props) {
     return (
         <div>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center mt-12">
                 {/* Introduction */}
                 <div className="flex items-center justify-center my-10 md:flex-row mx-14 md:mx-20 lg:mx-36">
                 <div className="flex flex-col basis-3/4 md:basis-1/2">
