@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navbar } from "../Navbar/Navbar.js";
 import { getDatabase, ref, get } from 'firebase/database';
 import { initializeApp } from "firebase/app";
-import Filter from '../Filter/Filter.js'
+import Filter from './Filter.js'
 import EventCard from "../EventCard/EventCard.js";
 
 import arrow from '../../imgs/Events/Arrow.png';
