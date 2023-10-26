@@ -70,7 +70,7 @@ export default function Events(props) {
                         {/* filter by location*/}
                         {/* <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full mr-7"> */}
                         <Filter defaultVal="All Languages" options={languages}/>
-                        <Filter defaultVal="All Languages Levels" options={langLevel}/>
+                        <Filter defaultVal="All Language Levels" options={langLevel}/>
                         <Filter defaultVal="All Locations" options={locations}/>
                     </div>
                         <Filter defaultVal="Sort by date" options={["Ascending", "Descending"]} />

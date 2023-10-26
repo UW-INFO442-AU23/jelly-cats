@@ -12,7 +12,7 @@ export function Login(props) {
 
     return (
         <div>
-            <button className="px-6 py-1 font-bold text-white bg-indigo-500 rounded md:text-xl" onClick={handleSignIn}>Login</button>
+            <button className="px-6 py-1 font-bold text-white bg-indigo-500 rounded-lg md:text-xl" onClick={handleSignIn}>Login</button>
         </div>
     );
 }
