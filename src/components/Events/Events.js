@@ -42,6 +42,7 @@ export default function Events(props) {
             setLanguages(eventLanguages);
             setLocations(eventLocations);
             setLangLevel(eventLangLevels)
+            console.log(events)
             } else {
             console.log("No data found for events.");
             }
@@ -76,7 +77,10 @@ export default function Events(props) {
                 
             </div>
             {/*Events */}
-            <div className="grid my-6 mx-14 md:mx-20 lg:mx-36">
+            <div className="grid grid-cols-2 mt-12 mx-14 md:mx-20 lg:mx-36 gap-10 ">
+                    <EventCard />
+                    <EventCard />
+                    <EventCard />
                     <EventCard />
                 </div>
         </div>
