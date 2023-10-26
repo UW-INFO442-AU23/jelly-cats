@@ -1,8 +1,6 @@
 import React from 'react';
 import { getAuth, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
 
-import './Login.css'
-
 export function Login(props) {
     const auth = getAuth();
 

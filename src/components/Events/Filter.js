@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import arrow from '../../imgs/Events/Arrow.png'
-import './Filter.css';
 
 export default function Filter(props) {
 

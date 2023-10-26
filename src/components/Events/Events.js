@@ -7,8 +7,6 @@ import EventCard from "../EventCard/EventCard.js";
 
 import arrow from '../../imgs/Events/Arrow.png';
 
-import './Events.css';
-
 const firebaseConfig = {
     apiKey: "AIzaSyAjDJtvu0NuE44_Xs2qNZADRJq_lMc9-2c",
     authDomain: "kinguistics-6dd7e.firebaseapp.com",
@@ -58,7 +56,7 @@ export default function Events(props) {
     return (
         <div>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
-            <div className="flex flex-col justify-center mx-14 md:mx-20 lg:mx-36">
+            <div className="flex flex-col justify-center mt-12 mx-14 md:mx-20 lg:mx-36">
                 {/* Introduction */}
                 <div className="mt-10 md:mt-20">
                     <p className="text-lg font-bold md:text-2xl lg:text-4xl">Upcoming Events</p>
