@@ -77,7 +77,7 @@ export default function Events(props) {
                 
             </div>
             {/*Events */}
-            <div className="grid grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
+            <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
                     {Object.entries(events).map(([eventKey, eventData]) => (
                         <EventCard eventName={eventKey} eventData={eventData} />
                     ))}
