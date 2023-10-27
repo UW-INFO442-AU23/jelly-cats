@@ -13,8 +13,8 @@ export default function About(props) {
             <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mt-12">
                 {/* Team Introduction & Goals */}
-                <p className="mt-10 text-lg font-bold md:text-4xl mx-14 md:mx-32 md:mt-20"> Meet the team behind Kinguistics</p>
-                <p className="mt-3 md:text-xl mx-14 md:mx-32 md:mt-6">
+                <p className="mt-10 text-lg font-bold md:text-4xl mx-14 md:mx-32 lg:mx-36 md:mt-20"> Meet the team behind Kinguistics</p>
+                <p className="mt-3 md:text-xl mx-14 md:mx-32 md:mt-6 lg:mx-36">
                     To address the educational disparities faced by underprivileged students in King County schools’
                     foreign language programs, our team aims to support high school students by offering free resources
                     and opportunities for students to further their learning and collaborate with peers outside of school.

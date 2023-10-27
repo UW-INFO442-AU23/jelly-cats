@@ -3,9 +3,7 @@ import { Navbar } from "../Navbar/Navbar.js";
 import { getDatabase, ref, get } from 'firebase/database';
 import { initializeApp } from "firebase/app";
 import Filter from './Filter.js'
-import EventCard from "../EventCard/EventCard.js";
-
-import arrow from '../../imgs/Events/Arrow.png';
+import EventCard from "./EventCard.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAjDJtvu0NuE44_Xs2qNZADRJq_lMc9-2c",
@@ -79,7 +77,7 @@ export default function Events(props) {
             {/*Events */}
             <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
                     {Object.entries(events).map(([eventKey, eventData]) => (
-                        <EventCard eventName={eventKey} eventData={eventData} />
+                        <EventCard eventName={eventKey} eventData={eventData} user={props.user} />
                     ))}
                 </div>
         </div>

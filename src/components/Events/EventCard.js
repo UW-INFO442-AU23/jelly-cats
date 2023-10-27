@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Popup from './Popup.js';
 
-export default function EventCard({eventName, eventData}) {
+export default function EventCard({eventName, eventData, user}) {
+    const [isOpen, setIsOpen] = useState(false);
 
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
     
     return (
         <div className="flex justify-center">
@@ -43,9 +48,10 @@ export default function EventCard({eventName, eventData}) {
                                 <p className="text-xl font-semibold">{eventData["Current Attendees"]}/{eventData["Spot Limit"]}</p>
                                 <p className="text-lg">spots avail.</p>
                             </div>
-                            <button className="h-10 mt-auto bg-black rounded-lg w-28 max-[750px]:text-sm max-[750px]:place-self-center">
+                            <button className="h-10 mt-auto bg-black rounded-lg w-28 max-[750px]:text-sm max-[750px]:place-self-center" onClick={togglePopup}>
                                 Learn more
                             </button>
+                            {isOpen && <Popup onClose={togglePopup} eventName={eventName} eventData={eventData} user={user} />}
                         </div>
                     </div>
             </div>
