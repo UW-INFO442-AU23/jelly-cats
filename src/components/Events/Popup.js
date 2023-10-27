@@ -7,6 +7,7 @@ export default function Popup(props) {
     const user = props.user;
     const eventName = props.eventName;
     const eventData = props.eventData;
+    const [email, setEmail] = useState('');
 
     const [isChecked, setIsChecked] = useState(false);
 
@@ -14,6 +15,11 @@ export default function Popup(props) {
         setIsChecked(!isChecked);
     };
 
+    const handleemailChange = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const registerDisabled = !(email && isChecked);
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-75">
@@ -62,15 +68,15 @@ export default function Popup(props) {
                         </div>
                         {/* Register */}
                         <div>
-                            <div class="flex justify-center mb-5">
+                            <div className="flex justify-center mb-5">
                                 {user ? (
                                     <div>
-                                        <Register user={user} eventName={eventName} eventData={eventData} onClose={props.onClose}/>
+                                        <Register registerDisabled={!isChecked} email={user.email} eventName={eventName} eventData={eventData} onClose={props.onClose}/>
                                     </div>
                                 ) : (
                                     <div>
-                                        <input type="text" name="username" id="username" autocomplete="username" class="rounded-md border-2 flex-1 text-gray-900 placeholder:text-gray-500 sm:text-sm py-2 w-96" placeholder="username@domain.com"/>
-                                        <Register user={user} eventName={eventName} eventData={eventData} onClose={props.onClose}/>
+                                        <input type="text" name="email" id="email" autocomplete="email" value={email} onChange={handleemailChange} className="flex-1 py-2 text-gray-900 border-2 rounded-md placeholder:text-gray-500 sm:text-sm w-96" placeholder="email@domain.com"/>
+                                        <Register registerDisabled={registerDisabled} email={email} eventName={eventName} eventData={eventData} onClose={props.onClose}/>
                                     </div>
                                 )}
                             </div>

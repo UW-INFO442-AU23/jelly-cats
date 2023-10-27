@@ -1,44 +1,52 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { db } from "../../firebase.js";
-import { ref, update } from "firebase/database";
+import { ref, get, update } from "firebase/database";
 
 export default function Register(props) {
-    const user = props.user;
+    const email = props.email;
+    const emailKey = email.replace('.', ',');
     const eventName = props.eventName;
     const eventData = props.eventData;
+    const [isRegistered, setIsRegistered] = useState(false);
 
-    function onRegister() {
-        // Reference to the user's events in the database
-        const userEventsRef = ref(db, `Users/${user.uid}/Events`);
-        
-        // Reference to the event's attendees in the database
+    useEffect(() => {
+      const checkRegistration = async () => {
+          const userEventsRef = ref(db, `Users/${emailKey}/Events/${eventName}`);
+          const snapshot = await get(userEventsRef);
+          setIsRegistered(snapshot.exists());
+      };
+
+      checkRegistration();
+    }, [emailKey, eventName]);
+
+    const handleButtonClick = async () => {
         const eventRef = ref(db, `Events/${eventName}`);
+        const userEventsRef = ref(db, `Users/${emailKey}/Events`);
         const eventAttendeesRef = ref(db, `Events/${eventName}/Attendees`);
-    
-        // Push event to the user's node
-        update(userEventsRef, { [eventName]: true })
-          .then(() => {
-            // Push user to the event's attendees
-            update(eventRef, { "Current Attendees" : eventData["Current Attendees"] + 1 });
-            update(eventAttendeesRef, { [user.uid]: true })
-              .then(() => {
-                console.log("User registered for the event!");
-              })
-              .catch((error) => {
-                console.error("Error adding user to event attendees:", error);
-              });
-          })
-          .catch((error) => {
-            console.error("Error adding event to user's events:", error);
-          });
+        if (isRegistered) {
+            await update(userEventsRef, { [eventName]: null });
+            await update(eventAttendeesRef, { [emailKey]: null });
+            await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] - 1 });
+        } else {
+            await update(userEventsRef, { [eventName]: true });
+            await update(eventAttendeesRef, { [emailKey]: true });
+            await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] + 1 });
+        }
+
+        setIsRegistered(!isRegistered);
+
+        props.onClose();
     };
     
     return (
-        <button onClick={() => {
-            onRegister();
-            props.onClose();
-        }} className="px-4 py-2 mx-4 text-white rounded bg-neutral-900">
-            Register
-        </button>
+      <button
+          onClick={handleButtonClick}
+          className={`px-4 py-2 mx-4 text-white rounded ${
+              props.registerDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-lg'
+          }`}
+          disabled={props.registerDisabled}
+      >
+          {isRegistered ? 'Unregister' : 'Register'}
+      </button>
     );
 }
