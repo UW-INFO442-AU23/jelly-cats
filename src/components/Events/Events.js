@@ -63,6 +63,8 @@ export default function Events(props) {
         setFilteredEvents(filtered);
     }, [selectedLocation, selectedLanguageLevel, selectedLanguage, events]);
 
+    console.log(filteredEvents);
+
     return (
         <div>
             <Navbar user={props.user} onSignOut={props.onSignOut} />

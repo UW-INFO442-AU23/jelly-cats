@@ -46,8 +46,7 @@
                             <img src={x} alt="close" className="absolute top-0 right-0 m-4 cursor-pointer" onClick={props.onClose}/>
                             {/* Event Description */}
                             <div className="w-full px-10 py-10 text-lg text-white bg-indigo-500">
-                                <p>Event Description: Interested in learning how to navigate getting groceries using ASL? 
-                                    Learn how to sign common food items with the help of a King County ASL teacher</p>
+                                <p>Event Description: {eventData.Description}</p>
                             </div>
                             {/* Event Policy */}
                             <div className="flex flex-row px-6">
