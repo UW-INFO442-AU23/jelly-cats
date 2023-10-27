@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../Navbar/Navbar.js";
 import { getDatabase, ref, get } from 'firebase/database';
-import { initializeApp } from "firebase/app";
 import Filter from './Filter.js'
 import EventCard from "./EventCard.js";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAjDJtvu0NuE44_Xs2qNZADRJq_lMc9-2c",
-    authDomain: "kinguistics-6dd7e.firebaseapp.com",
-    projectId: "kinguistics-6dd7e",
-    storageBucket: "kinguistics-6dd7e.appspot.com",
-    messagingSenderId: "1084695766941",
-    appId: "1:1084695766941:web:65e08e8b08f9d4891c3174",
-};
-
-const app = initializeApp(firebaseConfig);
 
 export default function Events(props) {
+
+    // states for filter options
     const [events, setEvents] = useState([]);
     const [languages, setLanguages] = useState([]);
     const [langLevel, setLangLevel] = useState([]);
     const [locations, setLocations] = useState([]);
-
+    
+    // states for filtering data
+    const [filteredEvents, setFilteredEvents] = useState([]); // State to store filtered events
+    const [selectedLocation, setSelectedLocation] = useState("All Locations");
+    const [selectedLanguageLevel, setSelectedLanguageLevel] = useState("All Language Levels");
+    const [selectedLanguage, setSelectedLanguage] = useState("All Languages");
+    
+    // effect to get data from firebase
     useEffect(() => {
         const database = getDatabase();
         const eventsRef = ref(database, 'Events');
@@ -40,7 +38,7 @@ export default function Events(props) {
             setLanguages(eventLanguages);
             setLocations(eventLocations);
             setLangLevel(eventLangLevels)
-            console.log(events)
+
             } else {
             console.log("No data found for events.");
             }
@@ -50,7 +48,20 @@ export default function Events(props) {
         });
     }, []);
 
+    // effect to apply the filters whenever filter options change
+    useEffect(() => {
+        // Filter the events based on selected filter criteria
+        const filtered = Object.entries(events).filter(([eventKey, eventData]) => {
+            const event = eventData;
+            const isLocationMatch = selectedLocation === "All Locations" || event.Location === selectedLocation;
+            const isLanguageLevelMatch = selectedLanguageLevel === "All Language Levels" || event["Language Level"] === selectedLanguageLevel;
+            const isLanguageMatch = selectedLanguage === "All Languages" || event.Language === selectedLanguage;
+            
+            return isLocationMatch && isLanguageLevelMatch && isLanguageMatch;
+        });
 
+        setFilteredEvents(filtered);
+    }, [selectedLocation, selectedLanguageLevel, selectedLanguage, events]);
 
     return (
         <div>
@@ -65,10 +76,9 @@ export default function Events(props) {
                 <div className="flex flex-row items-center justify-between mt-8">
                     <div className="flex">
                         {/* filter by location*/}
-                        {/* <div className="flex flex-row items-center justify-between px-4 py-2 border-4 border-indigo-500 rounded-full mr-7"> */}
-                        <Filter defaultVal="All Languages" options={languages}/>
-                        <Filter defaultVal="All Language Levels" options={langLevel}/>
-                        <Filter defaultVal="All Locations" options={locations}/>
+                        <Filter defaultVal="All Languages" options={languages} onSelect={(value) => setSelectedLanguage(value)} />
+                        <Filter defaultVal="All Language Levels" options={langLevel} onSelect={(value) => setSelectedLanguageLevel(value)} />
+                        <Filter defaultVal="All Locations" options={locations} onSelect={(value) => setSelectedLocation(value)} />
                     </div>
                         <Filter defaultVal="Sort by date" options={["Ascending", "Descending"]} />
                 </div>
@@ -76,10 +86,10 @@ export default function Events(props) {
             </div>
             {/*Events */}
             <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
-                    {Object.entries(events).map(([eventKey, eventData]) => (
-                        <EventCard eventName={eventKey} eventData={eventData} user={props.user} />
-                    ))}
-                </div>
+                {filteredEvents.map(([eventKey, eventData]) => (
+                    <EventCard eventName={eventKey} eventData={eventData} user={props.user} />
+                ))}
+            </div>
         </div>
     );
 }

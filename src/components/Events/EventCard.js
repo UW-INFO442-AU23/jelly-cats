@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Popup from './Popup.js';
 
 export default function EventCard({eventName, eventData, user}) {
@@ -10,9 +10,13 @@ export default function EventCard({eventName, eventData, user}) {
     
     return (
         <div className="flex justify-center">
+            {/* Event Card */}
             <div className="flex w-[590px] bg-indigo-500 h-[225px] justify-left p-5 gap-6 rounded-[20px] max-[750px]:flex-col max-[750px]:w-[275px] max-[750px]:h-[415px] max-[750px]:p-0 max-[750px]:gap-4" >
+                    {/*I mg Place Holder */}
                     <div id="imgPlaceholder" className="bg-gray-500 w-44 h-44 place-self-center max-[750px]:h-[200px] max-[750px]:w-[275px] max-[750px]:rounded-t-lg" ></div>
+                    {/* Event Information */}
                     <div id="eventInfo" className="flex gap-10 ml-auto text-white max-[750px]:m-0 max-[750px]:flex-col max-[750px]:content-center max-[750px]:justify-center max-[750px]:gap-4">
+                        {/*Left Column Info (Title, Date, Time, Location, Difficulty) */}
                         <div id="leftColumn" className="flex gap-2.5 flex-col ">
                             <h1 className="text-xl font-bold max-[750px]:text-sm max-[750px]:place-self-center">{eventName}</h1>
                             <div id="info" className="flex flex-col gap-2">
@@ -43,6 +47,7 @@ export default function EventCard({eventName, eventData, user}) {
                                 </div>
                             </div>
                         </div>
+                        {/* Right Column Info (Spots & Button) */}
                         <div id="rightColumn" className="flex flex-col gap-20">
                             <div id="spotsAvail" className="flex flex-col items-end max-[750px]:hidden">
                                 <p className="text-xl font-semibold">{eventData["Current Attendees"]}/{eventData["Spot Limit"]}</p>
