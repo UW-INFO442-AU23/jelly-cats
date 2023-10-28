@@ -20,22 +20,26 @@ export default function Register(props) {
     }, [emailKey, eventName]);
 
     const handleButtonClick = async () => {
-        const eventRef = ref(db, `Events/${eventName}`);
-        const userEventsRef = ref(db, `Users/${emailKey}/Events`);
-        const eventAttendeesRef = ref(db, `Events/${eventName}/Attendees`);
-        if (isRegistered) {
-            await update(userEventsRef, { [eventName]: null });
-            await update(eventAttendeesRef, { [emailKey]: null });
-            await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] - 1 });
-        } else {
-            await update(userEventsRef, { [eventName]: true });
-            await update(eventAttendeesRef, { [emailKey]: true });
-            await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] + 1 });
+        try {
+            const eventRef = ref(db, `Events/${eventName}`);
+            const userEventsRef = ref(db, `Users/${emailKey}/Events`);
+            const eventAttendeesRef = ref(db, `Events/${eventName}/Attendees`);
+            if (isRegistered) {
+                await update(userEventsRef, { [eventName]: null });
+                await update(eventAttendeesRef, { [emailKey]: null });
+                await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] - 1 });
+            } else {
+                await update(userEventsRef, { [eventName]: true });
+                await update(eventAttendeesRef, { [emailKey]: true });
+                await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] + 1 });
+            }
+
+            setIsRegistered(!isRegistered);
+
+            props.onClose();
+        } catch (error) {
+            console.error("Error occurred during database operation:", error);
         }
-
-        setIsRegistered(!isRegistered);
-
-        props.onClose();
     };
     
     return (

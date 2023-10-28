@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar } from "../Navbar/Navbar.js";
+import { db } from "../../firebase.js";
+import { getDatabase, ref, get } from 'firebase/database';
 
 export default function Profile(props) {
     const user = props.user;
@@ -12,8 +14,6 @@ export default function Profile(props) {
                     <img src={user.photoURL} className="h-48 my-10 rounded-full w-fit" alt="profile"/>
                     <p className="text-4xl font-bold">{user.displayName}</p>
                 </div>
-                <p className="mt-10 text-2xl font-bold">Upcoming Events</p>
-                <p className="mt-10 text-2xl font-bold">Previous Events</p>
             </div>
         </div>
     );

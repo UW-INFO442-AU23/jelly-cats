@@ -59,9 +59,7 @@ export function Navbar(props) {
                                     </div>
                                 </div>
                             ) : (
-                                <li className="basis-1/4 flex-center">
-                                    <Login data={props.data} user={user} onSignOut={ props.onSignOut} />
-                                </li>
+                                <Login data={props.data} user={user} onSignOut={ props.onSignOut} />
                             )}
                         </li>
                     </ul>
