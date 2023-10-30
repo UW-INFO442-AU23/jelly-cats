@@ -34,7 +34,7 @@ export default function Popup(props) {
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-75">
             <div className="fixed inset-0 flex items-center justify-center">
-                <div className="relative flex items-center w-3/5 text-black bg-white shadow-lg rounded-3xl">
+                <div className="relative flex items-center w-4/5 text-black bg-white shadow-lg rounded-3xl">
                     {/* Event Image */}
                     <div className="w-1/2 h-fit">
                         <img src={asl} alt="Event popup" className="w-full h-full"/>

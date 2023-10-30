@@ -8,15 +8,31 @@ export default function Register(props) {
     const eventName = props.eventName;
     const eventData = props.eventData;
     const [isRegistered, setIsRegistered] = useState(false);
+    const [atCapacity, setAtCapacity] = useState(false);
 
     useEffect(() => {
-      const checkRegistration = async () => {
-          const userEventsRef = ref(db, `Users/${emailKey}/Events/${eventName}`);
-          const snapshot = await get(userEventsRef);
-          setIsRegistered(snapshot.exists());
-      };
+        const checkRegistration = async () => {
+            const userEventsRef = ref(db, `Users/${emailKey}/Events/${eventName}`);
+            const snapshot = await get(userEventsRef);
+            setIsRegistered(snapshot.exists());
+        };
 
-      checkRegistration();
+        const checkCapacity = async () => {
+            const eventRef = ref(db, `Events/${eventName}`);
+
+            get(eventRef)
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const event = snapshot.val();
+                    setAtCapacity(event['Current Attendees'] >= event['Spot Limit']);
+                } else {
+                    console.log("No data found for events.");
+                }
+            })
+        };
+
+        checkRegistration();
+        checkCapacity();
     }, [emailKey, eventName]);
 
     const handleButtonClick = async () => {
@@ -43,14 +59,15 @@ export default function Register(props) {
     };
     
     return (
-      <button
-          onClick={handleButtonClick}
-          className={`px-4 py-2 mx-4 text-white rounded ${
-              props.registerDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-lg'
-          }`}
-          disabled={props.registerDisabled}
-      >
-          {isRegistered ? 'Unregister' : 'Register'}
-      </button>
+        <button
+            onClick={handleButtonClick}
+            className={`px-4 py-2 mx-4 text-white rounded ${
+                (props.registerDisabled || atCapacity) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-lg'
+            }`}
+            disabled={props.registerDisabled || atCapacity}
+        >
+            {atCapacity}
+            {isRegistered ? 'Unregister' : atCapacity ? 'Max Capacity' : 'Register'}
+        </button>
     );
 }
