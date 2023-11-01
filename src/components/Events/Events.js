@@ -73,7 +73,7 @@ export default function Events(props) {
                     <p className="mt-8 md:text-lg lg:text-2xl">Find an upcoming language-learning event that suits your learning needs! Use filters to refine your search.</p>
                 </div>
                 {/* Filter */}
-                <div className="flex flex-row items-center justify-between mt-8">
+                <div className="flex flex-row items-center justify-center md:justify-between mt-8">
                     <div className="flex">
                         {/* filter by location*/}
                         <Filter defaultVal="All Languages" options={languages} onSelect={(value) => setSelectedLanguage(value)} />
