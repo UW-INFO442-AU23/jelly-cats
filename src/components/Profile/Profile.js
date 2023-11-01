@@ -11,8 +11,9 @@ export default function Profile(props) {
             <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mt-16 mx-14 md:mx-20 lg:mx-36">
                 <div className="flex flex-col items-center justify-center">
-                    <img src={user.photoURL} className="h-48 my-10 rounded-full w-fit" alt="profile"/>
+                    <img src={user.photoURL} className="h-48 mt-10 mb-5 rounded-full w-fit" alt="profile"/>
                     <p className="text-4xl font-bold">{user.displayName}</p>
+                    <p className="mt-2 text-2xl">{user.email}</p>
                 </div>
             </div>
         </div>

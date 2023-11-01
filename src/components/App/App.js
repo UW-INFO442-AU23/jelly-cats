@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 import Home from "../Home/Home.js";
@@ -24,7 +24,7 @@ function App(props) {
 
         // Clean up the listener when the component unmounts
         return () => unsubscribe();
-    }, []);
+    }, [auth]);
 
     const handleSignOut = () => {
         signOut(auth)
