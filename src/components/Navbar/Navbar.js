@@ -59,7 +59,7 @@ export function Navbar(props) {
                                     </div>
                                 </div>
                             ) : (
-                                <Login data={props.data} user={user} onSignOut={ props.onSignOut} />
+                                <Login data={props.data} user={user} onSignOut={props.onSignOut} />
                             )}
                         </li>
                     </ul>

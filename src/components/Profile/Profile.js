@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Navbar } from "../Navbar/Navbar.js";
-import { db } from "../../firebase.js";
+import EventCard from '../Events/EventCard.js';
+import { Navbar } from '../Navbar/Navbar.js';
+import { db } from '../../firebase.js';
 import { getDatabase, ref, get } from 'firebase/database';
 
 export default function Profile(props) {
