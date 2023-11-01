@@ -7,7 +7,7 @@ export default function Resources(props) {
         <div>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className='flex justify-center m-20'>
-                <iframe width="800" height="395" src="https://www.youtube.com/embed/c0MlOuOPjfU"
+                <iframe className='rounded-3xl'width="800" height="395" src="https://www.youtube.com/embed/c0MlOuOPjfU"
                     title="Why Students Should Learn a Second Language" frameborder="0"
                     allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
