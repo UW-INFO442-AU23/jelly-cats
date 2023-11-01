@@ -49,6 +49,46 @@ export default function Resources(props) {
                     </div>
                 </div>
             </div>
+
+                {/* Additional Resources */}
+                <div className="m-16">
+                    <h1 className='text-lg font-bold md:text-2xl lg:text-4xl'>Additional Resources</h1>
+                    <h3 className='text-lg md:text-2xl mt-4'>Here are some additional readings and links to learn more about another language</h3>
+                </div>
+
+                {/* Spanish Resources */}
+                <div className="m-16">
+                    <h2 className="font-bold">Spanish</h2> 
+                    <h3>Get access to additional worksheets, videos, podcasts, and games for Spanish language learners of all levels.</h3> 
+                    <ul className="list-disc list-inside underline text-indigo-400">
+                        <li><a href="https://www.onlinefreespanish.com/" aria-label="Click for Online Free Spanish Resource">OnlineFreeSpanish</a></li>
+                        <li><a href="https://personal.colby.edu/~bknelson/SLC/" aria-label="Click for Spanish Language & Culture  Resource">Spanish Language & Culture</a></li>
+                        <li><a href="https://laits.utexas.edu/spe/index/siteindex/#adv" aria-label="Click for Spanish Proficiency Exercises">Spanish Proficiency Exercises</a></li>
+                    </ul>
+                </div>
+
+                {/* French Resources */}
+                <div className="m-16">
+                    <h2 className="font-bold">French</h2>
+                    <h3>Learn and improve your French skills through additional online lessons, worksheets, flashcards, practice quizzes, and games.</h3>
+                    <ul className="list-disc list-inside underline text-indigo-400">
+                        <li><a href="https://www.elearningfrench.com/" aria-label="Click for E-Learning French Resource">ELearningFrench</a></li>
+                        <li><a href="https://pollylingu.al/fr/en" aria-label="Click for Polly Lingual Resource">Polly Lingual</a></li>
+                        <li><a href="https://www.mondly.com/learn-french-online" aria-label="Click for Mondly by Pearson Resource">Mondly by Pearson</a></li>
+                    </ul>
+                    
+                </div>
+
+                {/* ASL Resources */}
+                <div className="m-16">
+                    <h2 className="font-bold">ASL</h2>
+                    <h3>Get access to a comprehensive dictionary and practice your ASL through interactive videos, tutorials, games, and quizzes.</h3>
+                    <ul className= "list-disc list-inside underline text-indigo-400">
+                        <li><a href="https://www.lifeprint.com/" aria-label="Click for Life Print Resource">Life Print</a></li>
+                        <li><a href="https://aslpro.cc/" aria-label="Click for ASL Pro Resource">ASL Pro</a></li>
+                        <li><a href="https://www.signingsavvy.com/" aria-label="Click for Signing Savvy Resource">Signing Savvy</a></li>
+                    </ul>
+                </div>
         </div>
     )
 }
