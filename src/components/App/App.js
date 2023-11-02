@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 import Home from "../Home/Home.js";
 import Events from "../Events/Events.js";
+import EventPage from "../Events/EventPage.js";
 import Resources from "../Resources/Resources.js";
 import About from "../About/About.js";
 import Profile from "../Profile/Profile.js";
@@ -40,6 +41,7 @@ function App(props) {
         <Routes>
             <Route path="" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="about" element={<About data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="profile" element={<Profile data={props.data} user={user} onSignOut={handleSignOut} />} />

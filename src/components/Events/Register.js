@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { db } from "../../firebase.js";
 import { ref, get, update } from "firebase/database";
 
@@ -59,15 +60,17 @@ export default function Register(props) {
     };
     
     return (
-        <button
-            onClick={handleButtonClick}
-            className={`px-4 py-2 mx-4 text-white rounded ${
-                (props.registerDisabled || atCapacity) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-lg'
-            }`}
-            disabled={props.registerDisabled || atCapacity}
-        >
-            {atCapacity}
-            {isRegistered ? 'Unregister' : atCapacity ? 'Max Capacity' : 'Register'}
-        </button>
+        <Link to="/events">
+            <button
+                onClick={handleButtonClick}
+                className={`px-4 py-2 mx-4 text-white rounded ${
+                    (props.registerDisabled || atCapacity) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-lg'
+                }`}
+                disabled={props.registerDisabled || atCapacity}
+            >
+                {atCapacity}
+                {isRegistered ? 'Unregister' : atCapacity ? 'Max Capacity' : 'Register'}
+            </button>
+        </Link>
     );
 }

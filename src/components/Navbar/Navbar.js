@@ -28,13 +28,13 @@ export function Navbar(props) {
                                             <Link to="/" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
                                         </li>
                                         <li>
-                                            <Link to="/Events" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Events</Link>
+                                            <Link to="/events" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Events</Link>
                                         </li>
                                         <li>
-                                            <Link to="/Resources" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Resources</Link>
+                                            <Link to="/resources" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Resources</Link>
                                         </li>
                                         <li>
-                                            <Link to="/About" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</Link>
+                                            <Link to="/about" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -73,13 +73,13 @@ export function Navbar(props) {
                             <a className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} href="/">Home</a>
                         </li>
                         <li>
-                            <a className={`font-bold ${location.pathname === '/Events' ? 'border-b-4 border-indigo-500' : ''}`} href="/Events">Events</a>
+                            <a className={`font-bold ${location.pathname === '/events' ? 'border-b-4 border-indigo-500' : ''}`} href="/events">Events</a>
                         </li>
                         <li>
-                            <a className={`font-bold ${location.pathname === '/Resources' ? 'border-b-4 border-indigo-500' : ''}`} href="/Resources">Resources</a>
+                            <a className={`font-bold ${location.pathname === '/resources' ? 'border-b-4 border-indigo-500' : ''}`} href="/resources">Resources</a>
                         </li>
                         <li>
-                            <a className={`font-bold ${location.pathname === '/About' ? 'border-b-4 border-indigo-500' : ''}`} href="/About">About</a>
+                            <a className={`font-bold ${location.pathname === '/about' ? 'border-b-4 border-indigo-500' : ''}`} href="/about">About</a>
                         </li>
                         <li className="basis-1/4 flex-center">
                             {user ? (

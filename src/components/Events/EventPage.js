@@ -1,12 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useLocation, useParams, Link } from "react-router-dom";
+import { getDatabase, ref, get } from 'firebase/database';
 import Register from './Register.js';
 import asl from '../../imgs/Events/ASL.png';
 import x from '../../imgs/Navbar/X.png';
 
-export default function Popup(props) {
+export default function EventPage(props) {
     const user = props.user;
-    const eventName = props.eventName;
-    const eventData = props.eventData;
+    const { eventName } = useParams();
+    const [eventData, setEventData] = useState([]);
+
+    useEffect(() => {
+        const database = getDatabase();
+        const eventsRef = ref(database, `Events/${eventName}`);
+        get(eventsRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                const event = snapshot.val();
+                setEventData(event);
+            } else {
+                console.log("No data found for events.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error reading events:", error);
+        });
+    }, [eventName, eventData]);
+
     const [email, setEmail] = useState('');
 
     const [isChecked, setIsChecked] = useState(false);
@@ -48,7 +68,7 @@ export default function Popup(props) {
                             <div className="flex flex-col">
                                 <p className="text-3xl font-bold">{eventName}</p>
                                 <div className="flex flex-row mt-2 text-indigo-500">
-                                    <div className="text-2xl font-bold">{eventData["Current Attendees"]}</div>
+                                    <div className="text-2xl font-bold">{eventData["Spot Limit"] - eventData["Current Attendees"]}</div>
                                     <div className="mt-1 text-xl font-bold">/{eventData["Spot Limit"]}</div>
                                 </div>
                                 <p className="text-xl">Spots Available</p>
@@ -82,7 +102,9 @@ export default function Popup(props) {
                                 </div>
                             </div>
                         </div>
-                        <img src={x} alt="close" className="absolute top-0 right-0 m-4 cursor-pointer" onClick={props.onClose}/>
+                        <Link to="/events">
+                            <img src={x} alt="close" className="absolute top-0 right-0 m-4 cursor-pointer"/>
+                        </Link>
                         {/* Event Description */}
                         <div className="w-full px-10 py-10 text-lg text-white bg-indigo-500">
                             <p><b>Event Description:</b> {eventData.Description}</p>
@@ -107,12 +129,12 @@ export default function Popup(props) {
                             <div className="flex justify-center mb-5">
                                 {user ? (
                                     <div>
-                                        <Register registerDisabled={!isChecked} email={user.email} eventName={eventName} eventData={eventData} onClose={props.onClose}/>
+                                        <Register registerDisabled={!isChecked} email={user.email} eventName={eventName} eventData={eventData}/>
                                     </div>
                                 ) : (
                                     <div>
                                         <input type="text" name="email" id="email" onChange={handleEmailChange} className="flex-1 py-2 text-gray-900 border-2 rounded-md placeholder:text-gray-500 sm:text-sm w-96" placeholder="email@domain.com"/>
-                                        <Register registerDisabled={registerDisabled} email={email} eventName={eventName} eventData={eventData} onClose={props.onClose}/>
+                                        <Register registerDisabled={registerDisabled} email={email} eventName={eventName} eventData={eventData}/>
                                     </div>
                                 )}
                             </div>

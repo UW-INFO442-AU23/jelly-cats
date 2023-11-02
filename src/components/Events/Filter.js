@@ -11,7 +11,7 @@ export default function Filter(props) {
     };
 
     return (
-        <select onChange={handleSelectChange} className="text-sm md:text-base px-1 py-1 md:px-4 md:py-2 text-center border-4 border-indigo-500 rounded-full appearance-none cursor-pointer w-fit mr-2 md:mr-7">
+        <select onChange={handleSelectChange} className="px-1 py-1 mr-2 text-sm text-center border-4 border-indigo-500 rounded-full appearance-none cursor-pointer md:text-base md:px-4 md:py-2 w-fit md:mr-7">
             <option value={defaultVal}>{defaultVal}</option>
             {options.map((option, index) => (
                 <option key={index} value={option}>

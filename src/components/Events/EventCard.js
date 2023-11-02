@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Popup from './Popup.js';
+import { Link } from 'react-router-dom';
 
 const languageImages = {
     ASL: require('../../imgs/Events/LASL.png'),
@@ -13,11 +13,6 @@ const languageImages = {
 
 export default function EventCard({eventName, eventData, user}) {
     const [isOpen, setIsOpen] = useState(false);
-
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    }
-    
     const language = eventData.Language;
     const languageImageSrc = languageImages[language];
 
@@ -27,7 +22,7 @@ export default function EventCard({eventName, eventData, user}) {
             <div className="flex w-[590px] bg-indigo-500 h-[225px] justify-left p-5 gap-6 rounded-[20px] max-[750px]:flex-col max-[750px]:w-[275px] max-[750px]:h-[415px] max-[750px]:p-0 max-[750px]:gap-4" >
                     {/*I mg Place Holder */}
                     <div id="imgPlaceholder" className="flex justify-center items-center w-44 h-44 place-self-center max-[750px]:h-[200px] max-[750px]:w-[275px] max-[750px]:rounded-t-lg" >
-                        <img src={languageImageSrc} className="w-[176px] h-[120px] object-cover"></img>
+                        <img src={languageImageSrc} className="w-[176px] h-[120px] object-cover" alt="language"></img>
                     </div>
                     {/* Event Information */}
                     <div id="eventInfo" className="flex gap-10 ml-auto text-white max-[750px]:m-0 max-[750px]:flex-col max-[750px]:content-center max-[750px]:justify-center max-[750px]:gap-4">
@@ -65,13 +60,12 @@ export default function EventCard({eventName, eventData, user}) {
                         {/* Right Column Info (Spots & Button) */}
                         <div id="rightColumn" className="flex flex-col gap-20">
                             <div id="spotsAvail" className="flex flex-col items-end max-[750px]:hidden">
-                                <p className="text-xl font-semibold">{eventData["Current Attendees"]}/{eventData["Spot Limit"]}</p>
+                                <p className="text-xl font-semibold">{eventData["Spot Limit"] - eventData["Current Attendees"]}/{eventData["Spot Limit"]}</p>
                                 <p className="text-lg">spots avail.</p>
                             </div>
-                            <button className="h-10 mt-auto bg-black rounded-lg w-28 max-[750px]:text-sm max-[750px]:place-self-center" onClick={togglePopup}>
+                            <Link to={`/events/${eventName}`} className="text-center py-2 mt-auto bg-black rounded-lg w-28 max-[750px]:text-sm max-[750px]:place-self-center">
                                 Learn more
-                            </button>
-                            {isOpen && <Popup onClose={togglePopup} eventName={eventName} eventData={eventData} user={user} />}
+                            </Link>
                         </div>
                     </div>
             </div>
