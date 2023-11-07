@@ -63,8 +63,8 @@ export default function Register(props) {
         <Link to="/events">
             <button
                 onClick={handleButtonClick}
-                className={`px-4 py-2 mx-4 text-white rounded ${
-                    (props.registerDisabled || atCapacity) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-lg'
+                className={`px-2 py-1 mx-2 md:px-4 md:py-2 md:mx-4 md:text-sm text-white rounded ${
+                    (props.registerDisabled || atCapacity) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-md'
                 }`}
                 disabled={props.registerDisabled || atCapacity}
             >
