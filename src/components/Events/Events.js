@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Navbar } from "../Navbar/Navbar.js";
+import React, { useEffect, useState } from 'react';
+import { Navbar } from '../Navbar/Navbar.js';
 import { getDatabase, ref, get } from 'firebase/database';
 import Filter from './Filter.js'
 import EventCard from "./EventCard.js";

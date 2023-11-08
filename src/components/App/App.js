@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
-import Home from "../Home/Home.js";
-import Events from "../Events/Events.js";
-import EventPage from "../Events/EventPage.js";
-import Registered from "../Events/Registered.js";
-import Unregistered from "../Events/Unregistered.js";
-import Resources from "../Resources/Resources.js";
-import About from "../About/About.js";
-import Profile from "../Profile/Profile.js";
+import Home from '../Home/Home.js';
+import Events from '../Events/Events.js';
+import EventPage from '../Events/EventPage.js';
+import Registered from '../Events/Registered.js';
+import Unregistered from '../Events/Unregistered.js';
+import Resources from '../Resources/Resources.js';
+import About from '../About/About.js';
+import Profile from '../Profile/Profile.js';
 
 function App(props) {
     const [user, setUser] = useState(null);

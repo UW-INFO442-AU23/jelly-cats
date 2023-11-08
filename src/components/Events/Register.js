@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { db } from "../../firebase.js";
-import { ref, get, update } from "firebase/database";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { db } from '../../firebase.js';
+import { ref, get, update } from 'firebase/database';
 
 export default function Register(props) {
     const email = props.email;

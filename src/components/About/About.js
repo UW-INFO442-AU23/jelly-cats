@@ -1,5 +1,5 @@
-import React from "react";
-import { Navbar } from "../Navbar/Navbar.js";
+import React from 'react';
+import { Navbar } from '../Navbar/Navbar.js';
 
 import justin from '../../imgs/About/Justin.png';
 import matthew from '../../imgs/About/Matthew.png';

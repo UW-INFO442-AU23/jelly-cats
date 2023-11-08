@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Navbar } from "../Navbar/Navbar.js";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Navbar } from '../Navbar/Navbar.js';
+import { Link } from 'react-router-dom';
 import unregistered from '../../imgs/Events/Unregistered.png';
 
 export default function Unregistered(props) {

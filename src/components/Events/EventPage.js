@@ -1,14 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, useParams, Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useLocation, useParams, Link } from 'react-router-dom';
 import { getDatabase, ref, get } from 'firebase/database';
 import Register from './Register.js';
-import asl from '../../imgs/Events/ASL.png';
 import x from '../../imgs/Navbar/X.png';
+
+const languageImages = {
+    ASL: require('../../imgs/Events/LASL.png'),
+    Korean: require('../../imgs/Events/KR.png'),
+    English: require('../../imgs/Events/EN.png'),
+    Japanese: require('../../imgs/Events/JP.png'),
+    Chinese: require('../../imgs/Events/CH.png'),
+    Spanish: require('../../imgs/Events/SP.png'),
+    French: require('../../imgs/Events/FR.png')
+};
 
 export default function EventPage(props) {
     const user = props.user;
     const { eventName } = useParams();
     const [eventData, setEventData] = useState([]);
+
+    const language = eventData.Language;
+    const languageImageSrc = languageImages[language];
 
     useEffect(() => {
         const database = getDatabase();
@@ -57,11 +69,11 @@ export default function EventPage(props) {
                 <div className="relative flex-row items-center w-4/5 text-black bg-white shadow-lg md:flex rounded-3xl">
                     {/* Event Image */}
                     <div className="flex justify-center my-3 md:my-0 md:w-1/2 md:h-fit">
-                        <img src={asl} alt="Event popup" className="w-2/5 md:w-full md:h-full"/>
+                        <img src={languageImageSrc} alt="Event popup" className="w-2/5 md:w-full md:h-full"/>
                     </div>
 
                     {/* Event Information Section */}
-                    <div className="flex flex-col justify-center gap-1 md:w-1/2 md:gap-3 lg:gap-6 xl:gap-10">
+                    <div className="flex flex-col justify-center gap-1 md:w-1/2 md:gap-3 lg:gap-6">
                         {/* Event Details */}
                         <div className="flex flex-row items-center justify-around md:mx-3 xl:mx-10 xl:mt-5">
                             {/* Event Name + Available Spots */}
