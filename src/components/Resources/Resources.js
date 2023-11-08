@@ -26,23 +26,23 @@ export default function Resources(props) {
                     <h3 className='text-white md:text-2xl lg:text-4xl'>Why care about learning a new language?</h3>
                 {/* </div> */}
 
-                <div className="flex flex-col space-x-4 md:flex-row md:space-x-8 lg:space-x-12">
+                <div className="flex flex-col md:flex-row md:space-x-8 lg:space-x-12 md:p-6 lg:p-9">
                     {/* Benefit 1 */}
-                    <div className="flex flex-col items-center justify-center p-3 md:p-6 lg:p-9">
+                    <div className="flex flex-col items-center justify-center">
                         <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={Boost} alt="boost icon" />
                         <h3 className="mt-2 font-bold text-white">Boost Executive Functioning </h3>
                         <p1 className="mt-3 text-white">By learning a new language, you can boost your brain’s executive functioning and improve your ability to <b>focus</b> and accelerate your <b>retention</b> and recall speed</p1>
                     </div>
 
                     {/* Benefit 2 */}
-                    <div className="flex flex-col items-center p-3 md:p-6 lg:p-9">
+                    <div className="flex flex-col items-center">
                         <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={Brain} alt="brain icon" />
                         <h3 className="font-bold text-white">Improve Brain Health</h3>
                         <p1 className="mt-3 text-white">Acquiring a new language <b>challenges</b> your brain, <b>enhances</b> your memory, and may <b>delay</b> the onset of memory-related health conditions</p1>
                     </div>
 
                     {/* Benefit 3 */}
-                    <div className="flex flex-col items-center p-3 md:p-6 lg:p-9">
+                    <div className="flex flex-col items-center">
                         <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={Heart} alt="heart icon" />
                         <h3 className="mt-2 font-bold text-white">Increase Cultural Awareness</h3>
                         <p1 className="mt-3 text-white">Language learning exposes you to other cultures which can strengthen your <b>empathy</b>, <b>understanding</b>, and <b>respect</b> of different people and perspectives</p1>
