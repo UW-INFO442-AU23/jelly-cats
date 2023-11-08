@@ -1,0 +1,22 @@
+import React, { useState, useEffect } from "react";
+import { Navbar } from "../Navbar/Navbar.js";
+import { Link } from "react-router-dom";
+import unregistered from '../../imgs/Events/Unregistered.png';
+
+export default function Unregistered(props) {
+    return (
+        <div>
+            <Navbar/>
+            <Link to="/events">
+                <div className="flex flex-col items-center justify-center h-full gap-8 mt-32 text-center">
+                    <img src={unregistered} alt="registration complete"/>
+                    <h1 className="text-3xl font-bold">You have successfully <span className="text-indigo-500">UNREGISTERED</span> for this event!</h1>
+                    <p className="text-2xl">Confirmation will be sent to your email.</p>
+                    <button className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
+                        Back To Events
+                    </button>
+                </div>
+            </Link>
+        </div>
+    );
+}
