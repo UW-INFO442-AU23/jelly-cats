@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import EventCard from '../Events/EventCard.js';
 import { Navbar } from '../Navbar/Navbar.js';
 import { db } from '../../firebase.js';
@@ -11,64 +11,60 @@ export default function Profile(props) {
 
 
     const user = props.user;
-    console.log(user);
     const email = user.email;
     const emailKey = email.replace('.', ',');
 
         // gets a list of registered events for current user
-        useEffect(() => {
-            const userEventsRef = ref(db, `Users/${emailKey}/Events`);
-    
-            get(userEventsRef)
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                const userEventsSnap = snapshot.val();
-                const userEventsKeys = Object.keys(userEventsSnap);
+    useEffect(() => {
+        const userEventsRef = ref(db, `Users/${emailKey}/Events`);
 
-                setUserEvents(userEventsKeys);
+        get(userEventsRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+            const userEventsSnap = snapshot.val();
+            const userEventsKeys = Object.keys(userEventsSnap);
 
-                } else {
-                console.log("No data found for events.");
-                }
-            })
-            .catch((error) => {
-                console.error("Error reading events:", error);
-            });
-        }, [user]);
+            setUserEvents(userEventsKeys);
 
-        useEffect(() => {
-            const eventsRef = ref(db, 'Events');
-    
-            get(eventsRef)
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                const eventsData = snapshot.val();
-    
-                setEvents(eventsData);
+            } else {
+            console.log("No data found for events.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error reading events:", error);
+        });
+    }, [user, emailKey]);
 
-    
-                } else {
-                console.log("No data found for events.");
-                }
-            })
-            .catch((error) => {
-                console.error("Error reading events:", error);
-            });
-        }, [user]);
+    useEffect(() => {
+        const eventsRef = ref(db, 'Events');
 
-        useEffect(() => {
-            // Filter events based on user's registered events
-            const filteredEventsData = Object.fromEntries(
-                Object.entries(events)
-                    .filter(([eventName]) => userEvents.includes(eventName))
-            );
+        get(eventsRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+            const eventsData = snapshot.val();
+
+            setEvents(eventsData);
+
+
+            } else {
+            console.log("No data found for events.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error reading events:", error);
+        });
+    }, [user]);
+
+    useEffect(() => {
+        // Filter events based on user's registered events
+        const filteredEventsData = Object.fromEntries(
+            Object.entries(events)
+                .filter(([eventName]) => userEvents.includes(eventName))
+        );
+
+        setFilteredEvents(filteredEventsData);
+    }, [userEvents, events])
     
-            setFilteredEvents(filteredEventsData);
-        }, [userEvents, events])
-        
-        console.log("userEvents: ", userEvents);
-        console.log("events", events);
-        console.log("filteredEvents: ", filteredEvents);
     return (
         <div>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
