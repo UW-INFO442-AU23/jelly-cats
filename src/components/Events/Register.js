@@ -64,9 +64,9 @@ export default function Register(props) {
             <button
                 onClick={handleButtonClick}
                 className={`px-2 py-1 mx-2 md:px-4 md:py-2 md:mx-4 md:text-sm text-white rounded ${
-                    (props.registerDisabled || atCapacity) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-md'
+                    (props.registerDisabled || (atCapacity && !isRegistered)) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-md'
                 }`}
-                disabled={props.registerDisabled || atCapacity}
+                disabled={props.registerDisabled || (atCapacity && !isRegistered)}
             >
                 {atCapacity}
                 {isRegistered ? 'Unregister' : atCapacity ? 'Max Capacity' : 'Register'}
