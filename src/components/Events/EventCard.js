@@ -11,8 +11,7 @@ const languageImages = {
     French: require('../../imgs/Events/FR.png')
 };
 
-export default function EventCard({eventName, eventData, user}) {
-    const [isOpen, setIsOpen] = useState(false);
+export default function EventCard({eventName, eventData}) {
     const language = eventData.Language;
     const languageImageSrc = languageImages[language];
 

@@ -15,7 +15,7 @@ export function Navbar(props) {
 
     return (
         <header>
-            <nav>
+            <nav className="z-50">
                 <div>
                     {/* Mobile Header */}
                     <ul className="fixed top-0 flex flex-row items-center justify-around w-full h-16 bg-white sm:hidden">

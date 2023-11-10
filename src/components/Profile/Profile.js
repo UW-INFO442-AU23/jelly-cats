@@ -14,7 +14,7 @@ export default function Profile(props) {
     const email = user.email;
     const emailKey = email.replace('.', ',');
 
-        // gets a list of registered events for current user
+    // gets a list of registered events for current user
     useEffect(() => {
         const userEventsRef = ref(db, `Users/${emailKey}/Events`);
 
@@ -27,7 +27,7 @@ export default function Profile(props) {
             setUserEvents(userEventsKeys);
 
             } else {
-            console.log("No data found for events.");
+                console.log("No data found for events.");
             }
         })
         .catch((error) => {
