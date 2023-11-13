@@ -12,12 +12,13 @@ export default function Events(props) {
     const [languages, setLanguages] = useState([]);
     const [langLevel, setLangLevel] = useState([]);
     const [locations, setLocations] = useState([]);
-    
+
     // states for filtering data
     const [filteredEvents, setFilteredEvents] = useState([]); // State to store filtered events
     const [selectedLocation, setSelectedLocation] = useState("All Locations");
     const [selectedLanguageLevel, setSelectedLanguageLevel] = useState("All Language Levels");
     const [selectedLanguage, setSelectedLanguage] = useState("All Languages");
+    const [selectedSortOption, setSelectedSortOption] = useState("Ascending");
     
     // effect to get data from firebase
     useEffect(() => {
@@ -50,18 +51,29 @@ export default function Events(props) {
 
     // effect to apply the filters whenever filter options change
     useEffect(() => {
-        // Filter the events based on selected filter criteria
-        const filtered = Object.entries(events).filter(([eventKey, eventData]) => {
-            const event = eventData;
-            const isLocationMatch = selectedLocation === "All Locations" || event.Location === selectedLocation;
-            const isLanguageLevelMatch = selectedLanguageLevel === "All Language Levels" || event["Language Level"] === selectedLanguageLevel;
-            const isLanguageMatch = selectedLanguage === "All Languages" || event.Language === selectedLanguage;
-            
-            return isLocationMatch && isLanguageLevelMatch && isLanguageMatch;
-        });
+        // Filter and sort the events based on selected filter criteria
+        const filteredAndSorted = Object.entries(events)
+            //filter by criteria
+            .filter(([eventKey, eventData]) => {
+                const event = eventData;
+                const isLocationMatch = selectedLocation === "All Locations" || event.Location === selectedLocation;
+                const isLanguageLevelMatch = selectedLanguageLevel === "All Language Levels" || event["Language Level"] === selectedLanguageLevel;
+                const isLanguageMatch = selectedLanguage === "All Languages" || event.Language === selectedLanguage;
 
-        setFilteredEvents(filtered);
-    }, [selectedLocation, selectedLanguageLevel, selectedLanguage, events]);
+                return isLocationMatch && isLanguageLevelMatch && isLanguageMatch;
+            })
+            // Sort by date
+            .sort(([, a], [, b]) => {
+                // removes st, nd, rd, th from numbers (making 5th => 5) for better parsing into Date Object
+                const dateA = new Date(a.Date.replace(/(\d+)(st|nd|rd|th)/, '$1')).getTime();
+                const dateB = new Date(b.Date.replace(/(\d+)(st|nd|rd|th)/, '$1')).getTime();
+
+                return selectedSortOption === "Ascending" ? dateA - dateB : dateB - dateA;
+            });
+
+        setFilteredEvents(filteredAndSorted);
+    }, [selectedLocation, selectedLanguageLevel, selectedLanguage, selectedSortOption, events]);
+
 
     return (
         <div>
@@ -80,7 +92,7 @@ export default function Events(props) {
                         <Filter defaultVal="All Language Levels" options={langLevel} onSelect={(value) => setSelectedLanguageLevel(value)} />
                         <Filter defaultVal="All Locations" options={locations} onSelect={(value) => setSelectedLocation(value)} />
                     </div>
-                        <Filter defaultVal="Sort by date" options={["Ascending", "Descending"]} />
+                        <Filter defaultVal="Sort by date" options={["Ascending", "Descending"]} onSelect={(value) => setSelectedSortOption(value)}/>
                 </div>
                 
             </div>
