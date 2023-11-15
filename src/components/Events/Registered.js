@@ -6,7 +6,7 @@ import registered from '../../imgs/Events/Registered.png';
 export default function Registered(props) {
     return (
         <div>
-            <Navbar/>
+            <Navbar user={props.user}/>
             <div className="flex flex-col items-center justify-center h-full gap-6 mt-32 text-center">
                 <img src={registered} alt="registration complete"/>
                 <h1 className="text-3xl font-bold">You have successfully <span className="text-indigo-500">REGISTERED</span> for this event!</h1>
