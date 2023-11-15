@@ -21,12 +21,10 @@ export default function Resources(props) {
 
 
             <div className='flex flex-col items-center w-screen p-16 text-center bg-indigo-500 h-110'>
-                {/* <div className="my-4"> */}
                     <h2 className='text-lg font-bold text-white md:text-2xl lg:text-4xl'>The Value of Learning a New Language</h2>
                     <h3 className='text-white md:text-2xl lg:text-4xl'>Why care about learning a new language?</h3>
-                {/* </div> */}
 
-                <div className="flex flex-col md:flex-row md:space-x-8 lg:space-x-12 md:p-6 lg:p-9">
+                <div className="flex flex-col gap-6 my-6 md:flex-row md:space-x-8 lg:space-x-12 md:p-6 lg:p-9">
                     {/* Benefit 1 */}
                     <div className="flex flex-col items-center justify-center">
                         <img className="mb-2 md:w-fit md:h-1/2 lg:h-fit" src={Boost} alt="boost icon" />

@@ -3,6 +3,8 @@ import EventCard from '../Events/EventCard.js';
 import { Navbar } from '../Navbar/Navbar.js';
 import { db } from '../../firebase.js';
 import { getDatabase, ref, get } from 'firebase/database';
+import { Link } from 'react-router-dom';
+
 
 export default function Profile(props) {
     const [userEvents, setUserEvents] = useState([]);
@@ -71,11 +73,25 @@ export default function Profile(props) {
             <div className="flex flex-col justify-center mt-16 mx-14 md:mx-20 lg:mx-36">
                 <div className="flex flex-col items-center justify-center">
                     <img src={user.photoURL} className="h-48 mt-10 mb-5 rounded-full w-fit" alt="profile"/>
-                    <p className="text-4xl font-bold">{user.displayName}</p>
-                    <p className="mt-2 text-2xl">{user.email}</p>
+                    <p className="text-4xl font-bold text-center">{user.displayName}</p>
+                    <p className="mt-2 text-2xl text-center">{user.email}</p>
                 </div>
             </div>
             {/*Events */}
+            {Object.keys(filteredEvents).length === 0 && (
+                <div className="flex flex-col mt-32 place-items-center mx-14">
+                    <p className="text-center text-black text-3xl font-bold mb-6">
+                        You are currently not registerd for any events!
+                    </p>
+                    <p className="mb-12 text-2xl text-black text-center">
+                        Your profile will populate any events you register for. Let's start exploring some events!
+                    </p>
+                    <Link to={`/events`} className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
+                        Explore events
+                    </Link>
+                    
+                </div>
+            )}
             <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
                 {Object.entries(filteredEvents).map(([eventKey, eventData]) => (
                     <EventCard key={eventKey} eventName={eventKey} eventData={eventData} user={props.user} />
