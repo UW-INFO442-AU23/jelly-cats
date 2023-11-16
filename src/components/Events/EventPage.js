@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getDatabase, ref, get } from 'firebase/database';
 import { Navbar } from '../Navbar/Navbar.js'
 import Register from './Register.js';
@@ -47,6 +47,12 @@ export default function EventPage(props) {
 
     const [email, setEmail] = useState('');
 
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
+    const [isChecked, setIsChecked] = useState(false);
+    const registerDisabled = !(email && isChecked);
+
     const handleEmailChange = (e) => {
         const inputEmail = e.target.value;
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -80,6 +86,7 @@ export default function EventPage(props) {
             <div className="absolute flex flex-col items-center justify-center w-3/5 p-6 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl sm:flex-row rounded-2xl top-1/5 left-1/2">
                 {/* Event Name + Available Spots */}
                 <img src={eventOrgImg} alt="organization" className="w-fit"/>
+                <div className="hidden sm:inline-block inline-block h-[145px] min-h-[1em] w-0.5 bg-gray-200"></div>
                 {/* Event Information Section */}
                 <div className="flex flex-col justify-center w-full gap-5">
                     {/* Event Date/Time/Location/Level */}
@@ -125,8 +132,27 @@ export default function EventPage(props) {
                             <p className="text-xs xl:text-xl max-[750px]:text-xs">{eventData["Language Level"]}</p>
                         </div>
                     </div>
+                    <div className="flex flex-row items-center justify-center">
+                        <input
+                            type="checkbox"
+                            id="myCheckbox"
+                            name="myCheckbox"
+                            checked={isChecked}
+                            onChange={handleCheckboxChange}
+                            className="ml-5 mr-5 md:w-16 md:h-16 md:ml-5 md:mr-5 xl:ml-5 xl:mr-10 xl:w-12 xl:h-12 form-checkbox"
+                        />
+                        <label htmlFor="myCheckbox" className="text-xs xl:text-lg">
+                            <b>Event Policy:</b> By agreeing, you acknowledge that you are accountable for showing up to this event—you 
+                            can unregister using the same email. Meeting information will be sent after registration.
+                        </label>
+                    </div>
                     {/* Register */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-between mx-60">
+                        <Link to={`/events/${eventName}/vocabulary`}>
+                            <button className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
+                                Vocab List
+                            </button>
+                        </Link>
                         {user ? (
                             <div>
                                 <Register email={user.email} eventName={eventName} eventData={eventData}/>

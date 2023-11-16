@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import Home from '../Home/Home.js';
 import Events from '../Events/Events.js';
 import EventPage from '../Events/EventPage.js';
+import VocabPage from '../Events/VocabPage.js';
 import Registered from '../Events/Registered.js';
 import Unregistered from '../Events/Unregistered.js';
 import Resources from '../Resources/Resources.js';
@@ -43,7 +44,9 @@ function App(props) {
         <Routes>
             <Route path="" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} >
+            </Route>
+            <Route path="/events/:eventName/vocabulary" element={<VocabPage data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/registered" element={<Registered data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/unregistered" element={<Unregistered data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
