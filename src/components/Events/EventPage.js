@@ -47,11 +47,12 @@ export default function EventPage(props) {
 
     const [email, setEmail] = useState('');
 
+    const [isChecked, setIsChecked] = useState(false);
+
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
+        console.log(isChecked);
     };
-    const [isChecked, setIsChecked] = useState(false);
-    const registerDisabled = !(email && isChecked);
 
     const handleEmailChange = (e) => {
         const inputEmail = e.target.value;
@@ -66,6 +67,8 @@ export default function EventPage(props) {
             }
         }
     }
+
+    const registerDisabled = !(email && isChecked);
 
     return (
         <div>
@@ -132,7 +135,8 @@ export default function EventPage(props) {
                             <p className="text-xs xl:text-xl max-[750px]:text-xs">{eventData["Language Level"]}</p>
                         </div>
                     </div>
-                    <div className="flex flex-row items-center justify-center">
+                    {/* Event Policy */}
+                    <div className="flex flex-row items-center justify-center ">
                         <input
                             type="checkbox"
                             id="myCheckbox"
@@ -155,12 +159,12 @@ export default function EventPage(props) {
                         </Link>
                         {user ? (
                             <div>
-                                <Register email={user.email} eventName={eventName} eventData={eventData}/>
+                                <Register registerDisabled={!isChecked} email={user.email} eventName={eventName} eventData={eventData}/>
                             </div>
                         ) : (
                             <div>
                                 <input type="text" name="email" id="email" onChange={handleEmailChange} className="flex-1 py-2 text-xs text-gray-900 border-2 rounded-md sm:text-sm md:text-xs lg:text-sm placeholder:text-gray-500 w-36 lg:w-52 xl:w-80 2xl:w-96" placeholder="email@domain.com"/>
-                                <Register email={email} eventName={eventName} eventData={eventData}/>
+                                <Register registerDisabled={registerDisabled} email={email} eventName={eventName} eventData={eventData}/>
                             </div>
                         )}
                     </div>
