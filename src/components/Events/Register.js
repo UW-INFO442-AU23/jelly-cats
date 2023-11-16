@@ -8,8 +8,10 @@ export default function Register(props) {
     const emailKey = email.replace('.', ',');
     const eventName = props.eventName;
     const eventData = props.eventData;
+    const [isChecked, setIsChecked] = useState(false);
     const [isRegistered, setIsRegistered] = useState(false);
     const [atCapacity, setAtCapacity] = useState(false);
+    const registerDisabled = !(email && isChecked);
 
     useEffect(() => {
         const checkRegistration = async () => {
@@ -36,6 +38,10 @@ export default function Register(props) {
         checkCapacity();
     }, [emailKey, eventName]);
 
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
+
     const handleButtonClick = async () => {
         try {
             const eventRef = ref(db, `Events/${eventName}`);
@@ -60,17 +66,35 @@ export default function Register(props) {
     };
     
     return (
-        <Link to={isRegistered ? '/unregistered' : '/registered'}>
-            <button
-                onClick={handleButtonClick}
-                className={`px-2 py-1 mx-2 md:px-4 md:py-2 md:mx-4 md:text-sm text-white rounded ${
-                    ((props.registerDisabled || (atCapacity && !isRegistered)) && !isRegistered) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-md'
-                }`}
-                disabled={!isRegistered ? (props.registerDisabled || (atCapacity && !isRegistered)) : false}
-            >
-                {atCapacity}
-                {isRegistered ? 'Unregister' : atCapacity ? 'Max Capacity' : 'Register'}
-            </button>
-        </Link>
+        <div className="flex flex-col items-center justify-center gap-5">
+            {!isRegistered ? 
+                <div className="flex flex-row items-center justify-center">
+                    <input
+                        type="checkbox"
+                        id="myCheckbox"
+                        name="myCheckbox"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                        className="ml-5 mr-5 md:w-16 md:h-16 md:ml-5 md:mr-5 xl:ml-5 xl:mr-10 xl:w-12 xl:h-12 form-checkbox"
+                    />
+                    <label htmlFor="myCheckbox" className="text-xs xl:text-lg">
+                        <b>Event Policy:</b> By agreeing, you acknowledge that you are accountable for showing up to this event—you 
+                        can unregister using the same email. Meeting information will be sent after registration.
+                    </label>
+                </div>
+            : <div/>}
+            <Link to={isRegistered ? '/unregistered' : '/registered'}>
+                <button
+                    onClick={handleButtonClick}
+                    className={`px-2 py-1 mx-2 md:px-4 md:py-2 md:mx-4 md:text-sm text-white rounded ${
+                        ((registerDisabled || (atCapacity && !isRegistered)) && !isRegistered) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-md'
+                    }`}
+                    disabled={!isRegistered ? (registerDisabled || (atCapacity && !isRegistered)) : false}
+                >
+                    {atCapacity}
+                    {isRegistered ? 'Unregister' : atCapacity ? 'Max Capacity' : 'Register'}
+                </button>
+            </Link>
+        </div>
     );
 }
