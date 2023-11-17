@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getDatabase, ref, get } from 'firebase/database';
+import Return from '../../imgs/Events/Unregistered.png';
 import { Navbar } from '../Navbar/Navbar.js';
 
 function Flashcards(props) {
@@ -76,7 +77,18 @@ function Flashcards(props) {
     const currentFlashcard = flashcards[currentIndex];
 
     if (!currentFlashcard) {
-        return <div>Loading...</div>;
+        return (
+            <>
+                <Navbar user={props.user} />
+                <div className="flex flex-col items-center justify-center w-screen h-screen gap-10">
+                    <img src={Return} alt="return to events"/>
+                    <p className="text-3xl font-bold">No vocabulary at this time!</p>
+                    <Link to="/events">
+                        <button className="px-3 py-2 text-white bg-indigo-500 rounded-lg">Return to Events</button>
+                    </Link>
+                </div>
+            </>
+        )
     }
 
     return (
