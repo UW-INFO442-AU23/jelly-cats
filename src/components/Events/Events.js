@@ -6,7 +6,6 @@ import EventCard from "./EventCard.js";
 
 
 export default function Events(props) {
-
     // states for filter options
     const [events, setEvents] = useState([]);
     const [languages, setLanguages] = useState([]);

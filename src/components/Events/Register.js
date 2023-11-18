@@ -20,7 +20,6 @@ export default function Register(props) {
 
         const checkCapacity = async () => {
             const eventRef = ref(db, `Events/${eventName}`);
-
             get(eventRef)
             .then((snapshot) => {
                 if (snapshot.exists()) {
