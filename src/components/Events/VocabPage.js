@@ -16,6 +16,7 @@ function Flashcards(props) {
     const [totalVocabCount, setTotalVocabCount] = useState(0);
     const [inRotationVocabCount, setInRotationVocabCount] = useState(0);
     const [removedVocabCount, setRemovedVocabCount] = useState(0);
+    const [finished, setFinished] = useState(false);
 
     useEffect(() => {
         const fetchFlashcards = async () => {
@@ -33,6 +34,8 @@ function Flashcards(props) {
                     setTotalVocabCount(eventFlashcard.length);
                     setInRotationVocabCount(userFlashcard.length);
                     setRemovedVocabCount(totalVocabCount - inRotationVocabCount);
+                    console.log(eventFlashcard.length)
+                    console.log(userFlashcard.length)
                 } else {
                     if(eventSnapshot.exists()) {
                         const eventFlashcard = eventSnapshot.val();
@@ -75,19 +78,20 @@ function Flashcards(props) {
     
     const removeFromRotation = async () => {
         const updatedFlashcards = [...flashcards];
-        if (flashcards.length === currentIndex + 1) {
+        if (flashcards.length === 1) {
+            setFinished(true);
+        } else if (flashcards.length === currentIndex + 1) {
             setCurrentIndex(0);
             setShowTerm(true);
-            updatedFlashcards.splice(currentIndex - 1, 1);
-        } else {
-            updatedFlashcards.splice(currentIndex, 1);
         }
+        updatedFlashcards.splice(currentIndex, 1);
         const database = getDatabase();
         const userVocab = ref(database, `Users/${emailKey}/Events/${eventName}/Vocabulary`);
         await set(userVocab, updatedFlashcards);
-};
-
-    if (flashcards.length === 0) {
+    };
+    
+    if (finished) {
+        // Return the JSX for the "finished" state
         return (
             <div>
                 <Navbar user={props.user} />
@@ -147,13 +151,7 @@ function Flashcards(props) {
                         {showTerm ? flashcards[Object.keys(flashcards)[currentIndex]].Term : flashcards[Object.keys(flashcards)[currentIndex]].Definition}
                     </div>
                 ) : null}
-                <div className="flex justify-between w-4/5 sm:w-1/2 basis-1/4">
-                    <button className="mb-8" onClick={rewindCard}>
-                        <svg width="40" height="37" viewBox="0 0 47 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.4604 3L3.00647 12.4674L12.4649 21.9258" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M18.7711 31.3856H34.5375C40.8441 31.3884 43.9974 28.2351 43.9974 21.9257C43.9974 15.6164 40.8441 12.4631 34.5375 12.4658H3.00464" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                <div className="flex justify-between w-3/5 sm:w-1/5 basis-1/4">
                     <button onClick={keepInRotation}>
                         <svg width="60" height="60" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="42.182" cy="42.182" r="42.182" fill="#CD4040"/>
@@ -165,11 +163,6 @@ function Flashcards(props) {
                             <circle cx="42.546" cy="42.182" r="42.182" fill="#6FD173"/>
                             <path d="M36 55L62 29" stroke="white" stroke-width="8" stroke-linecap="round"/>
                             <path d="M36 55L24 43" stroke="white" stroke-width="8" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <button className="mb-8" onClick={randomizeCard}>
-                        <svg width="39" height="35" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M36.3333 3L43 9.75M43 9.75L36.3333 16.5M43 9.75H34.1111C32.046 9.75 31.0133 9.75 30.1547 9.92293C26.6287 10.6331 23.8722 13.424 23.1709 16.9941C23 17.8635 23 18.9091 23 21C23 23.0909 23 24.1365 22.8291 25.0059C22.1278 28.576 19.3713 31.3669 15.8452 32.077C14.9866 32.25 13.954 32.25 11.8889 32.25H3M36.3333 39L43 32.25M43 32.25L36.3333 25.5M43 32.25H34.1111C32.046 32.25 31.0133 32.25 30.1547 32.077C29.9904 32.0439 29.8276 32.0063 29.6667 31.9642M3 9.75H11.8889C13.954 9.75 14.9866 9.75 15.8452 9.92293C16.0097 9.95605 16.1724 9.99367 16.3333 10.0357" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                 </div>
