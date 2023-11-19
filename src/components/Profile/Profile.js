@@ -67,9 +67,11 @@ export default function Profile(props) {
         setFilteredEvents(filteredEventsData);
     }, [userEvents, events])
     
+    console.log(user.photoURL)
+    
     return (
         <div>
-            <Navbar user={props.user} onSignOut={props.onSignOut} />
+            <Navbar user={user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mt-16 mx-14 md:mx-20 lg:mx-36">
                 <div className="flex flex-col items-center justify-center">
                     <img src={user.photoURL} className="h-48 mt-10 mb-5 rounded-full w-fit" alt="profile"/>
@@ -80,10 +82,10 @@ export default function Profile(props) {
             {/*Events */}
             {Object.keys(filteredEvents).length === 0 && (
                 <div className="flex flex-col mt-32 place-items-center mx-14">
-                    <p className="text-center text-black text-3xl font-bold mb-6">
+                    <p className="mb-6 text-3xl font-bold text-center text-black">
                         You are currently not registerd for any events!
                     </p>
-                    <p className="mb-12 text-2xl text-black text-center">
+                    <p className="mb-12 text-2xl text-center text-black">
                         Your profile will populate any events you register for. Let's start exploring some events!
                     </p>
                     <Link to={`/events`} className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">

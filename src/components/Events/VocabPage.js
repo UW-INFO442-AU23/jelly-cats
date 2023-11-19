@@ -34,8 +34,6 @@ function Flashcards(props) {
                     setTotalVocabCount(eventFlashcard.length);
                     setInRotationVocabCount(userFlashcard.length);
                     setRemovedVocabCount(totalVocabCount - inRotationVocabCount);
-                    console.log(eventFlashcard.length)
-                    console.log(userFlashcard.length)
                 } else {
                     if(eventSnapshot.exists()) {
                         const eventFlashcard = eventSnapshot.val();
@@ -53,18 +51,6 @@ function Flashcards(props) {
         };
         fetchFlashcards();
     }, [eventName, emailKey, inRotationVocabCount, totalVocabCount, flashcards]);
-
-    const randomizeCard = () => {
-        const randomIndex = Math.floor(Math.random() * flashcards.length);
-        setCurrentIndex(randomIndex);
-        setShowTerm(true);
-    };
-
-    const rewindCard = () => {
-        const newIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
-        setCurrentIndex(newIndex);
-        setShowTerm(true);
-    };
 
     const flipCard = () => {
         setShowTerm(!showTerm);
@@ -91,10 +77,9 @@ function Flashcards(props) {
     };
     
     if (finished) {
-        // Return the JSX for the "finished" state
         return (
             <div>
-                <Navbar user={props.user} />
+                <Navbar user={user} />
                 <div className="flex flex-col items-center justify-center w-screen h-screen gap-10">
                     <img src={CompletedFlashcards} alt="successful flashcards" />
                     <p className="text-3xl font-bold">Congratulations! You’ve finished all the practice material.</p>
@@ -110,7 +95,7 @@ function Flashcards(props) {
     if (flashcards.length === 0) {
         return (
             <>
-                <Navbar user={props.user} />
+                <Navbar user={user} />
                 <div className="flex flex-col items-center justify-center w-screen h-screen gap-10">
                     <img src={Return} alt="return to events"/>
                     <p className="text-3xl font-bold">No vocabulary at this time!</p>

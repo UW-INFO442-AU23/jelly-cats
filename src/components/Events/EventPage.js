@@ -184,7 +184,7 @@ export default function EventPage(props) {
                         </div>
                         <div className="flex flex-row items-center justify-center gap-10 mt-5">
                             <img src={eventHost.Photo} alt="event host" className="w-1/3 rounded-xl"></img>
-                            <div className="flex flex-col justify-between gap-1">
+                            <div className="flex flex-col gap-1">
                                 <p className="text-xl font-bold">{eventHost.Name}</p>
                                 <div className="flex flex-row items-center justify-center gap-1">
                                     <svg width="34" height="35" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
