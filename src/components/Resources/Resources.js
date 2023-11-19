@@ -9,7 +9,7 @@ import Boost from '../../imgs/Resources/Boost.png';
 export default function Resources(props) {
 
     return (
-        <div>
+        <>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className='flex justify-center m-20'>
                 <iframe className='rounded-3xl' width="800" height="395" src="https://www.youtube.com/embed/c0MlOuOPjfU"
@@ -86,7 +86,7 @@ export default function Resources(props) {
                     <li><a href="https://www.signingsavvy.com/" aria-label="Click for Signing Savvy Resource">Signing Savvy</a></li>
                 </ul>
             </div>
-        </div>
+        </>
     )
 }
 

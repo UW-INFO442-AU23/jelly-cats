@@ -5,7 +5,7 @@ import registered from '../../imgs/Events/Registered.png';
 
 export default function Registered(props) {
     return (
-        <div>
+        <>
             <Navbar user={props.user}/>
             <div className="flex flex-col items-center justify-center h-full gap-6 mt-32 text-center">
                 <img src={registered} alt="registration complete"/>
@@ -17,6 +17,6 @@ export default function Registered(props) {
                     </button>
                 </Link>
             </div>
-        </div>
+        </>
     );
 }

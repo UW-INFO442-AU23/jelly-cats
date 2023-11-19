@@ -76,7 +76,7 @@ export default function Events(props) {
 
 
     return (
-        <div>
+        <>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className="max-[600px]:mx-8 flex flex-col justify-center mt-12 mx-14 md:mx-20 lg:mx-36">
                 {/* Introduction */}
@@ -127,6 +127,6 @@ export default function Events(props) {
                     ))}
                 </div>
             )}
-        </div>
+        </>
     );
 }

@@ -9,7 +9,7 @@ import vannary from '../../imgs/About/Vannary.png';
 
 export default function About(props) {
     return (
-        <div>
+        <>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mt-12">
                 {/* Team Introduction & Goals */}
@@ -50,6 +50,6 @@ export default function About(props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }

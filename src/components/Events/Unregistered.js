@@ -5,7 +5,7 @@ import unregistered from '../../imgs/Events/Unregistered.png';
 
 export default function Unregistered(props) {
     return (
-        <div>
+        <>
             <Navbar user={props.user}/>
             <div className="flex flex-col items-center justify-center h-full gap-6 mt-32 text-center">
                 <img src={unregistered} alt="registration complete"/>
@@ -17,6 +17,6 @@ export default function Unregistered(props) {
                     </button>
                 </Link>
             </div>
-        </div>
+        </>
     );
 }

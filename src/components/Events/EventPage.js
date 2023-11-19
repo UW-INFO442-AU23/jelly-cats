@@ -51,7 +51,6 @@ export default function EventPage(props) {
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
-        console.log(isChecked);
     };
 
     const handleEmailChange = (e) => {
@@ -71,7 +70,7 @@ export default function EventPage(props) {
     const registerDisabled = !(email && isChecked);
 
     return (
-        <div>
+        <>
             <div className="flex justify-center mt-20">
                 <img src={eventBannerImg} alt="event banner" className="w-9/12 darken"/>
             </div>
@@ -201,6 +200,6 @@ export default function EventPage(props) {
                 </div>
             </div>
             <Navbar user={user} onSignOut={props.onSignOut}/>
-        </div>
+        </>
     );
 }

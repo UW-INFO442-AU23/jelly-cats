@@ -9,7 +9,7 @@ import french from '../../imgs/Home/French.png';
 
 export default function Home(props) {
     return (
-        <div>
+        <>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mt-12">
                 {/* Introduction */}
@@ -57,7 +57,7 @@ export default function Home(props) {
                     <p className="lg:text-2xl">2. Explore the <Link to="/events" className="underline">Events</Link> page and sign up for upcoming in-person or online events where you can practice your skills with other students.</p>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

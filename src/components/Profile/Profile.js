@@ -70,7 +70,7 @@ export default function Profile(props) {
     console.log(user.photoURL)
     
     return (
-        <div>
+        <>
             <Navbar user={user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mt-16 mx-14 md:mx-20 lg:mx-36">
                 <div className="flex flex-col items-center justify-center">
@@ -99,6 +99,6 @@ export default function Profile(props) {
                     <EventCard key={eventKey} eventName={eventKey} eventData={eventData} user={props.user} />
                 ))}
             </div>
-        </div>
+        </>
     );
 }
