@@ -44,8 +44,7 @@ function App(props) {
         <Routes>
             <Route path="" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} >
-            </Route>
+            <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/events/:eventName/vocabulary" element={<VocabPage data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/registered" element={<Registered data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/unregistered" element={<Unregistered data={props.data} user={user} onSignOut={handleSignOut} />} />
