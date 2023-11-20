@@ -148,8 +148,8 @@ export default function EventPage(props) {
                             className="ml-5 mr-5 md:w-16 md:h-16 md:ml-5 md:mr-5 xl:ml-5 xl:mr-10 xl:w-12 xl:h-12 form-checkbox"
                         />
                         <label htmlFor="myCheckbox" className="text-xs xl:text-lg">
-                            <b>Event Policy:</b> By agreeing, you acknowledge that you are accountable for showing up to this event—you 
-                            can unregister using the same email. Meeting information will be sent after registration.
+                            <b>Event Policy:</b> By agreeing, you acknowledge that you are accountable for showing up to this event, 
+                            but you do have the option to unregister from your profile. Meeting information will be sent after registration.
                         </label>
                     </div>
                     {/* Register */}
