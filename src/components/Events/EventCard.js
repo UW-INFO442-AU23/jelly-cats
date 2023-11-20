@@ -69,10 +69,10 @@ export default function EventCard({eventName, eventData}) {
                         </div>
                     </div>
                     <div className='min-[750px]:hidden flex items-center place-content-center'>
-                            <Link to={`/events/${eventName}`} className="py-2 mt-auto text-sm text-center text-white bg-black rounded-lg w-28 ">
-                                Learn more
-                            </Link>
-                        </div>
+                        <Link to={`/events/${eventName}`} className="py-2 mt-auto text-sm text-center text-white bg-black rounded-lg w-28 ">
+                            Learn more
+                        </Link>
+                    </div>
             </div>
         </div>
     )

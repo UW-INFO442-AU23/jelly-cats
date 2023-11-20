@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getDatabase, ref, get } from 'firebase/database';
 import { Navbar } from '../Navbar/Navbar.js'
-import Register from './Register.js';
+import Register from '../Register/Register.js';
 
 const eventBanner = {
     ASL_Market: require('../../imgs/Events/ASL Market/banner.png'),

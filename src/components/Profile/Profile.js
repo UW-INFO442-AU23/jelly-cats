@@ -11,7 +11,6 @@ export default function Profile(props) {
     const [events, setEvents] = useState([]);
     const [filteredEvents, setFilteredEvents] = useState([]);
 
-
     const user = props.user;
     const email = user.email;
     const emailKey = email.replace('.', ',');
