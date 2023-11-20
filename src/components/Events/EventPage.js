@@ -69,6 +69,9 @@ export default function EventPage(props) {
 
     const registerDisabled = !(email && isChecked);
 
+    const eventHostEmail = eventHost.Email;
+    const eventHostEmailKey = eventHostEmail ? eventHostEmail.replace(/,/g, '.') : '';
+
     return (
         <>
             <div className="flex justify-center mt-20">
@@ -191,7 +194,7 @@ export default function EventPage(props) {
                                         <path d="M9.88867 13.7779L15.3998 17.9112C16.348 18.6223 17.6516 18.6223 18.5998 17.9112L24.1109 13.7778" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M23.2222 12H10.7778C9.79594 12 9 12.7959 9 13.7778V22.6667C9 23.6485 9.79594 24.4444 10.7778 24.4444H23.2222C24.2041 24.4444 25 23.6485 25 22.6667V13.7778C25 12.7959 24.2041 12 23.2222 12Z" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
                                     </svg>
-                                    <p className="">{eventHost.Email}</p>
+                                    <p className="">{eventHostEmailKey}</p>
                                 </div>
                             </div>
                         </div>
