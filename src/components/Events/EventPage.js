@@ -153,14 +153,14 @@ export default function EventPage(props) {
                         </label>
                     </div>
                     {/* Register */}
-                    <div className="flex justify-between mx-60">
-                        <Link to={`/events/${eventName}/vocabulary`}>
-                            <button className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
-                                Vocab List
-                            </button>
-                        </Link>
+                    <div className="flex items-center justify-center">
                         {user ? (
-                            <div>
+                            <div className="flex flex-row items-center justify-center w-full gap-40">
+                                <Link to={`/events/${eventName}/vocabulary`}>
+                                    <button className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
+                                        Vocab List
+                                    </button>
+                                </Link>
                                 <Register registerDisabled={!isChecked} email={user.email} eventName={eventName} eventData={eventData}/>
                             </div>
                         ) : (

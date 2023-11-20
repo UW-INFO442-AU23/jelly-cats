@@ -100,11 +100,11 @@ export default function Events(props) {
             </div>
             {/*Events */}
             {filteredEvents.length === 0 ? (
-                <div className="flex flex-col items-center gap-6 mt-32 mx-14 ">
-                    <h3 className='text-sm font-bold text-center text-black'>No results found!</h3>
-                    <p className="text-xs font-normal text-center text-black">No events match your selected filters.</p>
+                <div className="flex flex-col items-center justify-center gap-6 mt-56 mx-14">
+                    <h3 className='text-lg font-bold text-center text-black sm:text-3xl'>No results found!</h3>
+                    <p className="text-lg text-center text-black sm:text-3xl">There are no items matching your criteria—try filtering for a different event.</p>
                     <button
-                        className="w-24 px-2 py-1 mx-2 text-white bg-indigo-500 rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800"
+                    className="px-4 py-2 text-lg text-white bg-indigo-500 rounded-xl md:px-7 md:py-3 hover:bg-neutral-800"
                         onClick={() => {
                             // Reset filters
                             setSelectedLocation("All Locations");
