@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { Login } from './Login.js';
 
 import logo from '../../imgs/Navbar/Logo.png';
-import nav from '../../imgs/Navbar/Nav.png';
-import x from '../../imgs/Navbar/X.png';
+import nav from '../../imgs/Navbar/NavBarRounded.png';
+import x from '../../imgs/Navbar/NewX.png';
 
 export function Navbar(props) {
     const location = useLocation();
@@ -67,7 +67,8 @@ export function Navbar(props) {
                     {/* Desktop Header */}
                     <ul className="fixed top-0 flex-row items-center justify-around hidden w-full h-16 bg-white sm:flex">
                         <li className="basis-1/4 flex-center">
-                            <img className="h-16" src={logo} alt="Logo" />
+                            {/*Changing navbar logo icon to "Kinguistics"*/}
+                            <a className={`font-black text-2xl ${location.pathname === '/' ? '' : ''}`} href="/">Kinguistics</a>
                         </li>
                         <li>
                             <a className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} href="/">Home</a>

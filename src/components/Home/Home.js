@@ -54,8 +54,12 @@ export default function Home(props) {
                         Are you a King County, WA high school student looking for additional ways to help you learn and practice a foreign language for class? 
                         Here’s how to get started! Follow the steps below to get access to more language learning resources and events:
                     </p>
-                    <p className="mt-5 mb-3 lg:text-2xl md:mt-7 lg:mt-10">1. Review the <Link to="/resources" className="underline">Resources</Link> page for more educational tools to support your learning</p>
-                    <p className="lg:text-2xl">2. Explore the <Link to="/events" className="underline">Events</Link> page and sign up for upcoming in-person or online events where you can practice your skills with other students.</p>
+
+                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">1. Create a Kinguistics profile through your Google Account by clicking on the "Login" button.  </p>
+                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">2. Review the <Link to="/resources" className="underline">Resources</Link> page for more educational tools to support your learning</p>
+                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">3. Explore the <Link to="/events" className="underline">Events</Link> page and sign up for upcoming in-person or online events where you can practice your skills with other students.</p>
+                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">4. Explore the Flashcards associated with each event for more practice!</p>
+
                 </div>
             </div>
         </>
