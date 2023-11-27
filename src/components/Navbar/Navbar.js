@@ -68,19 +68,19 @@ export function Navbar(props) {
                     <ul className="fixed top-0 flex-row items-center justify-around hidden w-full h-16 bg-white sm:flex">
                         <li className="basis-1/4 flex-center">
                             {/*Changing navbar logo icon to "Kinguistics"*/}
-                            <a className={`font-black text-2xl ${location.pathname === '/' ? '' : ''}`} href="/">Kinguistics</a>
+                            <Link to="/home" className={`font-black text-2xl ${location.pathname === '/' ? '' : ''}`} >Kinguistics</Link>
                         </li>
                         <li>
-                            <a className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} href="/">Home</a>
+                            <Link to="/home" className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
                         </li>
                         <li>
-                            <a className={`font-bold ${location.pathname === '/events' ? 'border-b-4 border-indigo-500' : ''}`} href="/events">Events</a>
+                            <Link to="/events" className={`font-bold ${location.pathname === '/events' ? 'border-b-4 border-indigo-500' : ''}`} >Events</Link>
                         </li>
                         <li>
-                            <a className={`font-bold ${location.pathname === '/resources' ? 'border-b-4 border-indigo-500' : ''}`} href="/resources">Resources</a>
+                            <Link to="/resources" className={`font-bold ${location.pathname === '/resources' ? 'border-b-4 border-indigo-500' : ''}`} >Resources</Link>
                         </li>
                         <li>
-                            <a className={`font-bold ${location.pathname === '/about' ? 'border-b-4 border-indigo-500' : ''}`} href="/about">About</a>
+                            <Link to="/about" className={`font-bold ${location.pathname === '/about' ? 'border-b-4 border-indigo-500' : ''}`} >About</Link>
                         </li>
                         <li className="basis-1/4 flex-center">
                             {user ? (
