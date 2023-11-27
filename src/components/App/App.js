@@ -42,7 +42,7 @@ function App(props) {
 
     return (
         <Routes>
-            <Route path="home" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/events/:eventName/vocabulary" element={<VocabPage data={props.data} user={user} onSignOut={handleSignOut} />} />
