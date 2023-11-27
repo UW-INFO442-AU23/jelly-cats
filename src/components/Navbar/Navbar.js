@@ -25,7 +25,7 @@ export function Navbar(props) {
                                 <div className={`text-center absolute left-1/2 transform -translate-x-1/2 mt-2 w-28 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-indigo-500 ${toggle ? 'block' : 'hidden'}`}>
                                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                                         <li>
-                                            <Link to="/" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
+                                            <Link to="/home" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
                                         </li>
                                         <li>
                                             <Link to="/events" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Events</Link>
@@ -71,7 +71,7 @@ export function Navbar(props) {
                             <Link to="/home" className={`font-black text-2xl ${location.pathname === '/home' ? '' : ''}`} >Kinguistics</Link>
                         </li> */}
                         <li>
-                            <Link to="/Home" className={`font-bold ${location.pathname === '/Home' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
+                            <Link to="/home" className={`font-bold ${location.pathname === '/home' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
                         </li>
                         <li>
                             <Link to="/events" className={`font-bold ${location.pathname === '/events' ? 'border-b-4 border-indigo-500' : ''}`} >Events</Link>
