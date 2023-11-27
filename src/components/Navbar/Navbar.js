@@ -68,7 +68,7 @@ export function Navbar(props) {
                     <ul className="fixed top-0 flex-row items-center justify-around hidden w-full h-16 bg-white sm:flex">
                        <li className="basis-1/4 flex-center">
                             {/*Changing navbar logo icon to "Kinguistics" */}
-                            <Link to="/home" className={`font-black text-2xl ${location.pathname === '/home' ? '' : ''}`} >Kinguistics</Link>
+                            <Link to="/" className={`font-black text-2xl ${location.pathname === '/' ? '' : ''}`} >Kinguistics</Link>
                         </li>
                         <li>
                             <Link to="/" className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
