@@ -20,7 +20,6 @@ export default function Resources(props) {
                 </iframe>
             </div>
 
-
             <div className='flex flex-col items-center w-screen p-16 text-center bg-indigo-500 h-110'>
                 <h2 className='text-lg font-bold text-white md:text-2xl lg:text-4xl'>The Value of Learning a New Language</h2>
                 <h3 className='text-white md:text-xl lg:text-2xl'>Why care about learning a new language?</h3>
@@ -49,16 +48,16 @@ export default function Resources(props) {
                 </div>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex flex-col md:flex-row items-center ">
                 {/* Additional Resources */}
                 <div className="flex-1">
-                <div className="m-8 ml-14">
+                <div className="m-8 md:ml-14">
                     <h1 className='text-lg font-bold md:text-2xl lg:text-4xl'>Additional Resources</h1>
                     <h3 className='mt-4 text-lg md:text-2xl'>Here are some additional readings and links to learn more about another language</h3>
                 </div>
 
                 {/* Spanish Resources */}
-                <div className="m-8 ml-20">
+                <div className="m-8 md:ml-20">
                     <h2 className="font-bold text-2xl">Spanish</h2>
                     <h3 classname="text-2xl">Get access to additional worksheets, videos, podcasts, and games for Spanish language learners of all levels.</h3>
                     <ul className="text-indigo-400 underline list-disc list-inside">
@@ -69,7 +68,7 @@ export default function Resources(props) {
                 </div>
 
                 {/* French Resources */}
-                <div className="m-8 ml-20">
+                <div className="m-8 md:ml-20">
                     <h2 className="font-bold text-2xl">French</h2>
                     <h3>Learn and improve your French skills through additional online lessons, worksheets, flashcards, practice quizzes, and games.</h3>
                     <ul className="text-indigo-400 underline list-disc list-inside">
@@ -81,7 +80,7 @@ export default function Resources(props) {
                 </div>
 
                 {/* ASL Resources */}
-                <div className="m-8 ml-20">
+                <div className="m-8 md:ml-20">
                     <h2 className="font-bold text-2xl">ASL</h2>
                     <h3>Get access to a comprehensive dictionary and practice your ASL through interactive videos, tutorials, games, and quizzes.</h3>
                     <ul className="text-indigo-400 underline list-disc list-inside">
@@ -91,11 +90,9 @@ export default function Resources(props) {
                     </ul>
                 </div>
                 </div>
-        
 
-
-            <div className="mx-16">
-                    <img className="h-72" src={WorldLanguages} alt="People speaking different languages" />
+            <div className="mx-8 md:mx-16 mt-8 md:mt-0 hidden md:hidden lg:block">
+                    <img className="h-72 w-full object-cover" src={WorldLanguages} alt="People speaking different languages" />
             </div>
             </div>
 
