@@ -71,7 +71,7 @@ export function Navbar(props) {
                             <Link to="/home" className={`font-black text-2xl ${location.pathname === '/home' ? '' : ''}`} >Kinguistics</Link>
                         </li> */}
                         <li>
-                            <Link to="/" className={`font-bold ${location.pathname === '/home' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
+                            <Link to="/" className={`font-bold ${location.pathname === '/Home' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
                         </li>
                         <li>
                             <Link to="/events" className={`font-bold ${location.pathname === '/events' ? 'border-b-4 border-indigo-500' : ''}`} >Events</Link>
