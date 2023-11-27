@@ -66,10 +66,10 @@ export function Navbar(props) {
 
                     {/* Desktop Header */}
                     <ul className="fixed top-0 flex-row items-center justify-around hidden w-full h-16 bg-white sm:flex">
-                        <li className="basis-1/4 flex-center">
-                            {/*Changing navbar logo icon to "Kinguistics"*/}
+                       {/* <li className="basis-1/4 flex-center">
+                            {/*Changing navbar logo icon to "Kinguistics"
                             <Link to="/home" className={`font-black text-2xl ${location.pathname === '/home' ? '' : ''}`} >Kinguistics</Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link to="/home" className={`font-bold ${location.pathname === '/home' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
                         </li>
