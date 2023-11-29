@@ -21,7 +21,7 @@ To further support economically disadvantaged King County high school students l
 
 ## Published Site
 
-The link to our published web application:
+The link to our published web application: https://kinguistics-6dd7e.web.app/
 
 ## Group Members
 
@@ -33,7 +33,13 @@ The link to our published web application:
 
 ## User Personas
 
-The two user personas we used when designing our product can be found here.
+The two user personas we used when designing our product can be found here. They are also linked in our repo.
+
+![Persona 1](https://github.com/UW-INFO442-AU23/jelly-cats/assets/77508839/ce85ef69-c5a5-4fb2-b432-994ff742f46a)
+
+![Persona 2](https://github.com/UW-INFO442-AU23/jelly-cats/assets/77508839/ad87e23b-93c1-421b-976f-84b3caaf5e8a)
+
+
 
 ## Testing Protocols
 
