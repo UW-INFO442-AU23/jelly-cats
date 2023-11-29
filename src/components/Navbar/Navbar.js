@@ -24,9 +24,9 @@ export function Navbar(props) {
                                 <img className="mr-2 cursor-pointer h-7" src={`${!toggle ? nav : x}`} alt="Navigation" onClick={() => setToggle(!toggle)} />
                                 <div className={`text-center absolute left-1/2 transform -translate-x-1/2 mt-2 w-28 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-indigo-500 ${toggle ? 'block' : 'hidden'}`}>
                                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                                        {/* <li>
+                                        <li>
                                             <Link to="/" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
-                                        </li> */}
+                                        </li>
                                         <li>
                                             <Link to="/events" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Events</Link>
                                         </li>
@@ -74,13 +74,13 @@ export function Navbar(props) {
                             <Link to="/" className={`font-bold ${location.pathname === '/' ? 'border-b-4 border-indigo-500' : ''}`} >Home</Link>
                         </li>
                         <li>
-                            <Link to="/events" className={`font-bold ${location.pathname === '/events' ? 'border-b-4 border-indigo-500' : ''}`} >Events</Link>
+                            <Link to="/Events" className={`font-bold ${location.pathname === '/events' ? 'border-b-4 border-indigo-500' : ''}`} >Events</Link>
                         </li> 
                         <li>
-                            <Link to="/resources" className={`font-bold ${location.pathname === '/resources' ? 'border-b-4 border-indigo-500' : ''}`} >Resources</Link>
+                            <Link to="/Resources" className={`font-bold ${location.pathname === '/resources' ? 'border-b-4 border-indigo-500' : ''}`} >Resources</Link>
                         </li>
                         <li>
-                            <Link to="/about" className={`font-bold ${location.pathname === '/about' ? 'border-b-4 border-indigo-500' : ''}`} >About</Link>
+                            <Link to="/About" className={`font-bold ${location.pathname === '/about' ? 'border-b-4 border-indigo-500' : ''}`} >About</Link>
                         </li>
                         <li className="basis-1/4 flex-center">
                             {user ? (
@@ -89,7 +89,7 @@ export function Navbar(props) {
                                     <div className={`absolute text-center left-1/2 transform -translate-x-1/2 mt-2 w-28 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-indigo-500 ${profileDropdown ? 'block' : 'hidden'}`}>
                                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <Link to="/profile" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</Link>
+                                                <Link to="/Profile" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</Link>
                                             </li>
                                             <li>
                                                 <a href="/" className="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={props.onSignOut}>Logout</a>

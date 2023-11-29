@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ref, get, update, getDatabase, set } from 'firebase/database';
 import { Navbar } from '../Navbar/Navbar.js';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs.js'
 import Return from '../../imgs/Events/Unregistered.png';
 import CompletedFlashcards from '../../imgs/Events/Flashcards.png';
 
@@ -9,7 +10,7 @@ function Flashcards(props) {
     const user = props.user;
     const email = user.email;
     const emailKey = email.replace('.', ',');
-    const { eventName } = useParams();
+    const eventName = useParams().EventName;
     const [flashcards, setFlashcards] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showTerm, setShowTerm] = useState(true);
@@ -84,7 +85,7 @@ function Flashcards(props) {
                     <img src={CompletedFlashcards} alt="successful flashcards" />
                     <p className="text-3xl font-bold">Congratulations! You’ve finished all the practice material.</p>
                     <p className="text-xl">Thanks for being proactive by preparing for this event!</p>
-                    <Link to="/events">
+                    <Link to="/Events">
                         <button className="px-3 py-2 text-white bg-indigo-500 rounded-lg">Return to Events</button>
                     </Link>
                 </div>
@@ -99,7 +100,7 @@ function Flashcards(props) {
                 <div className="flex flex-col items-center justify-center w-screen h-screen gap-10">
                     <img src={Return} alt="return to events"/>
                     <p className="text-3xl font-bold">No vocabulary at this time!</p>
-                    <Link to="/events">
+                    <Link to="/Events">
                         <button className="px-3 py-2 text-white bg-indigo-500 rounded-lg">Return to Events</button>
                     </Link>
                 </div>
@@ -110,7 +111,10 @@ function Flashcards(props) {
     return (
         <>
             <Navbar user={props.user} />
-            <main className="flex flex-col items-center w-screen h-screen mt-6">
+            <main className="flex flex-col items-center w-screen h-screen">
+                <div className="w-screen">
+                    <Breadcrumbs />
+                </div>
                 <div className="flex flex-row items-center justify-between w-4/6 sm:w-2/5 basis-1/4">
                     <div className="flex flex-col items-center justify-center gap-2">
                         <div class="h-5 w-5 rounded-full bg-red-500"></div>

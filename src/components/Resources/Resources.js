@@ -48,7 +48,7 @@ export default function Resources(props) {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center ">
+            <div className="flex flex-col items-center md:flex-row ">
                 {/* Additional Resources */}
                 <div className="flex-1">
                 <div className="m-8 md:ml-14">
@@ -58,7 +58,7 @@ export default function Resources(props) {
 
                 {/* Spanish Resources */}
                 <div className="m-8 md:ml-20">
-                    <h2 className="font-bold text-2xl">Spanish</h2>
+                    <h2 className="text-2xl font-bold">Spanish</h2>
                     <h3 classname="text-2xl">Get access to additional worksheets, videos, podcasts, and games for Spanish language learners of all levels.</h3>
                     <ul className="text-indigo-400 underline list-disc list-inside">
                         <li className="marker:text-black"><a href="https://www.onlinefreespanish.com/" target="_blank" aria-label="Click for Online Free Spanish Resource">OnlineFreeSpanish</a></li>
@@ -69,7 +69,7 @@ export default function Resources(props) {
 
                 {/* French Resources */}
                 <div className="m-8 md:ml-20">
-                    <h2 className="font-bold text-2xl">French</h2>
+                    <h2 className="text-2xl font-bold">French</h2>
                     <h3>Learn and improve your French skills through additional online lessons, worksheets, flashcards, practice quizzes, and games.</h3>
                     <ul className="text-indigo-400 underline list-disc list-inside">
                         <li className="marker:text-black"><a href="https://www.elearningfrench.com/" target="_blank" aria-label="Click for E-Learning French Resource">ELearningFrench</a></li>
@@ -81,7 +81,7 @@ export default function Resources(props) {
 
                 {/* ASL Resources */}
                 <div className="m-8 md:ml-20">
-                    <h2 className="font-bold text-2xl">ASL</h2>
+                    <h2 className="text-2xl font-bold">ASL</h2>
                     <h3>Get access to a comprehensive dictionary and practice your ASL through interactive videos, tutorials, games, and quizzes.</h3>
                     <ul className="text-indigo-400 underline list-disc list-inside">
                         <li className="marker:text-black"><a href="https://www.lifeprint.com/" target="_blank" aria-label="Click for Life Print Resource">Life Print</a></li>
@@ -91,9 +91,9 @@ export default function Resources(props) {
                 </div>
                 </div>
 
-            <div className="mx-8 md:mx-16 mt-8 md:mt-0 hidden md:hidden lg:block">
-                    <img className="h-72 w-full object-cover" src={WorldLanguages} alt="People speaking different languages" />
-            </div>
+                <div className="hidden mx-8 mt-8 md:mx-16 md:mt-0 md:hidden lg:block">
+                        <img className="object-cover w-full h-72" src={WorldLanguages} alt="People speaking different languages" />
+                </div>
             </div>
 
         </>

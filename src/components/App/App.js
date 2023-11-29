@@ -43,14 +43,14 @@ function App(props) {
     return (
         <Routes>
             <Route path="" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="/events/:eventName/vocabulary" element={<VocabPage data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="/registered" element={<Registered data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="/unregistered" element={<Unregistered data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="about" element={<About data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="profile" element={<Profile data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="Events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/Events/:EventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/Events/:EventName/Vocabulary" element={<VocabPage data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/Registered" element={<Registered data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/Unregistered" element={<Unregistered data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="Resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="About" element={<About data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="Profile" element={<Profile data={props.data} user={user} onSignOut={handleSignOut} />} />
         </Routes>
     );
 }

@@ -3,6 +3,7 @@ import { Navbar } from '../Navbar/Navbar.js';
 import { getDatabase, ref, get } from 'firebase/database';
 import Filter from './Filter.js'
 import EventCard from "./EventCard.js";
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs.js'
 
 
 export default function Events(props) {

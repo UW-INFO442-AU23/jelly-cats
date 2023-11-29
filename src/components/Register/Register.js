@@ -59,7 +59,7 @@ export default function Register(props) {
     };
     
     return (
-        <Link to={isRegistered ? '/unregistered' : '/registered'}>
+        <Link to={isRegistered ? '/Unregistered' : '/Registered'}>
             <button
                 onClick={handleButtonClick}
                 className={`px-2 py-1 mx-2 md:px-4 md:py-2 md:mx-4 md:text-sm text-white rounded ${
