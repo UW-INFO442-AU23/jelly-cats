@@ -42,15 +42,18 @@ function App(props) {
 
     return (
         <Routes>
-            <Route path="" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/" element={<Home data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/events" element={<Events data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/events/:eventName" element={<EventPage data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/events/:eventName/vocabulary" element={<VocabPage data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/registered" element={<Registered data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/unregistered" element={<Unregistered data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="about" element={<About data={props.data} user={user} onSignOut={handleSignOut} />} />
-            <Route path="profile" element={<Profile data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/about" element={<About data={props.data} user={user} onSignOut={handleSignOut} />} />
+            <Route path="/profile" element={<Profile data={props.data} user={user} onSignOut={handleSignOut} />} />
+            
+            {/* redirect users back to the home page if route gets lost*/}
+            <Route path="/*" element={<Navigate to="/" replace />} />
         </Routes>
     );
 }
