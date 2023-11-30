@@ -17,7 +17,7 @@ export default function Events(props) {
     const [selectedLocation, setSelectedLocation] = useState("All Locations");
     const [selectedLanguageLevel, setSelectedLanguageLevel] = useState("All Language Levels");
     const [selectedLanguage, setSelectedLanguage] = useState("All Languages");
-    const [selectedSortOption, setSelectedSortOption] = useState("Ascending");
+    const [selectedSortOption, setSelectedSortOption] = useState("Newest First");
     const [resetFilters, setResetFilters] = useState(false)
     
     // effect to get data from firebase
@@ -68,7 +68,7 @@ export default function Events(props) {
                 const dateA = new Date(a.Date.replace(/(\d+)(st|nd|rd|th)/, '$1')).getTime();
                 const dateB = new Date(b.Date.replace(/(\d+)(st|nd|rd|th)/, '$1')).getTime();
 
-                return selectedSortOption === "Ascending" ? dateA - dateB : dateB - dateA;
+                return selectedSortOption === "Newest First" ? dateA - dateB : dateB - dateA;
             });
 
         setFilteredEvents(filteredAndSorted);
@@ -93,7 +93,7 @@ export default function Events(props) {
                         <Filter defaultVal="All Locations" options={locations} onSelect={(value) => setSelectedLocation(value)} shouldReset={resetFilters}/>
                     </div>
                     <div className="flex">
-                        <Filter defaultVal="Sort by date" options={["Ascending", "Descending"]} onSelect={(value) => setSelectedSortOption(value)} shouldReset={resetFilters}/>
+                        <Filter defaultVal="Newest First" options={["Oldest First"]} onSelect={(value) => setSelectedSortOption(value)} shouldReset={resetFilters}/>
                     </div>
                 </div>
                 
@@ -110,7 +110,7 @@ export default function Events(props) {
                             setSelectedLocation("All Locations");
                             setSelectedLanguageLevel("All Language Levels");
                             setSelectedLanguage("All Languages");
-                            setSelectedSortOption("Ascending");
+                            setSelectedSortOption("Newest First");
                             setResetFilters(true);
                             setTimeout(() => {
                                 setResetFilters(false);
@@ -121,7 +121,7 @@ export default function Events(props) {
                     </button>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
+                <div className="grid grid-cols-1 min-[1400px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
                     {filteredEvents.map(([eventKey, eventData]) => (
                         <EventCard key={eventKey} eventName={eventKey} eventData={eventData} user={props.user} />
                     ))}
