@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import EventCard from '../Events/EventCard.js';
 import { Navbar } from '../Navbar/Navbar.js';
 import { db } from '../../firebase.js';
-import { getDatabase, ref, get } from 'firebase/database';
+import { ref, get } from 'firebase/database';
 import { Link } from 'react-router-dom';
 
 
@@ -87,7 +87,7 @@ export default function Profile(props) {
                     <p className="mb-12 text-2xl text-center text-black">
                         Your profile will populate any events you register for. Let's start exploring some events!
                     </p>
-                    <Link to={`/events`} className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
+                    <Link to="/Events" className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
                         Explore events
                     </Link>
                     

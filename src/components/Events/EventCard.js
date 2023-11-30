@@ -63,13 +63,13 @@ export default function EventCard({eventName, eventData}) {
                                 <p className="text-xl font-semibold max-[750px]:text-sm">{eventData["Spot Limit"] - eventData["Current Attendees"]}/{eventData["Spot Limit"]}</p>
                                 <p className="text-lg max-[750px]:text-sm">spots avail.</p>
                             </div>
-                            <Link to={`/events/${eventName}`} className="py-2 mt-auto text-center bg-black rounded-lg w-28 max-[750px]:hidden">
+                            <Link to={`/Events/${eventName}`} className="py-2 mt-auto text-center bg-black rounded-lg w-28 max-[750px]:hidden">
                                 Learn more
                             </Link>
                         </div>
                     </div>
                     <div className='min-[750px]:hidden flex items-center place-content-center'>
-                        <Link to={`/events/${eventName}`} className="py-2 mt-auto text-sm text-center text-white bg-black rounded-lg w-28 ">
+                        <Link to={`/Events/${eventName}`} className="py-2 mt-auto text-sm text-center text-white bg-black rounded-lg w-28 ">
                             Learn more
                         </Link>
                     </div>

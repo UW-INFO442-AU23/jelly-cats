@@ -44,7 +44,7 @@ export default function Home(props) {
                         </div>
                     </div>
                     <div className="flex flex-row justify-center">
-                        <Link to="/events" className="px-5 py-1 font-bold text-white bg-indigo-500 rounded-lg md:text-xl md:py-3 md:px-8">View all Events</Link>
+                        <Link to="/Events" className="px-5 py-1 font-bold text-white bg-indigo-500 rounded-lg md:text-xl md:py-3 md:px-8">View all Events</Link>
                     </div>
                 </div>
                 {/* How to use Section */}
@@ -56,8 +56,8 @@ export default function Home(props) {
                     </p>
 
                     <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">1. Create a Kinguistics profile through your Google Account by clicking on the "Login" button.  </p>
-                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">2. Review the <Link to="/resources" className="underline">Resources</Link> page for more educational tools to support your learning</p>
-                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">3. Explore the <Link to="/events" className="underline">Events</Link> page and sign up for upcoming in-person or online events where you can practice your skills with other students.</p>
+                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">2. Review the <Link to="/Resources" className="underline">Resources</Link> page for more educational tools to support your learning</p>
+                    <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">3. Explore the <Link to="/Events" className="underline">Events</Link> page and sign up for upcoming in-person or online events where you can practice your skills with other students.</p>
                     <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">4. Explore the Flashcards associated with each event for more practice!</p>
 
                 </div>
