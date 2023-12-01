@@ -203,8 +203,16 @@ export default function EventPage(props) {
                             {activeTab === 'description' && (<p className="text-xl">{eventData.Description}</p>)}
                             {activeTab === 'flashcards' && (
                                 <Link to={`/Events/${eventName}/Vocabulary`}>
-                                    <div className="flex items-center justify-center">
-                                        <img src={EventFlash} alt="event flashcard navigator" />
+                                    <div className="flex flex-row items-center justify-center">
+                                        <div className="flex flex-row items-center justify-center w-4/5 gap-20 bg-white shadow-2xl p-9 rounded-3xl">
+                                            <img src={EventFlash} alt="event flashcard navigator" />
+                                            <div className="flex flex-col gap-4">
+                                                <h3 className="text-3xl font-bold">{eventName}</h3>
+                                                <p className="text-lg">
+                                                    Practice before the event by going through {eventName} vocabulary! Click to start practicing.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </Link>)
                             }
@@ -236,7 +244,7 @@ export default function EventPage(props) {
                                 </div>
                             </div>
                         </div>
-                        <p className="m-5"><span className="font-bold">Description:</span> {eventHost.Description}</p>
+                        <p className="p-8"><span className="font-bold">Description:</span> {eventHost.Description}</p>
                     </div>
                 </div>
             </div>
