@@ -19,6 +19,6 @@ export default function Breadcrumbs() {
         })
 
     return (
-        <div className='mt-20 mb-10 md:ml-60 breadcrumbs'>{crumbs}</div>
+        <div className='mt-20 md:ml-60 breadcrumbs'>{crumbs}</div>
     )
 }

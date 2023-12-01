@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getDatabase, ref, get } from 'firebase/database';
 import { Navbar } from '../Navbar/Navbar.js'
+import EventFlash from '../../imgs/Events/EventFlash.png'
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs.js';
 import Register from '../Register/Register.js';
 
@@ -24,6 +25,7 @@ export default function EventPage(props) {
     const eventName = useParams().EventName;
     const [eventData, setEventData] = useState([]);
     const [eventHost, setEventHost] = useState([]);
+    const [activeTab, setActiveTab] = useState('description');
 
     const eventBannerImg = eventBanner[eventName.replace(/ /g, '_')];
     const eventOrgImg = eventOrg[eventName.replace(/ /g, '_')];
@@ -68,8 +70,11 @@ export default function EventPage(props) {
         }
     }
 
-    const registerDisabled = !(email && isChecked);
+    const handleTabClick = (tab) => {
+        setActiveTab(tab);
+    };
 
+    const registerDisabled = !(email && isChecked);
     const eventHostEmail = eventHost.Email;
     const eventHostEmailKey = eventHostEmail ? eventHostEmail.replace(/,/g, '.') : '';
 
@@ -77,7 +82,7 @@ export default function EventPage(props) {
         <>
             <Navbar user={user} onSignOut={props.onSignOut}/>
             <Breadcrumbs />
-            <div className="grid items-center justify-center grid-cols-1 grid-rows-1 place-items-center">
+            <div className="grid items-center justify-center grid-cols-1 grid-rows-1 mt-10 place-items-center">
                 <img src={eventBannerImg} alt="event banner" className="z-10 w-9/12 col-start-1 row-start-1 darken"/>
                 <div className="z-10 flex flex-col col-start-1 row-start-1 text-center text-white">
                     <h1 className="font-bold lg:text-4xl xl:text-6xl">{eventName}</h1>
@@ -159,12 +164,7 @@ export default function EventPage(props) {
                         {/* Register */}
                         <div className="flex items-center justify-center">
                             {user ? (
-                                <div className="flex flex-row items-center justify-center w-full gap-40">
-                                    <Link to={`/Events/${eventName}/Vocabulary`}>
-                                        <button className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
-                                            Vocab List
-                                        </button>
-                                    </Link>
+                                <div className="flex flex-row items-center justify-end w-full">
                                     <Register registerDisabled={!isChecked} email={user.email} eventName={eventName} eventData={eventData}/>
                                 </div>
                             ) : (
@@ -179,10 +179,45 @@ export default function EventPage(props) {
             </div>
             {/* Event Description + Host Information */}
             <div className="flex flex-col items-center justify-center gap-5 sm:gap-0 sm:justify-between sm:mx-40 sm:mt-20 sm:flex-row">
-                <div className="flex flex-col w-1/2 gap-4">
-                    <h2 className="text-3xl font-bold">Event Description</h2>
-                    <hr class="border-t-2 border-gray-300"></hr>
-                    <p className="text-xl">{eventData.Description}</p>
+                <div className="w-1/2">
+                    <div className="flex flex-col gap-4">
+                        {user ? (
+                            <div>
+                                <div className="flex flex-row items-center justify-between">
+                                    <h2
+                                        className="text-3xl font-bold cursor-pointer"
+                                        onClick={() => handleTabClick('description')}
+                                    >
+                                        Event Description
+                                    </h2>
+                                    <h2
+                                        className="text-3xl font-bold cursor-pointer"
+                                        onClick={() => handleTabClick('flashcards')}
+                                    >
+                                        Flashcards
+                                    </h2>
+                                </div>
+                                <div className="flex flex-row">
+                                    <hr className={`w-1/2 ${activeTab === 'description' ? 'border-indigo-500 border-t-4' : 'border-gray-300 border-t-4'}`}></hr>
+                                    <hr className={`w-1/2 ${activeTab === 'flashcards' ? 'border-indigo-500 border-t-4' : 'border-gray-300 border-t-4'}`}></hr>
+                                </div>
+                                {activeTab === 'description' && (<p className="text-xl">{eventData.Description}</p>)}
+                                {activeTab === 'flashcards' && (
+                                    <Link to={`/Events/${eventName}/Vocabulary`}>
+                                        <div className="flex items-center justify-center">
+                                            <img src={EventFlash} alt="event flashcard navigator" />
+                                        </div>
+                                    </Link>)
+                                }
+                            </div>
+                        ) : (
+                            <div className="flex flex-col gap-4">
+                                <h2 className="text-3xl font-bold"> Event Description</h2>
+                                <hr className="border-t-2 border-gray-300"></hr>
+                                <p className="text-xl">{eventData.Description}</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
                 <div className="flex justify-center w-1/2 rounded-xl">
                     <div className="flex flex-col w-3/5 gap-3 text-center bg-white shadow-2xl rounded-2xl sm:gap-0">

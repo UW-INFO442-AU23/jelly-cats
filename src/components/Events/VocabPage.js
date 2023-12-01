@@ -114,7 +114,7 @@ function Flashcards(props) {
         <>
             <Navbar user={props.user} />
             <Breadcrumbs />
-            <main className="flex flex-col items-center w-screen h-screen mt-6">
+            <main className="flex flex-col items-center w-screen h-screen">
                 <div className="flex flex-row items-center justify-between w-4/6 sm:w-2/5 basis-1/4">
                     <div className="flex flex-col items-center justify-center gap-2">
                         <div class="h-5 w-5 rounded-full bg-red-500"></div>
