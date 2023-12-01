@@ -178,11 +178,11 @@ export default function EventPage(props) {
                 </div>
             </div>
             {/* Event Description + Host Information */}
-            <div className="flex flex-col items-center justify-center gap-5 sm:gap-0 sm:justify-between sm:mx-40 sm:mt-20 sm:flex-row">
+            <div className="flex flex-col items-center justify-center gap-5 mb-10 sm:gap-0 sm:justify-between sm:mx-40 sm:mt-20 sm:flex-row">
                 <div className="w-1/2">
                     {user ? (
-                        <div className="flex flex-col gap-4">
-                            <div className="flex flex-row items-center justify-between">
+                        <div className="flex flex-col gap-5">
+                            <div className="flex flex-row items-center justify-around">
                                 <h2
                                     className="text-3xl font-bold cursor-pointer"
                                     onClick={() => handleTabClick('description')}
@@ -210,7 +210,7 @@ export default function EventPage(props) {
                             }
                         </div>
                     ) : (
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-5">
                             <h2 className="text-3xl font-bold"> Event Description</h2>
                             <hr className="border-t-2 border-gray-300"></hr>
                             <p className="text-xl">{eventData.Description}</p>
@@ -218,7 +218,7 @@ export default function EventPage(props) {
                     )}
                 </div>
                 <div className="flex justify-center w-1/2 rounded-xl">
-                    <div className="flex flex-col w-3/5 gap-3 text-center bg-white shadow-2xl rounded-2xl sm:gap-0">
+                    <div className="flex flex-col w-3/5 gap-3 bg-white shadow-2xl rounded-2xl sm:gap-0">
                         <div className="flex w-full p-4 bg-indigo-500 rounded-t-2xl">
                             <h2 className="text-2xl font-bold text-white">Contact Information</h2>
                         </div>
@@ -236,7 +236,7 @@ export default function EventPage(props) {
                                 </div>
                             </div>
                         </div>
-                        <p className="m-5 text-center"><span className="font-bold">Description:</span> {eventHost.Description}</p>
+                        <p className="m-5"><span className="font-bold">Description:</span> {eventHost.Description}</p>
                     </div>
                 </div>
             </div>
