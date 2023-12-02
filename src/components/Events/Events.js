@@ -85,16 +85,14 @@ export default function Events(props) {
                     <p className="max-[600px]:text-xs max-[600px]:mt-2 mt-8 md:text-lg lg:text-2xl">Find an upcoming language-learning event that suits your learning needs! Use filters to refine your search.</p>
                 </div>
                 {/* Filter */}
-                <div className="flex flex-row items-center max-[600px]:justify-end mt-8 justify-between gap-4 max-[600px]:gap-2 flex-wrap gap-y-6">
-                    <div className="flex max-[500px]:justify-center max-[600px]:items-center max-[600px]:gap-2 gap-5">
+                <div className="flex flex-row flex-wrap items-center justify-between gap-4 mt-8 gap-y-6">
+                    <div className="flex gap-5">
                         {/* filter by location*/}
                         <Filter defaultVal="All Languages" options={languages} onSelect={(value) => setSelectedLanguage(value)} shouldReset={resetFilters}/>
                         <Filter defaultVal="All Language Levels" options={langLevel} onSelect={(value) => setSelectedLanguageLevel(value)} shouldReset={resetFilters}/>
                         <Filter defaultVal="All Locations" options={locations} onSelect={(value) => setSelectedLocation(value)} shouldReset={resetFilters}/>
                     </div>
-                    <div className="flex">
-                        <Filter defaultVal="Newest First" options={["Oldest First"]} onSelect={(value) => setSelectedSortOption(value)} shouldReset={resetFilters}/>
-                    </div>
+                    <Filter defaultVal="Newest First" options={["Oldest First"]} onSelect={(value) => setSelectedSortOption(value)} shouldReset={resetFilters}/>
                 </div>
                 
             </div>
