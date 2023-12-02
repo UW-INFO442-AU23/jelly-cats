@@ -12,13 +12,13 @@ export default function Breadcrumbs() {
         .map(crumb => {
             currentLink += `/${crumb}`
             return (
-                <div className="crumb" key={crumb}>
+                <div className="text-sm crumb sm:text-md md:text-lg" key={crumb}>
                     <Link to={currentLink}>{crumb.replace('%20', ' ')}</Link>
                 </div>
             )
         })
 
     return (
-        <div className='mt-20 md:ml-60 breadcrumbs'>{crumbs}</div>
+        <div className='mt-20 ml-6 sm:ml-12 md:ml-40 breadcrumbs'>{crumbs}</div>
     )
 }
