@@ -57,6 +57,11 @@ The two user personas we used when designing our product can be found here. They
 
 `Ctrl + C` to cancel
 
+## Deploy Build to Firebase Hosting
+`npm run build`
+
+`firebase deploy`
+
 ## Testing Protocols
 |    | **Feature 1: Filter and Sort By Event Cards** | **Feature 2: Interactive Event Cards** | **Feature 3: Event Registration** | **Feature 4: Event attendee tracking** | **Feature 5: Login** |
 | --- | --- | --- | --- | --- | --- | 
