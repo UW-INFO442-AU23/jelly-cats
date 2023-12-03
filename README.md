@@ -10,16 +10,17 @@ To further support economically disadvantaged King County high school students l
 
 ## Features
 
-* Language-learning events with descriptions and details
-* Navigation bar with home, about, resources, and event pages
-* Filter and sort-by system for language-learning events
-  * Filter based on language, language level, location
-  * Sort-by date
-* Ability to register for language-learning events
-  * Requires user email for validation
-* Event attendee tracking
-* Multi-media information expressing the benefits of learning another language
-* Vocabulary flashcards
+- Log in/create an account through Google Authentication
+- Language-learning events with a description and details
+- Filter and sort-by system for language-learning events
+  - Filter based on language, language level, location
+  - Sort by date
+- Ability to register for language-learning events
+  - Requires user email or login for validation
+- Event attendee tracking
+  - Multi-media information expressing the benefits of learning another language
+- Vocabulary flashcards
+
 
 ## Published Site
 
@@ -41,7 +42,20 @@ The two user personas we used when designing our product can be found here. They
 
 ![Persona 2](https://github.com/UW-INFO442-AU23/jelly-cats/assets/77508839/ad87e23b-93c1-421b-976f-84b3caaf5e8a)
 
+# Development
 
+## Built With:
+- JavaScript
+- CSS
+- HTML
+- React
+- Firebase
+- Tailwind
+
+## Start LocalHost
+`npm start`
+
+`Ctrl + C` to cancel
 
 ## Testing Protocols
 
@@ -51,9 +65,7 @@ The two user personas we used when designing our product can be found here. They
 
 
 
-
-
-
+## References
 
 
 
