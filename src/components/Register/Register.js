@@ -15,7 +15,6 @@ export default function Register(props) {
         const checkRegistration = async () => {
             const userEventsRef = ref(db, `Users/${emailKey}/Events/${eventName}/Registered`);
             const snapshot = await get(userEventsRef);
-            console.log(snapshot);
             setIsRegistered(snapshot.exists());
         };
 
