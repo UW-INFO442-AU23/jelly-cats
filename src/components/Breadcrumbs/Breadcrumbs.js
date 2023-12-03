@@ -9,10 +9,11 @@ export default function Breadcrumbs() {
 
     const crumbs = location.pathname.split('/')
         .filter(crumb => crumb !== '')
-        .map(crumb => {
+        .map((crumb, index, array) => {
             currentLink += `/${crumb}`
+            const isLastCrumb = index === array.length - 1;
             return (
-                <div className="text-sm crumb sm:text-md md:text-lg" key={crumb}>
+                <div className={`text-sm crumb sm:text-md md:text-lg ${isLastCrumb ? "last-crumb" : ""}`} key={crumb}>
                     <Link to={currentLink}>{crumb.replace('%20', ' ')}</Link>
                 </div>
             )

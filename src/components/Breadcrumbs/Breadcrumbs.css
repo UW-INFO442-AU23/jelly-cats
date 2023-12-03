@@ -19,3 +19,7 @@
 .breadcrumbs .crumb a {
     color: rgb(139 92 246);
 }
+
+.breadcrumbs .last-crumb a {
+    color: black;
+}

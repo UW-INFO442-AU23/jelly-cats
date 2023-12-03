@@ -237,18 +237,18 @@ export default function EventPage(props) {
                                 </h2>
                             </div>
                             <div className="flex flex-row">
-                                <hr className={`w-1/2 ${activeTab === 'description' ? 'border-indigo-500 border-t-4' : 'border-gray-300 border-t-4'}`}></hr>
-                                <hr className={`w-1/2 ${activeTab === 'flashcards' ? 'border-indigo-500 border-t-4' : 'border-gray-300 border-t-4'}`}></hr>
+                                <hr className={`w-1/2 ${activeTab === 'description' ? 'border-indigo-500 sm:border-t-4 border-t-2' : 'border-gray-300 sm:border-t-4 border-t-2'}`}></hr>
+                                <hr className={`w-1/2 ${activeTab === 'flashcards' ? 'border-indigo-500 sm:border-t-4 border-t-2' : 'border-gray-300 sm:border-t-4 border-t-2'}`}></hr>
                             </div>
                             {activeTab === 'description' && (<p className="text-xs sm:text-sm md:text-base xl:text-lg">{eventData.Description}</p>)}
                             {activeTab === 'flashcards' && (
                                 <Link to={`/Events/${eventName}/Vocabulary`}>
                                     <div className="flex flex-row items-center justify-center">
-                                        <div className="flex flex-row items-center justify-center w-4/5 gap-20 bg-white shadow-2xl p-9 rounded-3xl">
-                                            <img src={EventFlash} alt="event flashcard navigator" />
+                                        <div className="flex flex-row items-center justify-center w-11/12 gap-5 p-3 bg-white shadow-2xl md:w-4/5 md:gap-20 md:p-9 rounded-3xl">
+                                            <img src={EventFlash} alt="event flashcard navigator" className="w-1/3 md:w-fit" />
                                             <div className="flex flex-col gap-4">
-                                                <h3 className="text-3xl font-bold">{eventName}</h3>
-                                                <p className="text-lg">
+                                                <h3 className="font-bold md:text-3xl">{eventName}</h3>
+                                                <p className="text-xs md:text-lg">
                                                     Practice before the event by going through {eventName} vocabulary! Click to start practicing.
                                                 </p>
                                             </div>
@@ -266,17 +266,17 @@ export default function EventPage(props) {
                     )}
                 </div>
                 <div className="flex flex-col w-full gap-5 sm:hidden">
-                            <h2 className="text-base font-bold cursor-pointer md:text-lg lg:text-2xl xl:text-3xl"> Contact Information</h2>
-                            <hr className="border-t-2 border-gray-300"></hr>
+                    <h2 className="text-base font-bold cursor-pointer md:text-lg lg:text-2xl xl:text-3xl"> Contact Information</h2>
+                    <hr className="border-t-2 border-gray-300"></hr>
                 </div>
                 <div className="flex justify-center w-full xl:w-1/2 rounded-xl">
                     <div className="flex flex-col w-full gap-3 bg-white shadow-2xl sm:w-3/5 rounded-2xl">
                         <div className="hidden w-full p-4 bg-indigo-500 sm:block rounded-t-2xl">
                             <h2 className="text-base text-white cursor-pointer md:text-lg lg:text-2xl xl:text-3xl">Contact Information</h2>
                         </div>
-                        <div className="flex flex-row flex-wrap items-center gap-10 m-4 mr-18 sm:mx-8 sm:mt-5 sm:justify-center">
+                        <div className="flex flex-row flex-wrap items-center gap-10 mr-18 sm:mx-8 sm:mt-5 sm:justify-center">
                             <img src={eventHost.Photo} alt="event host" className="w-16 max-sm:h-16 sm:w-1/3 rounded-xl"></img>
-                            <div className="flex flex-col flex-wrap gap-2 sm:gap-1 ">
+                            <div className="flex flex-col flex-wrap gap-2 sm:gap-1">
                                 <p className="text-base font-bold cursor-pointer md:text-lg lg:text-2xl xl:text-3xl">{eventHost.Name}</p>
                                 <div className="flex flex-row items-center justify-center gap-1">
                                     <svg className='w-4 h-4 sm:w-8 sm:h-8' viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -294,7 +294,7 @@ export default function EventPage(props) {
                 
                 {/* below: content appearing only in mobile view */}
                 <div className="flex flex-col w-full gap-5 sm:hidden">
-                            <hr className="border-t-2 border-gray-300"></hr>
+                    <hr className="border-t-2 border-gray-300"></hr>
                 </div>
                 {/* Event Policy */}
                 <div className="flex flex-row items-center justify-center sm:hidden">
