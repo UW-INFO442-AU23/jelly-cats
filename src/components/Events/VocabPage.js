@@ -139,7 +139,7 @@ function Flashcards(props) {
                 </div>
                 {flashcards && flashcards.length > 0 ? (
                     <div
-                        className={`basis-1/2 w-4/5 sm:w-4/6 h-2/5 p-4 bg-white rounded-3xl shadow-2xl border-2 border-indigo-500 text-6xl cursor-pointer ${showTerm ? '' : 'rotate-360'} flex items-center justify-center text-center`}
+                        className={`basis-1/2 w-4/5 sm:w-4/6 h-2/5 p-4 bg-white rounded-3xl shadow-2xl border-2 border-indigo-500 text-4xl sm:text-6xl cursor-pointer ${showTerm ? '' : 'rotate-360'} flex items-center justify-center text-center`}
                         onClick={flipCard}
                     >
                         {showTerm ? flashcards[Object.keys(flashcards)[currentIndex]].Term : flashcards[Object.keys(flashcards)[currentIndex]].Definition}

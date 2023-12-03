@@ -274,7 +274,7 @@ export default function EventPage(props) {
                         <div className="hidden w-full p-4 bg-indigo-500 sm:block rounded-t-2xl">
                             <h2 className="text-base text-white cursor-pointer md:text-lg lg:text-2xl xl:text-3xl">Contact Information</h2>
                         </div>
-                        <div className="flex flex-row flex-wrap items-center gap-10 mr-18 sm:mx-8 sm:mt-5 sm:justify-center">
+                        <div className="flex flex-row flex-wrap items-center gap-10 p-3 sm:p-0 mr-18 sm:mx-8 sm:mt-5 sm:justify-center">
                             <img src={eventHost.Photo} alt="event host" className="w-16 max-sm:h-16 sm:w-1/3 rounded-xl"></img>
                             <div className="flex flex-col flex-wrap gap-2 sm:gap-1">
                                 <p className="text-base font-bold cursor-pointer md:text-lg lg:text-2xl xl:text-3xl">{eventHost.Name}</p>
