@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const languageImages = {
+const defaultLanguageImages = {
     ASL: require('../../imgs/Events/LASL.png'),
     Korean: require('../../imgs/Events/KR.png'),
     English: require('../../imgs/Events/EN.png'),
@@ -11,9 +11,16 @@ const languageImages = {
     French: require('../../imgs/Events/FR.png')
 };
 
+const languageImages = {
+    ASL_Market: require('../../imgs/Events/ASL Market/pic.png'),
+    French_Bakery: require('../../imgs/Events/French Bakery/pic.png'),
+    Spanish_Beach: require('../../imgs/Events/Spanish Beach/pic.png'),
+    Spanish_Eats: require('../../imgs/Events/Spanish Eats/pic.png')
+};
+
 export default function EventCard({eventName, eventData}) {
     const language = eventData.Language;
-    const languageImageSrc = languageImages[language];
+    const languageImageSrc = languageImages[eventName.replace(/ /g, "_")] || defaultLanguageImages[language];
 
     return (
         <div className="flex justify-center">
