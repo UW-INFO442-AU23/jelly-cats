@@ -13,8 +13,9 @@ export default function Register(props) {
 
     useEffect(() => {
         const checkRegistration = async () => {
-            const userEventsRef = ref(db, `Users/${emailKey}/Events/${eventName}`);
+            const userEventsRef = ref(db, `Users/${emailKey}/Events/${eventName}/Registered`);
             const snapshot = await get(userEventsRef);
+            console.log(snapshot);
             setIsRegistered(snapshot.exists());
         };
 
@@ -41,11 +42,11 @@ export default function Register(props) {
             const userEventsRef = ref(db, `Users/${emailKey}/Events`);
             const eventAttendeesRef = ref(db, `Events/${eventName}/Attendees`);
             if (isRegistered) {
-                await update(userEventsRef, { [eventName]: null });
+                await update(userEventsRef, { [eventName]: { Registered: null } });
                 await update(eventAttendeesRef, { [emailKey]: null });
                 await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] - 1 });
             } else {
-                await update(userEventsRef, { [eventName]: true });
+                await update(userEventsRef, { [eventName]: { Registered: true } });
                 await update(eventAttendeesRef, { [emailKey]: true });
                 await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] + 1 });
             }

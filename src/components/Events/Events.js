@@ -28,20 +28,19 @@ export default function Events(props) {
         get(eventsRef)
         .then((snapshot) => {
             if (snapshot.exists()) {
-            const eventsData = snapshot.val();
+                const eventsData = snapshot.val();
 
-            // Extract data from the firebase
-            const eventLanguages = Array.from(new Set(Object.values(eventsData).map((event) => event.Language)));
-            const eventLocations = Array.from(new Set(Object.values(eventsData).map((event) => event.Location)));
-            const eventLangLevels = Array.from(new Set(Object.values(eventsData).map((event) => event["Language Level"])));
+                // Extract data from the firebase
+                const eventLanguages = Array.from(new Set(Object.values(eventsData).map((event) => event.Language)));
+                const eventLocations = Array.from(new Set(Object.values(eventsData).map((event) => event.Location)));
+                const eventLangLevels = Array.from(new Set(Object.values(eventsData).map((event) => event["Language Level"])));
 
-            setEvents(eventsData);
-            setLanguages(eventLanguages);
-            setLocations(eventLocations);
-            setLangLevel(eventLangLevels)
-
+                setEvents(eventsData);
+                setLanguages(eventLanguages);
+                setLocations(eventLocations);
+                setLangLevel(eventLangLevels)
             } else {
-            console.log("No data found for events.");
+                console.log("No data found for events.");
             }
         })
         .catch((error) => {

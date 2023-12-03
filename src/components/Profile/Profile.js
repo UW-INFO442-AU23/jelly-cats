@@ -18,6 +18,7 @@ export default function Profile(props) {
     // gets a list of registered events for current user
     useEffect(() => {
         const userEventsRef = ref(db, `Users/${emailKey}/Events`);
+        const eventsRef = ref(db, 'Events');
 
         get(userEventsRef)
         .then((snapshot) => {
@@ -25,7 +26,25 @@ export default function Profile(props) {
             const userEventsSnap = snapshot.val();
             const userEventsKeys = Object.keys(userEventsSnap);
 
-            setUserEvents(userEventsKeys);
+            const registeredEventsKeys = userEventsKeys.filter(key => userEventsSnap[key].Registered === true);
+
+            setUserEvents(registeredEventsKeys);
+
+            } else {
+                console.log("No data found for events.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error reading events:", error);
+        });
+
+        get(eventsRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+            const eventsData = snapshot.val();
+
+            setEvents(eventsData);
+
 
             } else {
                 console.log("No data found for events.");
@@ -37,26 +56,6 @@ export default function Profile(props) {
     }, [user, emailKey]);
 
     useEffect(() => {
-        const eventsRef = ref(db, 'Events');
-
-        get(eventsRef)
-        .then((snapshot) => {
-            if (snapshot.exists()) {
-            const eventsData = snapshot.val();
-
-            setEvents(eventsData);
-
-
-            } else {
-            console.log("No data found for events.");
-            }
-        })
-        .catch((error) => {
-            console.error("Error reading events:", error);
-        });
-    }, [user]);
-
-    useEffect(() => {
         // Filter events based on user's registered events
         const filteredEventsData = Object.fromEntries(
             Object.entries(events)
@@ -65,8 +64,6 @@ export default function Profile(props) {
 
         setFilteredEvents(filteredEventsData);
     }, [userEvents, events])
-    
-    console.log(user.photoURL)
     
     return (
         <>
@@ -90,7 +87,6 @@ export default function Profile(props) {
                     <Link to="/Events" className="px-2 py-1 mx-2 text-white bg-indigo-500 rounded-md md:px-4 md:py-2 md:mx-4 md:text-sm hover:bg-neutral-800">
                         Explore events
                     </Link>
-                    
                 </div>
             )}
             <div className="grid grid-cols-1 min-[1440px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
