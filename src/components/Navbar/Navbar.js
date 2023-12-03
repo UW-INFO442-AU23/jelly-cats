@@ -66,7 +66,7 @@ export function Navbar(props) {
 
                     {/* Desktop Header */}
                     <ul className="fixed top-0 z-50 flex-row items-center justify-around hidden w-full h-16 bg-white sm:flex">
-                       <li className="basis-1/4 flex-center">
+                        <li className="basis-1/4 flex-center">
                             {/*Changing navbar logo icon to "Kinguistics" */}
                             <Link to="/" className={`font-black text-2xl ${location.pathname === '/' ? '' : ''}`} >Kinguistics</Link>
                         </li>
@@ -75,7 +75,7 @@ export function Navbar(props) {
                         </li>
                         <li>
                             <Link to="/Events" className={`font-bold ${location.pathname === '/Events' ? 'border-b-4 border-indigo-500' : ''}`} >Events</Link>
-                        </li> 
+                        </li>
                         <li>
                             <Link to="/Resources" className={`font-bold ${location.pathname === '/Resources' ? 'border-b-4 border-indigo-500' : ''}`} >Resources</Link>
                         </li>

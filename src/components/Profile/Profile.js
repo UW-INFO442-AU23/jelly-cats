@@ -21,38 +21,33 @@ export default function Profile(props) {
         const eventsRef = ref(db, 'Events');
 
         get(userEventsRef)
-        .then((snapshot) => {
-            if (snapshot.exists()) {
-            const userEventsSnap = snapshot.val();
-            const userEventsKeys = Object.keys(userEventsSnap);
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const userEventsSnap = snapshot.val();
+                    const userEventsKeys = Object.keys(userEventsSnap);
+                    const registeredEventsKeys = userEventsKeys.filter(key => userEventsSnap[key].Registered === true);
 
-            const registeredEventsKeys = userEventsKeys.filter(key => userEventsSnap[key].Registered === true);
-
-            setUserEvents(registeredEventsKeys);
-
-            } else {
-                console.log("No data found for events.");
-            }
-        })
-        .catch((error) => {
-            console.error("Error reading events:", error);
-        });
+                    setUserEvents(registeredEventsKeys);
+                } else {
+                    console.log("No data found for events.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error reading events:", error);
+            });
 
         get(eventsRef)
-        .then((snapshot) => {
-            if (snapshot.exists()) {
-            const eventsData = snapshot.val();
-
-            setEvents(eventsData);
-
-
-            } else {
-                console.log("No data found for events.");
-            }
-        })
-        .catch((error) => {
-            console.error("Error reading events:", error);
-        });
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const eventsData = snapshot.val();
+                    setEvents(eventsData);
+                } else {
+                    console.log("No data found for events.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error reading events:", error);
+            });
     }, [user, emailKey]);
 
     useEffect(() => {
@@ -64,13 +59,13 @@ export default function Profile(props) {
 
         setFilteredEvents(filteredEventsData);
     }, [userEvents, events])
-    
+
     return (
         <>
             <Navbar user={user} onSignOut={props.onSignOut} />
             <div className="flex flex-col justify-center mt-16 mx-14 md:mx-20 lg:mx-36">
                 <div className="flex flex-col items-center justify-center">
-                    <img src={user.photoURL} className="h-48 mt-10 mb-5 rounded-full w-fit" alt="profile"/>
+                    <img src={user.photoURL} className="h-48 mt-10 mb-5 rounded-full w-fit" alt="profile" />
                     <p className="text-4xl font-bold text-center">{user.displayName}</p>
                     <p className="mt-2 text-2xl text-center">{user.email}</p>
                 </div>

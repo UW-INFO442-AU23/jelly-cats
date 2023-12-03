@@ -21,14 +21,14 @@ export default function Register(props) {
         const checkCapacity = async () => {
             const eventRef = ref(db, `Events/${eventName}`);
             get(eventRef)
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    const event = snapshot.val();
-                    setAtCapacity(event['Current Attendees'] >= event['Spot Limit']);
-                } else {
-                    console.log("No data found for events.");
-                }
-            })
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const event = snapshot.val();
+                        setAtCapacity(event['Current Attendees'] >= event['Spot Limit']);
+                    } else {
+                        console.log("No data found for events.");
+                    }
+                })
         };
 
         checkRegistration();
@@ -43,11 +43,11 @@ export default function Register(props) {
             if (isRegistered) {
                 await update(userEventsRef, { [eventName]: { Registered: null } });
                 await update(eventAttendeesRef, { [emailKey]: null });
-                await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] - 1 });
+                await update(eventRef, { "Current Attendees": eventData["Current Attendees"] - 1 });
             } else {
                 await update(userEventsRef, { [eventName]: { Registered: true } });
                 await update(eventAttendeesRef, { [emailKey]: true });
-                await update(eventRef, { "Current Attendees" : eventData["Current Attendees"] + 1 });
+                await update(eventRef, { "Current Attendees": eventData["Current Attendees"] + 1 });
             }
 
             setIsRegistered(!isRegistered);
@@ -57,14 +57,13 @@ export default function Register(props) {
             console.error("Error occurred during database operation:", error);
         }
     };
-    
+
     return (
         <Link to={isRegistered ? '/Unregistered' : '/Registered'}>
             <button
                 onClick={handleButtonClick}
-                className={`px-2 py-1 mx-2 md:px-4 md:py-2 md:mx-4 md:text-sm text-white rounded ${
-                    ((props.registerDisabled || (atCapacity && !isRegistered)) && !isRegistered) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-md'
-                }`}
+                className={`px-2 py-1 mx-2 md:px-4 md:py-2 md:mx-4 md:text-sm text-white rounded ${((props.registerDisabled || (atCapacity && !isRegistered)) && !isRegistered) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 hover:bg-neutral-800 rounded-md'
+                    }`}
                 disabled={!isRegistered ? (props.registerDisabled || (atCapacity && !isRegistered)) : false}
             >
                 {atCapacity}

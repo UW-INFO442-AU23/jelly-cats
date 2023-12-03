@@ -25,9 +25,9 @@ export default function Filter(props) {
 
 
     return (
-        <select 
+        <select
             value={selectedValue}
-            onChange={handleSelectChange} 
+            onChange={handleSelectChange}
             className="px-1 py-1 text-xs text-center border-4 border-indigo-500 rounded-full appearance-none cursor-pointer sm:text-sm md:text-base md:px-4 md:py-2 w-fit"
         >
             <option value={defaultVal}>{defaultVal}</option>
@@ -35,7 +35,7 @@ export default function Filter(props) {
                 <option key={index} value={option}>
                     {option}
                 </option>
-                ))}
+            ))}
         </select>
     )
 }

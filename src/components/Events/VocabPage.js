@@ -36,7 +36,7 @@ function Flashcards(props) {
                     setInRotationVocabCount(userFlashcard.length);
                     setRemovedVocabCount(totalVocabCount - inRotationVocabCount);
                 } else {
-                    if(eventSnapshot.exists()) {
+                    if (eventSnapshot.exists()) {
                         const eventFlashcard = eventSnapshot.val();
                         setFlashcards(eventFlashcard);
                         setTotalVocabCount(eventFlashcard.length);
@@ -62,7 +62,7 @@ function Flashcards(props) {
         setCurrentIndex(nextIndex);
         setShowTerm(true);
     };
-    
+
     const removeFromRotation = async () => {
         const updatedFlashcards = [...flashcards];
         if (flashcards.length === 1) {
@@ -76,7 +76,7 @@ function Flashcards(props) {
         const userVocab = ref(database, `Users/${emailKey}/Events/${eventName}/Vocabulary`);
         await set(userVocab, updatedFlashcards);
     };
-    
+
     if (finished) {
         return (
             <div>
@@ -100,7 +100,7 @@ function Flashcards(props) {
                 <Navbar user={user} />
                 <Breadcrumbs />
                 <div className="flex flex-col items-center justify-center w-screen h-screen gap-10">
-                    <img src={Return} alt="return to events"/>
+                    <img src={Return} alt="return to events" />
                     <p className="text-3xl font-bold">No vocabulary at this time!</p>
                     <Link to="/Events">
                         <button className="px-3 py-2 text-white bg-indigo-500 rounded-lg">Return to Events</button>
@@ -148,15 +148,15 @@ function Flashcards(props) {
                 <div className="flex justify-between w-3/5 sm:w-1/5 basis-1/4">
                     <button onClick={keepInRotation}>
                         <svg width="60" height="60" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="42.182" cy="42.182" r="42.182" fill="#CD4040"/>
-                            <path d="M53.9992 30L41.5 42.4992M41.5 42.4992L29 54.9992M41.5 42.4992L29.0008 30M41.5 42.4992L54 54.9992" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="42.182" cy="42.182" r="42.182" fill="#CD4040" />
+                            <path d="M53.9992 30L41.5 42.4992M41.5 42.4992L29 54.9992M41.5 42.4992L29.0008 30M41.5 42.4992L54 54.9992" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
                     <button onClick={removeFromRotation}>
                         <svg width="60" height="60" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="42.546" cy="42.182" r="42.182" fill="#6FD173"/>
-                            <path d="M36 55L62 29" stroke="white" stroke-width="8" stroke-linecap="round"/>
-                            <path d="M36 55L24 43" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                            <circle cx="42.546" cy="42.182" r="42.182" fill="#6FD173" />
+                            <path d="M36 55L62 29" stroke="white" stroke-width="8" stroke-linecap="round" />
+                            <path d="M36 55L24 43" stroke="white" stroke-width="8" stroke-linecap="round" />
                         </svg>
                     </button>
                 </div>

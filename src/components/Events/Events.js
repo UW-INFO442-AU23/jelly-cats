@@ -19,33 +19,33 @@ export default function Events(props) {
     const [selectedLanguage, setSelectedLanguage] = useState("All Languages");
     const [selectedSortOption, setSelectedSortOption] = useState("Newest First");
     const [resetFilters, setResetFilters] = useState(false)
-    
+
     // effect to get data from firebase
     useEffect(() => {
         const database = getDatabase();
         const eventsRef = ref(database, 'Events');
 
         get(eventsRef)
-        .then((snapshot) => {
-            if (snapshot.exists()) {
-                const eventsData = snapshot.val();
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const eventsData = snapshot.val();
 
-                // Extract data from the firebase
-                const eventLanguages = Array.from(new Set(Object.values(eventsData).map((event) => event.Language)));
-                const eventLocations = Array.from(new Set(Object.values(eventsData).map((event) => event.Location)));
-                const eventLangLevels = Array.from(new Set(Object.values(eventsData).map((event) => event["Language Level"])));
+                    // Extract data from the firebase
+                    const eventLanguages = Array.from(new Set(Object.values(eventsData).map((event) => event.Language)));
+                    const eventLocations = Array.from(new Set(Object.values(eventsData).map((event) => event.Location)));
+                    const eventLangLevels = Array.from(new Set(Object.values(eventsData).map((event) => event["Language Level"])));
 
-                setEvents(eventsData);
-                setLanguages(eventLanguages);
-                setLocations(eventLocations);
-                setLangLevel(eventLangLevels)
-            } else {
-                console.log("No data found for events.");
-            }
-        })
-        .catch((error) => {
-            console.error("Error reading events:", error);
-        });
+                    setEvents(eventsData);
+                    setLanguages(eventLanguages);
+                    setLocations(eventLocations);
+                    setLangLevel(eventLangLevels)
+                } else {
+                    console.log("No data found for events.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error reading events:", error);
+            });
     }, []);
 
     // effect to apply the filters whenever filter options change
@@ -87,13 +87,13 @@ export default function Events(props) {
                 <div className="flex flex-row flex-wrap items-center justify-between gap-4 mt-8 gap-y-6">
                     <div className="flex gap-5">
                         {/* filter by location*/}
-                        <Filter defaultVal="All Languages" options={languages} onSelect={(value) => setSelectedLanguage(value)} shouldReset={resetFilters}/>
-                        <Filter defaultVal="All Language Levels" options={langLevel} onSelect={(value) => setSelectedLanguageLevel(value)} shouldReset={resetFilters}/>
-                        <Filter defaultVal="All Locations" options={locations} onSelect={(value) => setSelectedLocation(value)} shouldReset={resetFilters}/>
+                        <Filter defaultVal="All Languages" options={languages} onSelect={(value) => setSelectedLanguage(value)} shouldReset={resetFilters} />
+                        <Filter defaultVal="All Language Levels" options={langLevel} onSelect={(value) => setSelectedLanguageLevel(value)} shouldReset={resetFilters} />
+                        <Filter defaultVal="All Locations" options={locations} onSelect={(value) => setSelectedLocation(value)} shouldReset={resetFilters} />
                     </div>
-                    <Filter defaultVal="Newest First" options={["Oldest First"]} onSelect={(value) => setSelectedSortOption(value)} shouldReset={resetFilters}/>
+                    <Filter defaultVal="Newest First" options={["Oldest First"]} onSelect={(value) => setSelectedSortOption(value)} shouldReset={resetFilters} />
                 </div>
-                
+
             </div>
             {/*Events */}
             {filteredEvents.length === 0 ? (
@@ -101,7 +101,7 @@ export default function Events(props) {
                     <h3 className='text-lg font-bold text-center text-black sm:text-3xl'>No results found!</h3>
                     <p className="text-lg text-center text-black sm:text-3xl">There are no items matching your criteria—try filtering for a different event.</p>
                     <button
-                    className="px-4 py-2 text-lg text-white bg-indigo-500 rounded-xl md:px-7 md:py-3 hover:bg-neutral-800"
+                        className="px-4 py-2 text-lg text-white bg-indigo-500 rounded-xl md:px-7 md:py-3 hover:bg-neutral-800"
                         onClick={() => {
                             // Reset filters
                             setSelectedLocation("All Locations");

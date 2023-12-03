@@ -2,7 +2,7 @@
     max-width: 1200px;
 }
 
-.breadcrumbs > *{
+.breadcrumbs>* {
     display: inline-block;
     margin-right: 10px;
 }

@@ -51,7 +51,7 @@ function App(props) {
             <Route path="/Resources" element={<Resources data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/About" element={<About data={props.data} user={user} onSignOut={handleSignOut} />} />
             <Route path="/Profile" element={<Profile data={props.data} user={user} onSignOut={handleSignOut} />} />
-            
+
             {/* redirect users back to the home page if route gets lost*/}
             <Route path="/*" element={<Navigate to="/" replace />} />
         </Routes>

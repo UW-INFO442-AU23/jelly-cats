@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAuth, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
-import { Link } from'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Login(props) {
     const auth = getAuth();

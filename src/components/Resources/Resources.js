@@ -51,51 +51,50 @@ export default function Resources(props) {
             <div className="flex flex-col items-center md:flex-row ">
                 {/* Additional Resources */}
                 <div className="flex-1">
-                <div className="m-8 md:ml-14">
-                    <h1 className='text-lg font-bold md:text-2xl lg:text-4xl'>Additional Resources</h1>
-                    <h3 className='mt-4 text-lg md:text-2xl'>Here are some additional readings and links to learn more about another language</h3>
+                    <div className="m-8 md:ml-14">
+                        <h1 className='text-lg font-bold md:text-2xl lg:text-4xl'>Additional Resources</h1>
+                        <h3 className='mt-4 text-lg md:text-2xl'>Here are some additional readings and links to learn more about another language</h3>
+                    </div>
+
+                    {/* Spanish Resources */}
+                    <div className="m-8 md:ml-20">
+                        <h2 className="text-2xl font-bold">Spanish</h2>
+                        <h3 classname="text-2xl">Get access to additional worksheets, videos, podcasts, and games for Spanish language learners of all levels.</h3>
+                        <ul className="text-indigo-400 underline list-disc list-inside">
+                            <li className="marker:text-black"><a href="https://www.onlinefreespanish.com/" target="_blank" aria-label="Click for Online Free Spanish Resource">OnlineFreeSpanish</a></li>
+                            <li className="marker:text-black"><a href="https://personal.colby.edu/~bknelson/SLC/" target="_blank" aria-label="Click for Spanish Language & Culture  Resource">Spanish Language & Culture</a></li>
+                            <li className="marker:text-black"><a href="https://laits.utexas.edu/spe/index/siteindex/#adv" target="_blank" aria-label="Click for Spanish Proficiency Exercises">Spanish Proficiency Exercises</a></li>
+                        </ul>
+                    </div>
+
+                    {/* French Resources */}
+                    <div className="m-8 md:ml-20">
+                        <h2 className="text-2xl font-bold">French</h2>
+                        <h3>Learn and improve your French skills through additional online lessons, worksheets, flashcards, practice quizzes, and games.</h3>
+                        <ul className="text-indigo-400 underline list-disc list-inside">
+                            <li className="marker:text-black"><a href="https://www.elearningfrench.com/" target="_blank" aria-label="Click for E-Learning French Resource">ELearningFrench</a></li>
+                            <li className="marker:text-black"><a href="https://pollylingu.al/fr/en" target="_blank" aria-label="Click for Polly Lingual Resource">Polly Lingual</a></li>
+                            <li className="marker:text-black"><a href="https://www.mondly.com/learn-french-online" target="_blank" aria-label="Click for Mondly by Pearson Resource">Mondly by Pearson</a></li>
+                        </ul>
+
+                    </div>
+
+                    {/* ASL Resources */}
+                    <div className="m-8 md:ml-20">
+                        <h2 className="text-2xl font-bold">ASL</h2>
+                        <h3>Get access to a comprehensive dictionary and practice your ASL through interactive videos, tutorials, games, and quizzes.</h3>
+                        <ul className="text-indigo-400 underline list-disc list-inside">
+                            <li className="marker:text-black"><a href="https://www.lifeprint.com/" target="_blank" aria-label="Click for Life Print Resource">Life Print</a></li>
+                            <li className="marker:text-black"><a href="https://www.youtube.com/channel/UC7fVfWv6FL7HeTFeSLz-muQ" target="_blank" aria-label="Click for ASL THAT! Videos">ASL THAT! Videos</a></li>
+                            <li className="marker:text-black"><a href="https://www.signingsavvy.com/" target="_blank" aria-label="Click for Signing Savvy Resource">Signing Savvy</a></li>
+                        </ul>
+                    </div>
                 </div>
 
-                {/* Spanish Resources */}
-                <div className="m-8 md:ml-20">
-                    <h2 className="text-2xl font-bold">Spanish</h2>
-                    <h3 classname="text-2xl">Get access to additional worksheets, videos, podcasts, and games for Spanish language learners of all levels.</h3>
-                    <ul className="text-indigo-400 underline list-disc list-inside">
-                        <li className="marker:text-black"><a href="https://www.onlinefreespanish.com/" target="_blank" aria-label="Click for Online Free Spanish Resource">OnlineFreeSpanish</a></li>
-                        <li className="marker:text-black"><a href="https://personal.colby.edu/~bknelson/SLC/" target="_blank" aria-label="Click for Spanish Language & Culture  Resource">Spanish Language & Culture</a></li>
-                        <li className="marker:text-black"><a href="https://laits.utexas.edu/spe/index/siteindex/#adv" target="_blank" aria-label="Click for Spanish Proficiency Exercises">Spanish Proficiency Exercises</a></li>
-                    </ul>
-                </div>
-
-                {/* French Resources */}
-                <div className="m-8 md:ml-20">
-                    <h2 className="text-2xl font-bold">French</h2>
-                    <h3>Learn and improve your French skills through additional online lessons, worksheets, flashcards, practice quizzes, and games.</h3>
-                    <ul className="text-indigo-400 underline list-disc list-inside">
-                        <li className="marker:text-black"><a href="https://www.elearningfrench.com/" target="_blank" aria-label="Click for E-Learning French Resource">ELearningFrench</a></li>
-                        <li className="marker:text-black"><a href="https://pollylingu.al/fr/en" target="_blank" aria-label="Click for Polly Lingual Resource">Polly Lingual</a></li>
-                        <li className="marker:text-black"><a href="https://www.mondly.com/learn-french-online" target="_blank" aria-label="Click for Mondly by Pearson Resource">Mondly by Pearson</a></li>
-                    </ul>
-
-                </div>
-
-                {/* ASL Resources */}
-                <div className="m-8 md:ml-20">
-                    <h2 className="text-2xl font-bold">ASL</h2>
-                    <h3>Get access to a comprehensive dictionary and practice your ASL through interactive videos, tutorials, games, and quizzes.</h3>
-                    <ul className="text-indigo-400 underline list-disc list-inside">
-                        <li className="marker:text-black"><a href="https://www.lifeprint.com/" target="_blank" aria-label="Click for Life Print Resource">Life Print</a></li>
-                        <li className="marker:text-black"><a href="https://www.youtube.com/channel/UC7fVfWv6FL7HeTFeSLz-muQ" target="_blank" aria-label="Click for ASL THAT! Videos">ASL THAT! Videos</a></li>
-                        <li className="marker:text-black"><a href="https://www.signingsavvy.com/" target="_blank" aria-label="Click for Signing Savvy Resource">Signing Savvy</a></li>
-                    </ul>
-                </div>
-                </div>
-
-            <div className="hidden mx-8 mt-8 md:mx-16 md:mt-0 md:hidden lg:block">
+                <div className="hidden mx-8 mt-8 md:mx-16 md:mt-0 md:hidden lg:block">
                     <img className="object-cover w-full h-72" src={WorldLanguages} alt="People speaking different languages" />
+                </div>
             </div>
-            </div>
-
         </>
     )
 }
