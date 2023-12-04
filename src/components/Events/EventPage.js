@@ -134,7 +134,7 @@ export default function EventPage(props) {
 
             {/* Event Details */}
             <div className="flex items-center justify-center mt-20 max-sm:hidden">
-                <div className="flex flex-col items-center justify-center w-3/5 col-start-1 row-start-2 bg-white shadow-2xl h-fit lg:p-2 xl:p-6 md:flex-row rounded-2xl">
+                <div className="flex flex-col items-center justify-center w-4/5 col-start-1 row-start-2 bg-white shadow-2xl h-fit lg:p-2 xl:p-6 md:flex-row rounded-2xl">
                     {/* Event Name + Available Spots */}
                     <img src={eventOrgImg} alt="organization" className="w-fit" />
                     <div className="md:inline-block hidden h-[145px] min-h-[1em] w-0.5 bg-gray-200"></div>
@@ -215,7 +215,7 @@ export default function EventPage(props) {
                 </div>
             </div>
             {/* Event Description + Host Information */}
-            <div className="flex max-[1250px]:flex-col items-center justify-center gap-5 mb-10 mx-6 md:mx-40 sm:mt-20 mt-5 flex-row">
+            <div className="flex max-[1250px]:flex-col items-center justify-center gap-5 mb-10 mx-6 md:mx-20 2xl:mx-40 sm:mt-20 mt-5 flex-row">
                 <div className="flex flex-col w-full gap-5 sm:hidden">
                     <hr className="border-t-2 border-gray-300"></hr>
                 </div>
@@ -244,7 +244,7 @@ export default function EventPage(props) {
                             {activeTab === 'flashcards' && (
                                 <Link to={`/Events/${eventName}/Vocabulary`}>
                                     <div className="flex flex-row items-center justify-center">
-                                        <div className="flex flex-row items-center justify-center w-11/12 gap-5 p-3 bg-white shadow-2xl md:w-4/5 md:gap-20 md:p-9 rounded-3xl">
+                                        <div className="flex flex-row items-center justify-center w-11/12 gap-5 p-3 bg-white shadow-2xl md:w-fit 2xl:w-4/5 md:gap-20 md:p-9 rounded-3xl">
                                             <img src={EventFlash} alt="event flashcard navigator" className="w-1/3 md:w-fit" />
                                             <div className="flex flex-col gap-4">
                                                 <h3 className="font-bold md:text-3xl">{eventName}</h3>
@@ -271,14 +271,14 @@ export default function EventPage(props) {
                     <hr className="border-t-2 border-gray-300"></hr>
                 </div>
                 <div className="flex justify-center w-full xl:w-1/2 rounded-xl">
-                    <div className="flex flex-col w-full gap-3 bg-white shadow-2xl sm:w-3/5 rounded-2xl">
+                    <div className="flex flex-col w-full gap-3 bg-white shadow-2xl sm:w-4/5 2xl:w-3/5 rounded-2xl">
                         <div className="hidden w-full p-4 bg-indigo-500 sm:block rounded-t-2xl">
                             <h2 className="text-base text-white md:text-lg lg:text-2xl xl:text-3xl">Contact Information</h2>
                         </div>
                         <div className="flex flex-row flex-wrap items-center gap-10 p-3 sm:p-0 mr-18 sm:mx-8 sm:mt-5 sm:justify-center">
                             <img src={eventHost.Photo} alt="event host" className="w-16 max-sm:h-16 sm:w-1/3 rounded-xl"></img>
                             <div className="flex flex-col flex-wrap gap-2 sm:gap-1">
-                                <p className="text-base font-bold md:text-lg lg:text-2xl xl:text-3xl">{eventHost.Name}</p>
+                                <p className="text-base font-bold md:text-lg lg:text-2xl 2xl:text-3xl">{eventHost.Name}</p>
                                 <div className="flex flex-row items-center gap-1">
                                     <svg className='w-4 h-4 sm:w-8 sm:h-8' viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="17" cy="17.5" r="17" fill="#5A6BC8" />
