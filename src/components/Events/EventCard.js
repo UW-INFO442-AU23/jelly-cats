@@ -23,7 +23,7 @@ export default function EventCard({ eventName, eventData }) {
     const languageImageSrc = languageImages[eventName.replace(/ /g, "_")] || defaultLanguageImages[language];
 
     return (
-        <div className="flex w-[590px] bg-indigo-500 h-[225px] justify-left p-5 gap-6 rounded-[20px] max-[750px]:flex-col max-[750px]:w-[280px] max-[750px]:h-[425px] max-[750px]:p-4 max-[750px]:gap-4" >
+        <div id="EventCard"className="flex w-[590px] bg-indigo-500 h-[225px] justify-left p-5 gap-6 rounded-[20px] max-[750px]:flex-col max-[750px]:w-[280px] max-[750px]:h-[425px] max-[750px]:p-4 max-[750px]:gap-4" >
             {/*Img Place Holder */}
             <div id="imgPlaceholder" className="flex justify-center items-center w-48 place-self-center max-[750px]:rounded-t-lg" >
                 <img src={languageImageSrc} className="object-cover w-full h-full p-1" alt="language"></img>
