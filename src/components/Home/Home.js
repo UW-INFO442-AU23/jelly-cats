@@ -26,7 +26,7 @@ export default function Home(props) {
                         <p className="text-lg font-bold md:text-2xl lg:text-4xl">Top Events</p>
                         <p className="py-2 md:text-xl lg:text-2xl md:pt-5">Here’s a selection of our top upcoming events</p>
                     </div>
-                    <div className="flex flex-col items-center w-4/5 sm:w-auto 2xl:w-4/5 sm:justify-between lg:flex-row md:my-3 lg:my-10">
+                    <div className="flex flex-col items-center w-10/12 sm:justify-between lg:flex-row md:my-3 lg:my-10">
                         <div className="flex flex-col items-center justify-center">
                             <img className="h-full mb-2 w-fit 2xl:w-96" src={asl} alt="ASL" />
                             <p className="text-lg font-bold lg:text-2xl">ASL Market</p>

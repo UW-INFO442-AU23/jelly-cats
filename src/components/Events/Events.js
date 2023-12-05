@@ -119,7 +119,7 @@ export default function Events(props) {
                 </div>
             ) : (
                 <div className="flex flex-col items-center justify-center">
-                    <div className="grid grid-cols-1 min-[1400px]:grid-cols-2 gap-20 min-[1400px]:gap-y-20 min-[1400px]:gap-x-60 mt-12">
+                    <div className="grid grid-cols-1 gap-20 mt-12 sm:grid-cols-2 sm:gap-y-12 sm:gap-x-30 2xl:gap-y-20 2xl:gap-x-60">
                         {filteredEvents.map(([eventKey, eventData]) => (
                             <EventCard key={eventKey} eventName={eventKey} eventData={eventData} user={props.user} />
                         ))}
