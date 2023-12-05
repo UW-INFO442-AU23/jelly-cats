@@ -52,10 +52,10 @@ export default function About(props) {
                             <div className="flex flex-col items-center justify-center">
                                 <p className="mt-3 text-lg font-bold md:mt-2 md:text-2xl">Justin Sukomol</p>
                                 <p className="mb-3 md:mb-0 md:text-xl">UX/UI Designer + PM</p>
-                                <a href="https://www.linkedin.com/in/justinsukomol/" target="_blank">
-                                    <img className="h-8 rounded" src={linkedin} alt="linkedin profile" />
-                                </a>
                             </div>
+                            <a href="https://www.linkedin.com/in/justinsukomol/" target="_blank">
+                                <img className="h-8 rounded" src={linkedin} alt="linkedin profile" />
+                            </a>
                         </div>
                     </div>
                 </div>
