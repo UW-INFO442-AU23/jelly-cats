@@ -28,17 +28,17 @@ export default function Home(props) {
                     </div>
                     <div className="flex flex-col items-center w-4/5 sm:justify-between sm:flex-row md:my-3 lg:my-10">
                         <div className="flex flex-col items-center justify-center">
-                            <img className="w-10/12 mb-2 xl:w-96" src={asl} alt="ASL" />
+                            <img className="w-full mb-2 h-fit 2xl:w-96" src={asl} alt="ASL" />
                             <p className="text-lg font-bold lg:text-2xl">ASL Market</p>
                             <p className="pb-5 md:pb-0 lg:text-xl">ASL in Aisles: Sign your way to flavors!</p>
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <img className="w-10/12 mb-2 xl:w-96" src={spanish} alt="Spanish" />
+                            <img className="mb-2 w-fit h-fit 2xl:w-96" src={spanish} alt="Spanish" />
                             <p className="text-lg font-bold lg:text-2xl">Spanish at the Beach</p>
                             <p className="pb-5 md:pb-0 lg:text-xl">Spanish by the shore: Spice up your getaway!</p>
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <img className="w-10/12 mb-2 xl:w-96" src={french} alt="French" />
+                            <img className="w-full mb-2 h-fit 2xl:w-96" src={french} alt="French" />
                             <p className="text-lg font-bold lg:text-2xl">French Bakery</p>
                             <p className="lg:text-xl">Fluent in French: Boss in Bakeries! </p>
                         </div>
