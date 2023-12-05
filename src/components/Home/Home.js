@@ -26,19 +26,19 @@ export default function Home(props) {
                         <p className="text-lg font-bold md:text-2xl lg:text-4xl">Top Events</p>
                         <p className="py-2 md:text-xl lg:text-2xl md:pt-5">Here’s a selection of our top upcoming events</p>
                     </div>
-                    <div className="flex flex-col items-center w-4/5 sm:justify-between sm:flex-row md:my-3 lg:my-10">
+                    <div className="flex flex-col items-center w-4/5 sm:w-auto 2xl:w-4/5 sm:justify-between lg:flex-row md:my-3 lg:my-10">
                         <div className="flex flex-col items-center justify-center">
-                            <img className="w-full mb-2 h-fit 2xl:w-96" src={asl} alt="ASL" />
+                            <img className="h-full mb-2 w-fit 2xl:w-96" src={asl} alt="ASL" />
                             <p className="text-lg font-bold lg:text-2xl">ASL Market</p>
                             <p className="pb-5 md:pb-0 lg:text-xl">ASL in Aisles: Sign your way to flavors!</p>
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <img className="mb-2 w-fit h-fit 2xl:w-96" src={spanish} alt="Spanish" />
+                            <img className="h-full mb-2 w-fit 2xl:w-96" src={spanish} alt="Spanish" />
                             <p className="text-lg font-bold lg:text-2xl">Spanish at the Beach</p>
                             <p className="pb-5 md:pb-0 lg:text-xl">Spanish by the shore: Spice up your getaway!</p>
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <img className="w-full mb-2 h-fit 2xl:w-96" src={french} alt="French" />
+                            <img className="w-full h-full mb-2 2xl:w-96" src={french} alt="French" />
                             <p className="text-lg font-bold lg:text-2xl">French Bakery</p>
                             <p className="lg:text-xl">Fluent in French: Boss in Bakeries! </p>
                         </div>
@@ -54,15 +54,12 @@ export default function Home(props) {
                         Are you a King County, WA high school student looking for additional ways to help you learn and practice a foreign language for class?
                         Here’s how to get started! Follow the steps below to get access to more language learning resources and events:
                     </p>
-
                     <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">1. Create a Kinguistics profile through your Google Account by clicking on the "Login" button.  </p>
                     <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">2. Review the <Link to="/Resources" className="underline">Resources</Link> page for more educational tools to support your learning</p>
                     <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">3. Explore the <Link to="/Events" className="underline">Events</Link> page and sign up for upcoming in-person or online events where you can practice your skills with other students.</p>
                     <p className="mt-2 mb-3 lg:text-lg md:mt-3 lg:mt-3">4. Explore the Flashcards associated with each event for more practice!</p>
-
                 </div>
             </div>
         </>
     );
 }
-
