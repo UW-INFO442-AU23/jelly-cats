@@ -6,6 +6,7 @@ import matthew from '../../imgs/About/Matthew.png';
 import sarah from '../../imgs/About/Sarah.png';
 import scott from '../../imgs/About/Scott.png';
 import vannary from '../../imgs/About/Vannary.png';
+import linkedin from '../../imgs/About/Linkedin.png';
 
 export default function About(props) {
     return (
@@ -20,33 +21,68 @@ export default function About(props) {
                     and opportunities for students to further their learning and collaborate with peers outside of school.
                 </p>
                 {/* Team Portraits + Role */}
-                <div className="flex flex-col flex-wrap justify-around mx-20 mt-5 md:flex-row md:my-6">
+                <div className="flex flex-col flex-wrap justify-around gap-5 mx-20 mt-5 md:flex-row md:my-6">
                     <div className="flex flex-col items-center justify-center">
                         <img className="md:w-60" src={sarah} alt="Portrait" />
-                        <p className="mt-3 font-bold md:mt-2 md:text-2xl">Sarah Thomas<br /></p>
-                        <p className="mb-3 md:text-xl">UX/UI Designer + PM</p>
+                        <div className="flex flex-row items-center justify-center gap-4">
+                            <div className="flex flex-col items-center justify-center">
+                                <p className="mt-3 text-lg font-bold md:mt-2 md:text-2xl">Sarah Thomas</p>
+                                <p className="mb-3 md:text-xl">UX/UI Designer + PM</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/sarahetthomas/" target="_blank">
+                                <img className="h-8 rounded" src={linkedin} alt="linkedin profile" />
+                            </a>
+                        </div>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <img className="md:w-60" src={vannary} alt="Portrait" />
-                        <p className="mt-3 font-bold md:mt-2 md:text-2xl">Vannary Sou<br /></p>
-                        <p className="mb-3 md:text-xl">User Researcher</p>
+                        <div className="flex flex-row items-center justify-center gap-4">
+                            <div className="flex flex-col items-center justify-center">
+                                <p className="mt-3 text-lg font-bold md:mt-2 md:text-2xl">Vannary Sou</p>
+                                <p className="mb-3 md:text-xl">User Researcher</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/vannary-sou-86a7291aa/" target="_blank">
+                                <img className="h-8 rounded" src={linkedin} alt="linkedin profile" />
+                            </a>
+                        </div>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <img className="md:w-60" src={justin} alt="Portrait" />
-                        <p className="mt-3 font-bold md:mt-2 md:text-2xl">Justin Sukomol<br /></p>
-                        <p className="mb-3 md:text-xl">UX/UI Designer + PM</p>
+                        <div className="flex flex-row items-center justify-center gap-4">
+                            <div className="flex flex-col items-center justify-center">
+                                <p className="mt-3 text-lg font-bold md:mt-2 md:text-2xl">Justin Sukomol</p>
+                                <p className="mb-3 md:mb-0 md:text-xl">UX/UI Designer + PM</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/justinsukomol/" target="_blank">
+                                <img className="h-8 rounded" src={linkedin} alt="linkedin profile" />
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div className="flex flex-col flex-wrap justify-around md:flex-row md:mx-72">
+                <div className="flex flex-col flex-wrap justify-around gap-5 mt-5 md:flex-row md:mx-72 md:mt-0 md:gap-0">
                     <div className="flex flex-col items-center justify-center">
                         <img className="md:w-60" src={scott} alt="Portrait" />
-                        <p className="mt-3 font-bold md:mt-2 md:text-2xl">Scott Nguyen<br /></p>
-                        <p className="mb-3 md:mb-0 md:text-xl">Developer</p>
+                        <div className="flex flex-row items-center justify-center gap-4">
+                            <div className="flex flex-col items-center justify-center">
+                                <p className="mt-3 text-lg font-bold md:mt-2 md:text-2xl">Scott Nguyen</p>
+                                <p className="mb-3 md:mb-0 md:text-xl">Developer</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/scottn523/" target="_blank">
+                                <img className="h-8 rounded" src={linkedin} alt="linkedin profile" />
+                            </a>
+                        </div>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <img className="md:w-60" src={matthew} alt="Portrait" />
-                        <p className="mt-3 font-bold md:mt-2 md:text-2xl">Matthew Bacarro<br /></p>
-                        <p className="mb-3 md:mb-0 md:text-xl">Developer</p>
+                        <div className="flex flex-row items-center justify-center gap-4">
+                            <div className="flex flex-col items-center justify-center">
+                                <p className="mt-3 text-lg font-bold md:mt-2 md:text-2xl">Matthew Bacarro</p>
+                                <p className="mb-3 md:mb-0 md:text-xl">Developer</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/matthew-bacarro/" target="_blank">
+                                <img className="h-8 rounded" src={linkedin} alt="linkedin profile" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -77,15 +77,15 @@ export default function Events(props) {
     return (
         <>
             <Navbar user={props.user} onSignOut={props.onSignOut} />
-            <div className="max-[600px]:mx-8 flex flex-col justify-center mt-12 mx-14 md:mx-20 lg:mx-36">
+            <div className="flex flex-col justify-center mt-12">
                 {/* Introduction */}
-                <div className="mt-10 md:mt-20">
+                <div className="mt-10 md:mt-20 max-[600px]:mx-8 mx-14 md:mx-20 lg:mx-36">
                     <p className="max-[600px]:text-sm text-lg font-bold md:text-2xl lg:text-4xl">Upcoming Events</p>
                     <p className="max-[600px]:text-xs max-[600px]:mt-2 mt-8 md:text-lg lg:text-2xl">Find an upcoming language-learning event that suits your learning needs! Use filters to refine your search.</p>
                 </div>
                 {/* Filter */}
-                <div className="flex flex-row flex-wrap items-center justify-between gap-4 mt-8 gap-y-6">
-                    <div className="flex gap-5">
+                <div className="flex flex-row flex-wrap items-center justify-center mt-8 gap-y-6">
+                    <div className="flex justify-center gap-4 sm:justify-normal basis-3/4">
                         {/* filter by location*/}
                         <Filter defaultVal="All Languages" options={languages} onSelect={(value) => setSelectedLanguage(value)} shouldReset={resetFilters} />
                         <Filter defaultVal="All Language Levels" options={langLevel} onSelect={(value) => setSelectedLanguageLevel(value)} shouldReset={resetFilters} />
@@ -118,10 +118,12 @@ export default function Events(props) {
                     </button>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 min-[1400px]:grid-cols-2 gap-10 mt-12 mx-14 md:mx-20 xl:mx-28 ">
-                    {filteredEvents.map(([eventKey, eventData]) => (
-                        <EventCard key={eventKey} eventName={eventKey} eventData={eventData} user={props.user} />
-                    ))}
+                <div className="flex flex-col items-center justify-center">
+                    <div className="grid grid-cols-1 min-[1400px]:grid-cols-2 gap-20 min-[1400px]:gap-y-20 min-[1400px]:gap-x-60 mt-12">
+                        {filteredEvents.map(([eventKey, eventData]) => (
+                            <EventCard key={eventKey} eventName={eventKey} eventData={eventData} user={props.user} />
+                        ))}
+                    </div>
                 </div>
             )}
         </>
